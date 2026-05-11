@@ -5,47 +5,50 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     // --- Dark Mode Toggle ---
-    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const darkModeToggles = document.querySelectorAll('.dark-mode-toggle');
     const body = document.body;
 
     if (localStorage.getItem('theme') === 'dark') {
         body.classList.add('dark-mode');
+        updateToggleIcons();
     }
 
-    if (darkModeToggle) {
-        darkModeToggle.addEventListener('click', () => {
+    darkModeToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
             body.classList.toggle('dark-mode');
             const theme = body.classList.contains('dark-mode') ? 'dark' : 'light';
             localStorage.setItem('theme', theme);
             updateToggleIcons();
         });
-    }
+    });
 
     function updateToggleIcons() {
-        const icon = darkModeToggle.querySelector('i');
-        if (body.classList.contains('dark-mode')) {
-            icon.classList.replace('fa-moon', 'fa-sun');
-        } else {
-            icon.classList.replace('fa-sun', 'fa-moon');
-        }
+        darkModeToggles.forEach(toggle => {
+            const icon = toggle.querySelector('i');
+            if (body.classList.contains('dark-mode')) {
+                icon.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                icon.classList.replace('fa-sun', 'fa-moon');
+            }
+        });
     }
 
     // --- RTL Toggle ---
-    const rtlToggle = document.getElementById('rtl-toggle');
+    const rtlToggles = document.querySelectorAll('.rtl-toggle');
     const html = document.documentElement;
 
     if (localStorage.getItem('dir') === 'rtl') {
         html.setAttribute('dir', 'rtl');
     }
 
-    if (rtlToggle) {
-        rtlToggle.addEventListener('click', () => {
+    rtlToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
             const currentDir = html.getAttribute('dir');
             const newDir = currentDir === 'rtl' ? 'ltr' : 'rtl';
             html.setAttribute('dir', newDir);
             localStorage.setItem('dir', newDir);
         });
-    }
+    });
 
     // --- Mobile Menu ---
     const hamburger = document.querySelector('.hamburger');

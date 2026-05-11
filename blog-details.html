@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/dark-mode.css">
@@ -16,14 +16,14 @@
     
     <style>
         .post-hero {
-            height: 500px;
-            background: url('https://images.unsplash.com/photo-1596464716127-f2a82984de30?q=80&w=1200&auto=format&fit=crop');
+            height: 350px;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('assets/images/dollhouse-blog-hero.png');
             background-size: cover;
             background-position: center;
         }
         .post-container {
             max-width: 800px;
-            margin: -100px auto 100px;
+            margin: 50px auto 100px;
             background: var(--white);
             padding: 60px;
             border-radius: 20px;
@@ -58,7 +58,10 @@
     <header>
         <div class="container">
             <nav>
-                <a href="index.html" class="logo">MiniCraft Shop</a>
+                <a href="index.html" class="logo">
+                    <i class="fas fa-house-chimney-window logo-icon"></i>
+                    MiniCraft Shop
+                </a>
                 <div class="nav-links">
                     <a href="index.html">Home 1</a>
                     <a href="home-2.html">Home 2</a>
@@ -67,11 +70,17 @@
                     <a href="blog.html">Blog</a>
                     <a href="pricing.html">Pricing</a>
                     <a href="contact.html">Contact</a>
+
+                    <div class="mobile-nav-actions mobile-only">
+                        <button class="toggle-btn dark-mode-toggle"><i class="fas fa-moon"></i></button>
+                        <button class="toggle-btn rtl-toggle" title="Toggle RTL"><i class="fas fa-right-left"></i></button>
+                        <a href="login.html" class="btn btn-primary">Login</a>
+                    </div>
                 </div>
                 <div class="nav-actions">
-                    <button id="dark-mode-toggle" class="toggle-btn"><i class="fas fa-moon"></i></button>
-                    <button id="rtl-toggle" class="toggle-btn"><i class="fas fa-globe"></i></button>
-                    <a href="login.html" class="btn btn-primary">Login</a>
+                    <button class="toggle-btn dark-mode-toggle desktop-only"><i class="fas fa-moon"></i></button>
+                    <button class="toggle-btn rtl-toggle desktop-only" title="Toggle RTL"><i class="fas fa-right-left"></i></button>
+                    <a href="login.html" class="btn btn-primary desktop-only">Login</a>
                     <div class="hamburger"><span></span><span></span><span></span></div>
                 </div>
             </nav>
@@ -79,29 +88,33 @@
     </header>
 
     <!-- 1. Blog Hero Image -->
-    <div class="post-hero"></div>
+    <div class="post-hero" id="blog-hero"></div>
 
     <!-- 2. Article Content -->
     <div class="container">
         <article class="post-container">
-            <div class="blog-meta" style="margin-bottom: 20px; color: #999;">
-                <span><i class="far fa-calendar-alt"></i> May 10, 2026</span> | <span><i class="far fa-user"></i> By Elena Vance</span> | <span><i class="far fa-folder"></i> Tutorials</span>
+            <div class="blog-meta" id="blog-meta" style="margin-bottom: 20px; color: #999;">
+                <span><i class="far fa-calendar-alt"></i> <span id="post-date">May 10, 2026</span></span> | <span><i class="far fa-user"></i> By <span id="post-author">Elena Vance</span></span> | <span><i class="far fa-folder"></i> <span id="post-category">Tutorials</span></span>
             </div>
-            <h1 style="font-size: 3rem; margin-bottom: 30px;">Realism in 1:12 Scale: The Ultimate Guide</h1>
+            <h1 id="blog-title" style="font-size: 3rem; margin-bottom: 30px;">Realism in 1:12 Scale: The Ultimate Guide</h1>
             
-            <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">The secret to a truly stunning dollhouse isn't just about how much you spend on furniture, but how you handle the tiny details that trick the eye into seeing reality. When we talk about "realism" in miniature, we're talking about scale, texture, and light.</p>
+            <img id="blog-featured-image" src="" alt="Featured Image" style="width: 100%; height: 500px; object-fit: cover; border-radius: 15px; margin-bottom: 40px; box-shadow: var(--shadow);">
             
-            <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">Scale is the foundation. If a single item is slightly off—say, a coffee mug that would be the size of a bucket in real life—it breaks the magic instantly. Always carry a scale ruler and verify every purchase.</p>
+            <div id="blog-content">
+                <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">The secret to a truly stunning dollhouse isn't just about how much you spend on furniture, but how you handle the tiny details that trick the eye into seeing reality. When we talk about "realism" in miniature, we're talking about scale, texture, and light.</p>
+                
+                <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">Scale is the foundation. If a single item is slightly off—say, a coffee mug that would be the size of a bucket in real life—it breaks the magic instantly. Always carry a scale ruler and verify every purchase.</p>
 
-            <!-- 3. Quote Section -->
-            <div class="quote-section">
-                "Miniature art is the only medium where the artist attempts to shrink the soul of an object without losing its essence."
+                <!-- 3. Quote Section -->
+                <div class="quote-section" id="blog-quote">
+                    "Miniature art is the only medium where the artist attempts to shrink the soul of an object without losing its essence."
+                </div>
+
+                <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">Texture is the next hurdle. Plastic shiny surfaces are the enemy of realism. We recommend weathering your pieces. A bit of fine sandpaper and some watered-down acrylic paint can turn a brand new "wood" chair into a cherished family heirloom with decades of history.</p>
+                
+                <h2 style="margin: 40px 0 20px;">The Power of Light</h2>
+                <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">Nothing kills the illusion faster than flat, overhead lighting. Use multiple sources. Tiny floor lamps, hidden LEDs behind valances, and even the glow of a "fireplace" create shadows that give your rooms depth and life.</p>
             </div>
-
-            <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">Texture is the next hurdle. Plastic shiny surfaces are the enemy of realism. We recommend weathering your pieces. A bit of fine sandpaper and some watered-down acrylic paint can turn a brand new "wood" chair into a cherished family heirloom with decades of history.</p>
-            
-            <h2 style="margin: 40px 0 20px;">The Power of Light</h2>
-            <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">Nothing kills the illusion faster than flat, overhead lighting. Use multiple sources. Tiny floor lamps, hidden LEDs behind valances, and even the glow of a "fireplace" create shadows that give your rooms depth and life.</p>
 
             <!-- 5. Comment Form -->
             <div class="comment-form">
@@ -127,28 +140,28 @@
                 <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Related 1">
                 <div class="card-body">
                     <h3 class="card-title">Top 5 Tools</h3>
-                    <a href="#" class="btn btn-outline card-btn">Read More</a>
+                    <a href="blog-details.html#tools" class="btn btn-outline card-btn">Read More</a>
                 </div>
             </div>
             <div class="card">
                 <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Related 2">
                 <div class="card-body">
                     <h3 class="card-title">Wiring 101</h3>
-                    <a href="#" class="btn btn-outline card-btn">Read More</a>
+                    <a href="blog-details.html#lighting" class="btn btn-outline card-btn">Read More</a>
                 </div>
             </div>
             <div class="card">
                 <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Related 3">
                 <div class="card-body">
                     <h3 class="card-title">Tiny Bookmaking</h3>
-                    <a href="#" class="btn btn-outline card-btn">Read More</a>
+                    <a href="blog-details.html#books" class="btn btn-outline card-btn">Read More</a>
                 </div>
             </div>
             <div class="card">
                 <img src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Related 4">
                 <div class="card-body">
                     <h3 class="card-title">Fantasy Worlds</h3>
-                    <a href="#" class="btn btn-outline card-btn">Read More</a>
+                    <a href="blog-details.html#fantasy" class="btn btn-outline card-btn">Read More</a>
                 </div>
             </div>
         </div>
@@ -158,12 +171,15 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h3 class="logo" style="color: var(--white); margin-bottom: 20px;">MiniCraft Shop</h3>
+                    <a href="index.html" class="logo" style="margin-bottom: 20px;">
+                        <i class="fas fa-house-chimney-window logo-icon"></i>
+                        MiniCraft Shop
+                    </a>
                     <p>Creating luxury worlds in 1:12 scale since 2015. Your destination for premium miniatures.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
@@ -202,5 +218,159 @@
     <div class="back-to-top"><i class="fas fa-chevron-up"></i></div>
 
     <script src="assets/js/main.js"></script>
+    <script>
+        (function() {
+            const blogData = {
+                'tools': {
+                    title: 'Top 5 Tools for Beginners',
+                    heroImage: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200&auto=format&fit=crop',
+                    date: 'May 10, 2026',
+                    author: 'Julian Thorne',
+                    category: 'Tutorials',
+                    quote: '"The right tool is half the battle in micro-crafting."',
+                    content: `
+                        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">Starting your journey into the world of miniatures can be overwhelming. With thousands of specialized tools available, which ones do you actually need?</p>
+                        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">1. Precision Tweezers: Essential for handling tiny parts without the clumsiness of fingers.<br>2. Sharp Craft Knife: A clean cut is vital for seamless joints.<br>3. High-Quality Wood Glue: We recommend acid-free glues that won't yellow over time.</p>
+                        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">Invest in quality over quantity. A few well-made tools will last longer and provide better results than a drawer full of cheap alternatives.</p>
+                    `
+                },
+                'realism': {
+                    title: 'Realism in 1:12 Scale: The Ultimate Guide',
+                    heroImage: 'https://images.unsplash.com/photo-1596464716127-f2a82984de30?q=80&w=1200&auto=format&fit=crop',
+                    date: 'May 08, 2026',
+                    author: 'Elena Vance',
+                    category: 'Design',
+                    quote: '"Miniature art is the only medium where the artist attempts to shrink the soul of an object without losing its essence."',
+                    content: `
+                        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">The secret to a truly stunning dollhouse isn't just about how much you spend on furniture, but how you handle the tiny details that trick the eye into seeing reality.</p>
+                        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">Scale is the foundation. If a single item is slightly off—say, a coffee mug that would be the size of a bucket in real life—it breaks the magic instantly. Always carry a scale ruler and verify every purchase.</p>
+                        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">Texture is the next hurdle. Plastic shiny surfaces are the enemy of realism. We recommend weathering your pieces with fine sandpaper and watered-down acrylic paint.</p>
+                    `
+                },
+                'lighting': {
+                    title: 'Wiring Your First House',
+                    heroImage: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=1200&auto=format&fit=crop',
+                    date: 'May 05, 2026',
+                    author: 'Marcus Flint',
+                    category: 'Engineering',
+                    quote: '"Light brings a tiny world to life, creating shadows that tell a story."',
+                    content: `
+                        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">Electricity can be intimidating at 1:12 scale, but it doesn't have to be. Modern LED systems make it safer and easier than ever.</p>
+                        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">Start with a simple battery-powered system. Use copper tape for invisible wiring behind wallpaper. Remember to always test your connections before gluing everything down!</p>
+                        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">Layer your lighting: combine ambient ceiling lights with focused floor lamps for the most realistic effect.</p>
+                    `
+                },
+                'books': {
+                    title: 'Miniature Bookmaking',
+                    heroImage: 'https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=1200&auto=format&fit=crop',
+                    date: 'May 01, 2026',
+                    author: 'Sophia Reed',
+                    category: 'Crafts',
+                    quote: '"A library, even a tiny one, is a home for a thousand tiny dreams."',
+                    content: `
+                        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">There is something magical about a miniature book that you can actually flip through. In this guide, we explore the art of tiny binding.</p>
+                        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">Using high-quality 20lb paper and real leather scraps, you can create a library that looks like it belongs in a royal manor. Precision folding is the key to avoiding a "puffy" look.</p>
+                        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">Don't forget the gold-leaf detailing on the spine for that ultimate touch of luxury.</p>
+                    `
+                },
+                'spotlight': {
+                    title: 'Inside the Artisan\'s Studio: Elena Vance',
+                    heroImage: 'https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=1200&auto=format&fit=crop',
+                    date: 'April 28, 2026',
+                    author: 'Editorial Team',
+                    category: 'Interviews',
+                    quote: '"Success in miniatures is found in the patience to do the small things perfectly."',
+                    content: `
+                        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">Elena Vance has spent over 15 years perfecting the art of 1:12 scale architectural modeling. In this exclusive interview, she shares her studio secrets.</p>
+                        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">"I start every project with historical research," Elena says. "If the skeleton of the building is accurate, the soul follows." Her studio is a sanctuary of precision tools and sustainably sourced mahogany.</p>
+                        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">We discuss her upcoming collection and what she believes is the future of the miniature hobby in a digital age.</p>
+                    `
+                },
+                'victorian': {
+                    title: 'Gallery: Victorian Elegance',
+                    heroImage: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=1200&auto=format&fit=crop',
+                    date: 'April 20, 2026',
+                    author: 'Elena Vance',
+                    category: 'Inspiration',
+                    quote: '"The Victorian era was defined by its attention to opulence, even at the smallest scale."',
+                    content: `
+                        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">Explore our curated gallery of 19th-century luxury. From hand-carved velvet settees to crystal chandeliers, see how we bring the Gilded Age to life.</p>
+                        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">Focus on deep jewel tones and heavy fabrics to replicate the Victorian aesthetic. Our gallery provides a template for your own historical projects.</p>
+                    `
+                },
+                'modern': {
+                    title: 'Gallery: Modern Minimalism',
+                    heroImage: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=1200&auto=format&fit=crop',
+                    date: 'April 15, 2026',
+                    author: 'Julian Thorne',
+                    category: 'Inspiration',
+                    quote: '"Less is more, especially when you have so little space to work with."',
+                    content: `
+                        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">Modern miniatures are about clean lines and innovative materials. See how artists use concrete, glass, and raw wood to create tiny urban lofts.</p>
+                        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">Minimalism requires even higher precision, as there are no ornate details to hide imperfections. Explore the beauty of functional tiny design.</p>
+                    `
+                },
+                'fantasy': {
+                    title: 'Gallery: Fantasy Worlds',
+                    heroImage: 'https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?q=80&w=1200&auto=format&fit=crop',
+                    date: 'April 10, 2026',
+                    author: 'Sophia Reed',
+                    category: 'Inspiration',
+                    quote: '"In a tiny world, the only limit is your imagination."',
+                    content: `
+                        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">Step into the magical and the mechanical. Our fantasy gallery features steampunk laboratories, fairy cottages, and tiny wizard towers.</p>
+                        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">Fantasy allows for unconventional materials—roots, crystals, and weathered copper—to tell a story of a world that never was.</p>
+                    `
+                },
+                'coastal': {
+                    title: 'Gallery: Coastal Tiny Living',
+                    heroImage: 'https://images.unsplash.com/photo-1615529328331-f8917597711f?q=80&w=1200&auto=format&fit=crop',
+                    date: 'April 05, 2026',
+                    author: 'Elena Vance',
+                    category: 'Inspiration',
+                    quote: '"Bring the serenity of the sea into your palm."',
+                    content: `
+                        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">Light, airy, and ocean-inspired. This gallery showcases tiny beach houses with driftwood furniture and nautical details.</p>
+                        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">Learn how to use sand, shells, and bleached fabrics to create a realistic seaside retreat in 1:12 scale.</p>
+                    `
+                }
+            };
+
+            function updateBlogDetails() {
+                const hash = window.location.hash.substring(1);
+                const data = blogData[hash] || blogData['realism'];
+
+                // Update Featured Image (Now below hero)
+                const featuredImg = document.getElementById('blog-featured-image');
+                if (featuredImg) {
+                    featuredImg.src = data.heroImage;
+                    featuredImg.alt = data.title;
+                }
+
+                // Update Meta
+                document.getElementById('post-date').textContent = data.date;
+                document.getElementById('post-author').textContent = data.author;
+                document.getElementById('post-category').textContent = data.category;
+
+                // Update Title
+                document.getElementById('blog-title').textContent = data.title;
+
+                // Update Content
+                document.getElementById('blog-content').innerHTML = `
+                    <div id="blog-body">${data.content}</div>
+                    <div class="quote-section" id="blog-quote">${data.quote}</div>
+                `;
+
+                // Update Document Title
+                document.title = `${data.title} - Blog Details`;
+
+                // Scroll to top
+                window.scrollTo(0, 0);
+            }
+
+            window.addEventListener('hashchange', updateBlogDetails);
+            updateBlogDetails();
+        })();
+    </script>
 </body>
 </html>

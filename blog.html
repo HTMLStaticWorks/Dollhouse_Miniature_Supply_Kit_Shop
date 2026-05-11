@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/dark-mode.css">
@@ -16,29 +16,66 @@
     
     <style>
         .blog-hero {
-            padding: 120px 0 80px;
-            background: var(--bg-soft);
+            padding: 220px 0 160px;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/images/dollhouse-blog-hero.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             text-align: center;
+            color: var(--white);
+            position: relative;
         }
-        .category-card {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-        .category-card:hover {
-            background: var(--primary-color);
-            color: white;
-            transform: translateY(-5px);
-        }
+
         .blog-meta {
             font-size: 0.8rem;
             color: #999;
             margin-bottom: 10px;
             display: flex;
             gap: 15px;
+        }
+        .artisan-spotlight {
+            background-color: var(--bg-soft);
+            padding: 100px 0;
+            overflow: hidden;
+        }
+        .spotlight-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        .spotlight-image {
+            position: relative;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: var(--shadow-hover);
+        }
+        .spotlight-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            display: block;
+        }
+        .spotlight-tag {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--primary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        @media (max-width: 768px) {
+            .spotlight-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .spotlight-image {
+                height: 350px;
+            }
         }
     </style>
 </head>
@@ -59,11 +96,17 @@
                     <a href="blog.html" class="active">Blog</a>
                     <a href="pricing.html">Pricing</a>
                     <a href="contact.html">Contact</a>
+
+                    <div class="mobile-nav-actions mobile-only">
+                        <button class="toggle-btn dark-mode-toggle"><i class="fas fa-moon"></i></button>
+                        <button class="toggle-btn rtl-toggle" title="Toggle RTL"><i class="fas fa-right-left"></i></button>
+                        <a href="login.html" class="btn btn-primary">Login</a>
+                    </div>
                 </div>
                 <div class="nav-actions">
-                    <button id="dark-mode-toggle" class="toggle-btn"><i class="fas fa-moon"></i></button>
-                    <button id="rtl-toggle" class="toggle-btn" title="Toggle RTL"><i class="fas fa-right-left"></i></button>
-                    <a href="login.html" class="btn btn-primary">Login</a>
+                    <button class="toggle-btn dark-mode-toggle desktop-only"><i class="fas fa-moon"></i></button>
+                    <button class="toggle-btn rtl-toggle desktop-only" title="Toggle RTL"><i class="fas fa-right-left"></i></button>
+                    <a href="login.html" class="btn btn-primary desktop-only">Login</a>
                     <div class="hamburger"><span></span><span></span><span></span></div>
                 </div>
             </nav>
@@ -73,35 +116,8 @@
     <!-- 1. Hero Section -->
     <section class="blog-hero">
         <div class="container">
-            <h1 style="font-size: 3rem; margin-bottom: 20px;">Miniature Insights</h1>
-            <p style="max-width: 600px; margin: 0 auto; color: #666;">Tutorials, artist interviews, and inspiration for your next tiny project.</p>
-        </div>
-    </section>
-
-    <!-- 2. Tutorial Categories -->
-    <section class="container">
-        <h2 style="text-align: center; margin-bottom: 50px;">Browse Categories</h2>
-        <div class="grid-4">
-            <div class="category-card">
-                <i class="fas fa-hammer" style="font-size: 2rem; margin-bottom: 15px;"></i>
-                <h3>Construction</h3>
-                <p>Building the structure.</p>
-            </div>
-            <div class="category-card">
-                <i class="fas fa-couch" style="font-size: 2rem; margin-bottom: 15px;"></i>
-                <h3>Upholstery</h3>
-                <p>Tiny textiles & fabrics.</p>
-            </div>
-            <div class="category-card">
-                <i class="fas fa-lightbulb" style="font-size: 2rem; margin-bottom: 15px;"></i>
-                <h3>Lighting</h3>
-                <p>Wiring for magic.</p>
-            </div>
-            <div class="category-card">
-                <i class="fas fa-paint-brush" style="font-size: 2rem; margin-bottom: 15px;"></i>
-                <h3>Finishing</h3>
-                <p>Paints & weathering.</p>
-            </div>
+            <h1 style="font-size: 4rem; margin-bottom: 25px; text-shadow: 0 4px 15px rgba(0,0,0,0.3);">Miniature Insights</h1>
+            <p style="max-width: 700px; margin: 0 auto; font-size: 1.3rem; color: rgba(255,255,255,0.9); text-shadow: 0 2px 10px rgba(0,0,0,0.3);">Tutorials, artist interviews, and inspiration for your next tiny project.</p>
         </div>
     </section>
 
@@ -116,7 +132,7 @@
                         <div class="blog-meta"><span>May 10, 2026</span> <span>5 min read</span></div>
                         <h3 class="card-title">Top 5 Tools for Beginners</h3>
                         <p class="card-text">Essential gear every miniature artist needs to start.</p>
-                        <a href="blog-details.html" class="btn btn-primary card-btn">Read More</a>
+                        <a href="blog-details.html#tools" class="btn btn-primary card-btn">Read More</a>
                     </div>
                 </div>
                 <div class="card">
@@ -125,7 +141,7 @@
                         <div class="blog-meta"><span>May 08, 2026</span> <span>8 min read</span></div>
                         <h3 class="card-title">Realism in 1:12 Scale</h3>
                         <p class="card-text">How to achieve museum-quality realism in your rooms.</p>
-                        <a href="blog-details.html" class="btn btn-primary card-btn">Read More</a>
+                        <a href="blog-details.html#realism" class="btn btn-primary card-btn">Read More</a>
                     </div>
                 </div>
                 <div class="card">
@@ -134,7 +150,7 @@
                         <div class="blog-meta"><span>May 05, 2026</span> <span>12 min read</span></div>
                         <h3 class="card-title">Wiring Your First House</h3>
                         <p class="card-text">A step-by-step guide to installing tiny LED lighting.</p>
-                        <a href="blog-details.html" class="btn btn-primary card-btn">Read More</a>
+                        <a href="blog-details.html#lighting" class="btn btn-primary card-btn">Read More</a>
                     </div>
                 </div>
                 <div class="card">
@@ -143,8 +159,29 @@
                         <div class="blog-meta"><span>May 01, 2026</span> <span>6 min read</span></div>
                         <h3 class="card-title">Miniature Bookmaking</h3>
                         <p class="card-text">Creating tiny libraries with real readable pages.</p>
-                        <a href="blog-details.html" class="btn btn-primary card-btn">Read More</a>
+                        <a href="blog-details.html#books" class="btn btn-primary card-btn">Read More</a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3.5 Artisan Spotlight Section -->
+    <section class="artisan-spotlight">
+        <div class="container">
+            <div class="spotlight-grid">
+                <div class="spotlight-image">
+                    <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=800&auto=format&fit=crop" alt="Artisan Studio">
+                    <div class="spotlight-tag">Master Maker</div>
+                </div>
+                <div class="spotlight-content">
+                    <span class="section-tag" style="color: var(--primary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 15px;">Spotlight</span>
+                    <h2 style="font-size: 3rem; margin-bottom: 25px;">Inside the Artisan's Studio</h2>
+                    <p style="font-size: 1.1rem; color: #555; margin-bottom: 30px; line-height: 1.8;">Join us for an exclusive look into the creative process of Elena Vance, whose latest Victorian Parlor collection has redefined museum-quality realism in the miniature world.</p>
+                    <div class="spotlight-quote" style="border-left: 4px solid var(--primary-color); padding-left: 25px; margin-bottom: 40px; font-style: italic; color: #444; font-size: 1.2rem;">
+                        "True artistry isn't about shrinking an object; it's about preserving the soul of the craftsmanship at a tiny scale."
+                    </div>
+                    <a href="blog-details.html#spotlight" class="btn btn-primary" style="padding: 15px 40px;">Read the Full Interview</a>
                 </div>
             </div>
         </div>
@@ -159,7 +196,7 @@
                 <div class="card-body">
                     <h3 class="card-title">Victorian Elegance</h3>
                     <p class="card-text">A showcase of 19th-century luxury in miniature.</p>
-                    <a href="blog-details.html" class="btn btn-outline card-btn">View Gallery</a>
+                    <a href="blog-details.html#victorian" class="btn btn-outline card-btn">View Gallery</a>
                 </div>
             </div>
             <div class="card">
@@ -167,7 +204,7 @@
                 <div class="card-body">
                     <h3 class="card-title">Modern Minimalism</h3>
                     <p class="card-text">Clean lines and tiny concrete in today's dollhouses.</p>
-                    <a href="blog-details.html" class="btn btn-outline card-btn">View Gallery</a>
+                    <a href="blog-details.html#modern" class="btn btn-outline card-btn">View Gallery</a>
                 </div>
             </div>
             <div class="card">
@@ -175,7 +212,7 @@
                 <div class="card-body">
                     <h3 class="card-title">Fantasy Worlds</h3>
                     <p class="card-text">Steampunk and magical tiny room creations.</p>
-                    <a href="blog-details.html" class="btn btn-outline card-btn">View Gallery</a>
+                    <a href="blog-details.html#fantasy" class="btn btn-outline card-btn">View Gallery</a>
                 </div>
             </div>
             <div class="card">
@@ -183,34 +220,27 @@
                 <div class="card-body">
                     <h3 class="card-title">Coastal Tiny Living</h3>
                     <p class="card-text">Beach-inspired interiors and tiny surfboards.</p>
-                    <a href="blog-details.html" class="btn btn-outline card-btn">View Gallery</a>
+                    <a href="blog-details.html#coastal" class="btn btn-outline card-btn">View Gallery</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 5. Newsletter CTA -->
-    <section class="container" style="text-align: center;">
-        <div style="background: var(--primary-color); padding: 60px; border-radius: 30px; color: var(--white);">
-            <h3>Never Miss a Tiny Update</h3>
-            <p style="margin-bottom: 30px;">Get the latest tutorials and product drops directly in your inbox.</p>
-            <form class="newsletter-form" style="max-width: 500px; margin: 0 auto;">
-                <input type="email" placeholder="Your Email Address" required>
-                <button type="submit" class="btn btn-outline" style="background: white; border: none;">Subscribe</button>
-            </form>
-        </div>
-    </section>
+
 
     <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h3 class="logo" style="color: var(--white); margin-bottom: 20px;">MiniCraft Shop</h3>
+                    <a href="index.html" class="logo" style="margin-bottom: 20px;">
+                        <i class="fas fa-house-chimney-window logo-icon"></i>
+                        MiniCraft Shop
+                    </a>
                     <p>Creating luxury worlds in 1:12 scale since 2015. Your destination for premium miniatures.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>

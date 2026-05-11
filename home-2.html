@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home 2 - Dollhouse Miniature Supply & Kit Shop</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/dark-mode.css">
     <link rel="stylesheet" href="assets/css/rtl.css">
-    
+
     <style>
         .hero-cinematic {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=1600&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('assets/images/dollhouse-home2-hero.png') no-repeat center center / cover;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -27,11 +28,13 @@
             color: white;
             position: relative;
         }
+
         .hero-cinematic-content h1 {
             font-size: 5rem;
             margin-bottom: 20px;
             animation: fadeInDown 1s ease;
         }
+
         .hero-cinematic-content p {
             font-size: 1.5rem;
             max-width: 800px;
@@ -39,50 +42,66 @@
             animation: fadeInUp 1s ease 0.3s;
             animation-fill-mode: both;
         }
-        
+
         .zoom-card {
             overflow: hidden;
             border-radius: 20px;
             position: relative;
         }
+
         .zoom-card img {
             transition: transform 0.5s ease;
         }
+
         .zoom-card:hover img {
             transform: scale(1.15);
         }
+
         .zoom-card-overlay {
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
             padding: 30px;
             color: white;
             opacity: 0;
             transition: opacity 0.3s ease;
         }
+
         .zoom-card:hover .zoom-card-overlay {
             opacity: 1;
         }
-        
+
         .workshop-split {
             display: flex;
             align-items: center;
             gap: 50px;
         }
-        .workshop-text { flex: 1; }
-        .workshop-video { 
-            flex: 1; 
+
+        .workshop-text {
+            flex: 1;
+        }
+
+        .workshop-video {
+            flex: 1;
             height: 400px;
-            background: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop');
-            background-size: cover;
+            background: #eee url('assets/images/dollhouse-kitchen.png') no-repeat center center / cover;
             border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
             box-shadow: var(--shadow-hover);
+            overflow: hidden;
+            position: relative;
         }
+
+        .workshop-video video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         .play-btn {
             width: 80px;
             height: 80px;
@@ -96,23 +115,580 @@
             cursor: pointer;
             transition: var(--transition);
         }
-        .play-btn:hover { transform: scale(1.1); }
-        
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-50px); }
-            to { opacity: 1; transform: translateY(0); }
+
+        .play-btn:hover {
+            transform: scale(1.1);
         }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(50px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Premium Showcase Styles */
+        .premium-showcase {
+            background-color: var(--bg-soft);
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .premium-showcase::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            right: -5%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, var(--accent-color) 0%, transparent 70%);
+            opacity: 0.3;
+            z-index: 0;
+        }
+
+        .premium-card {
+            position: relative;
+            height: 500px;
+            border-radius: 30px;
+            overflow: hidden;
+            border: none;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .premium-card.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .premium-card:nth-child(1) {
+            transition-delay: 0.1s;
+        }
+
+        .premium-card:nth-child(2) {
+            transition-delay: 0.2s;
+        }
+
+        .premium-card:nth-child(3) {
+            transition-delay: 0.3s;
+        }
+
+        .premium-card:nth-child(4) {
+            transition-delay: 0.4s;
+        }
+
+        .premium-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .premium-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1.2s ease;
+        }
+
+        .premium-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .premium-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 40%, transparent 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 40px;
+            color: white;
+            opacity: 0.9;
+            transition: opacity 0.4s ease;
+        }
+
+        .premium-card:hover .premium-overlay {
+            opacity: 1;
+        }
+
+        .premium-category {
+            color: var(--primary-color);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+            display: block;
+            transform: translateY(20px);
+            transition: transform 0.5s ease;
+        }
+
+        .premium-card:hover .premium-category {
+            transform: translateY(0);
+        }
+
+        .premium-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            transform: translateY(20px);
+            transition: transform 0.5s ease 0.1s;
+        }
+
+        .premium-card:hover h3 {
+            transform: translateY(0);
+        }
+
+        .premium-desc {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.7);
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.5s ease 0.2s;
+        }
+
+        .premium-card:hover .premium-desc {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+
+        /* New Section Styles */
+        .style-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 320px);
+            gap: 30px;
+        }
+
+        .style-card {
+            position: relative;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .style-card.large {
+            grid-row: span 2;
+        }
+
+        .style-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .style-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .style-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .style-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 40px;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+            color: white;
+        }
+
+        .style-content span {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .style-content h3 {
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .rarity-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 100px;
+        }
+
+        .rarity-info {
+            flex: 1;
+        }
+
+        .rarity-images {
+            flex: 1;
+            position: relative;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .rarity-img-box {
+            width: 85%;
+            height: 450px;
+            border-radius: 40px;
+            overflow: hidden;
+            box-shadow: 30px 30px 80px rgba(0, 0, 0, 0.15);
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: transform 0.6s ease;
+        }
+
+        .rarity-img-box.secondary {
+            top: auto;
+            left: auto;
+            bottom: 0;
+            right: 0;
+            width: 65%;
+            height: 320px;
+            border: 12px solid var(--white);
+            z-index: 2;
+        }
+
+        .rarity-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .rarity-label {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            background: var(--white);
+            color: var(--black);
+            padding: 10px 25px;
+            border-radius: 100px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .rarity-features {
+            margin-top: 50px;
+        }
+
+        .r-feature {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 35px;
+        }
+
+        .r-feature i {
+            width: 60px;
+            height: 60px;
+            background: rgba(212, 160, 107, 0.1);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            flex-shrink: 0;
+        }
+
+        .r-feature h4 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+
+        .r-feature p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Anatomy Section Styles */
+        .anatomy-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 0;
+        }
+
+        .anatomy-image {
+            width: 100%;
+            max-width: 900px;
+            border-radius: 40px;
+            overflow: hidden;
+            box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
+            border: 1px solid #222;
+        }
+
+        .anatomy-image img {
+            width: 100%;
+            display: block;
+            transition: transform 0.5s ease;
+            animation: moveFrontBack 12s ease-in-out infinite;
+        }
+
+        @keyframes moveFrontBack {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.08); }
+        }
+
+        .callout {
+            position: absolute;
+            background: rgba(15, 15, 15, 0.9);
+            padding: 25px;
+            border-radius: 20px;
+            max-width: 280px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 2;
+        }
+
+        .callout h4 {
+            color: var(--primary-color);
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+        }
+
+        .callout p {
+            font-size: 0.95rem;
+            color: #aaa;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .callout-1 {
+            top: 10%;
+            left: 0;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .callout-2 {
+            bottom: 20%;
+            right: 0;
+            border-right: 4px solid var(--primary-color);
+            text-align: right;
+        }
+
+        .callout-3 {
+            bottom: 10%;
+            left: 5%;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        @media (max-width: 992px) {
+            .anatomy-wrapper {
+                flex-direction: column;
+                gap: 30px;
+            }
+            .callout {
+                position: static;
+                max-width: 100%;
+                width: 100%;
+                text-align: left !important;
+                border-right: none !important;
+                border-left: 4px solid var(--primary-color) !important;
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Luxury CTA Enhancements */
+        .luxury-cta-box {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            padding: 120px 50px;
+            border-radius: 60px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 50px;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-btn {
+            background: white !important;
+            color: var(--black) !important;
+            font-size: 1.25rem !important;
+            padding: 22px 60px !important;
+            border-radius: 100px !important;
+            font-weight: 700 !important;
+            box-shadow: 0 15px 35px rgba(255, 255, 255, 0.2);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .cta-btn:hover {
+            transform: scale(1.08) translateY(-5px);
+            box-shadow: 0 20px 45px rgba(255, 255, 255, 0.3);
+            background: var(--primary-color) !important;
+            color: white !important;
+        }
+
+        .social-links-cta {
+            margin-top: 60px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .social-links-cta a {
+            width: 55px;
+            height: 55px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .social-links-cta a:hover {
+            background: var(--primary-color);
+            transform: translateY(-8px) rotate(10deg);
+            border-color: var(--primary-color);
+            box-shadow: 0 10px 20px rgba(212, 160, 107, 0.3);
         }
 
         @media (max-width: 768px) {
-            .hero-cinematic-content h1 { font-size: 3rem; }
-            .workshop-split { flex-direction: column; }
+            .hero-cinematic-content h1, 
+            h2 {
+                font-size: 2.2rem !important;
+                text-align: center !important;
+                line-height: 1.2 !important;
+            }
+
+            .hero-cinematic-content p {
+                font-size: 1.1rem !important;
+                text-align: center !important;
+            }
+
+            .workshop-split {
+                flex-direction: column;
+            }
+
+            .premium-card {
+                height: 400px;
+            }
+
+            .style-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                gap: 20px;
+            }
+
+            .style-card.large {
+                grid-row: span 1;
+                height: 400px;
+            }
+
+            .rarity-wrapper {
+                flex-direction: column !important;
+                gap: 50px !important;
+                text-align: center !important;
+                display: flex !important;
+            }
+
+            .rarity-info {
+                width: 100% !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+            }
+
+            .r-feature {
+                flex-direction: column !important;
+                align-items: center !important;
+                text-align: center !important;
+                gap: 15px !important;
+            }
+
+            .rarity-images {
+                height: auto !important;
+                width: 100% !important;
+                margin-top: 30px !important;
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 20px !important;
+                align-items: center !important;
+                position: relative !important;
+            }
+
+            .rarity-img-box {
+                width: 100% !important;
+                max-width: 320px !important;
+                height: 300px !important;
+                position: relative !important;
+                left: auto !important;
+                top: auto !important;
+                transform: none !important;
+                border-radius: 20px !important;
+            }
+
+            .rarity-img-box.secondary {
+                width: 100% !important;
+                max-width: 320px !important;
+                height: 300px !important;
+                position: relative !important;
+                left: auto !important;
+                right: auto !important;
+                bottom: auto !important;
+                top: auto !important;
+                transform: none !important;
+                border: none !important;
+            }
+
+            .luxury-cta-box {
+                padding: 80px 20px !important;
+                border-radius: 40px;
+            }
+
+            .luxury-cta-box h2 {
+                font-size: 2.2rem !important;
+            }
+
+            .cta-btn {
+                padding: 15px 30px !important;
+                font-size: 1.1rem !important;
+                white-space: nowrap !important;
+                display: inline-block !important;
+                width: auto !important;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <header>
@@ -130,11 +706,18 @@
                     <a href="blog.html">Blog</a>
                     <a href="pricing.html">Pricing</a>
                     <a href="contact.html">Contact</a>
+
+                    <div class="mobile-nav-actions mobile-only">
+                        <button class="toggle-btn dark-mode-toggle"><i class="fas fa-moon"></i></button>
+                        <button class="toggle-btn rtl-toggle" title="Toggle RTL"><i class="fas fa-right-left"></i></button>
+                        <a href="login.html" class="btn btn-primary">Login</a>
+                    </div>
                 </div>
                 <div class="nav-actions">
-                    <button id="dark-mode-toggle" class="toggle-btn"><i class="fas fa-moon"></i></button>
-                    <button id="rtl-toggle" class="toggle-btn" title="Toggle RTL"><i class="fas fa-right-left"></i></button>
-                    <a href="login.html" class="btn btn-primary">Login</a>
+                    <button class="toggle-btn dark-mode-toggle desktop-only"><i class="fas fa-moon"></i></button>
+                    <button class="toggle-btn rtl-toggle desktop-only" title="Toggle RTL"><i
+                            class="fas fa-right-left"></i></button>
+                    <a href="login.html" class="btn btn-primary desktop-only">Login</a>
                     <div class="hamburger"><span></span><span></span><span></span></div>
                 </div>
             </nav>
@@ -145,50 +728,64 @@
     <section class="hero-cinematic">
         <div class="hero-cinematic-content">
             <h1>Artistry in Miniature</h1>
-            <p>Elevate your collection with world-class craftsmanship and exclusive DIY kits designed for the true connoisseur.</p>
+            <p>Elevate your collection with world-class craftsmanship and exclusive DIY kits designed for the true
+                connoisseur.</p>
             <div class="hero-btns">
-                <a href="services.html" class="btn btn-primary" style="background: white; color: black; border: none;">View Collections</a>
-                <a href="contact.html" class="btn btn-outline" style="border-color: white; color: white; margin-left: 15px;">Custom Inquiries</a>
+                <a href="services.html" class="btn btn-primary btn-white">View Collections</a>
+                <a href="contact.html" class="btn btn-outline btn-white-outline">Custom Inquiries</a>
             </div>
         </div>
     </section>
 
-    <!-- 2. Room Showcase -->
-    <section class="container">
-        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 50px;">
-            <div>
-                <span style="color: var(--primary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">Curated Spaces</span>
-                <h2 style="font-size: 3rem;">Luxury Room Showcase</h2>
-            </div>
-            <a href="services.html" class="btn btn-outline">View All Rooms</a>
-        </div>
-        <div class="grid-4">
-            <div class="zoom-card">
-                <img src="https://images.unsplash.com/photo-1615529328331-f8917597711f?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Luxury Room 1">
-                <div class="zoom-card-overlay">
-                    <h3>Imperial Ballroom</h3>
-                    <p>Gold leaf details & silk wallcoverings.</p>
+    <!-- 2. Premium Signature Collection -->
+    <section class="premium-showcase">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <span
+                        style="color: var(--primary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 3px; display: block; margin-bottom: 15px;">Crafted
+                        for Connoisseurs</span>
+                    <h2 style="font-size: 3.5rem; line-height: 1;">Signature Collections</h2>
                 </div>
+                <a href="services.html" class="btn btn-outline view-all-btn">View All Series <i
+                        class="fas fa-arrow-right" style="margin-left: 10px;"></i></a>
             </div>
-            <div class="zoom-card">
-                <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Luxury Room 2">
-                <div class="zoom-card-overlay">
-                    <h3>French Country Kitchen</h3>
-                    <p>Real copper pots & limestone floors.</p>
+
+            <div class="grid-4">
+                <div class="card premium-card">
+                    <img src="assets/images/dollhouse-kitchen.png" alt="Luxury Kitchen">
+                    <div class="premium-overlay">
+                        <span class="premium-category">Culinary Arts</span>
+                        <h3>Gourmet Kitchens</h3>
+                        <p class="premium-desc">Featuring working faucets, marble-top islands, and copper cookware sets.
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <div class="zoom-card">
-                <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Luxury Room 3">
-                <div class="zoom-card-overlay">
-                    <h3>Master Conservatory</h3>
-                    <p>Glass ceiling & tropical scale plants.</p>
+                <div class="card premium-card">
+                    <img src="assets/images/dollhouse-bedroom.png" alt="Royal Bedroom">
+                    <div class="premium-overlay">
+                        <span class="premium-category">Sanctuary</span>
+                        <h3>Royal Bedrooms</h3>
+                        <p class="premium-desc">Hand-carved mahogany frames with 100% silk linens and velvet drapes.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="zoom-card">
-                <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Luxury Room 4">
-                <div class="zoom-card-overlay">
-                    <h3>Private Study</h3>
-                    <p>Leather-bound books & mahogany desk.</p>
+                <div class="card premium-card">
+                    <img src="assets/images/dollhouse-garden.png" alt="Miniature Garden">
+                    <div class="premium-overlay">
+                        <span class="premium-category">Exterior</span>
+                        <h3>Botanical Gardens</h3>
+                        <p class="premium-desc">Lush scale greenery with working fountains and artisan stone pathways.
+                        </p>
+                    </div>
+                </div>
+                <div class="card premium-card">
+                    <img src="assets/images/dollhouse-space.png" alt="Victorian Parlor">
+                    <div class="premium-overlay">
+                        <span class="premium-category">Heritage</span>
+                        <h3>Victorian Parlors</h3>
+                        <p class="premium-desc">Gold-leaf detailing and miniature oil paintings for a true formal
+                            aesthetic.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -200,111 +797,169 @@
             <div class="workshop-text">
                 <span style="color: var(--primary-color); font-weight: 700;">THE PROCESS</span>
                 <h2 style="font-size: 2.5rem; margin: 20px 0;">Handcrafted With Precision</h2>
-                <p style="font-size: 1.1rem; color: #555; margin-bottom: 30px;">Every piece in our shop is either hand-assembled by master artists or precision-cut for your own assembly. We use only the finest woods, metals, and textiles to ensure museum-quality results.</p>
+                <p style="font-size: 1.1rem; color: #555; margin-bottom: 30px;">Every piece in our shop is either
+                    hand-assembled by master artists or precision-cut for your own assembly. We use only the finest
+                    woods, metals, and textiles to ensure museum-quality results.</p>
                 <ul style="margin-bottom: 40px;">
-                    <li style="margin-bottom: 15px;"><i class="fas fa-check-circle" style="color: var(--primary-color); margin-right: 10px;"></i> Sustainable birch and mahogany woods</li>
-                    <li style="margin-bottom: 15px;"><i class="fas fa-check-circle" style="color: var(--primary-color); margin-right: 10px;"></i> Professional grade LED systems</li>
-                    <li style="margin-bottom: 15px;"><i class="fas fa-check-circle" style="color: var(--primary-color); margin-right: 10px;"></i> Exclusive artist-designed patterns</li>
+                    <li style="margin-bottom: 15px;"><i class="fas fa-check-circle"
+                            style="color: var(--primary-color); margin-right: 10px;"></i> Sustainable birch and mahogany
+                        woods</li>
+                    <li style="margin-bottom: 15px;"><i class="fas fa-check-circle"
+                            style="color: var(--primary-color); margin-right: 10px;"></i> Professional grade LED systems
+                    </li>
+                    <li style="margin-bottom: 15px;"><i class="fas fa-check-circle"
+                            style="color: var(--primary-color); margin-right: 10px;"></i> Exclusive artist-designed
+                        patterns</li>
                 </ul>
                 <a href="about.html" class="btn btn-primary">Learn Our Story</a>
             </div>
             <div class="workshop-video">
-                <div class="play-btn"><i class="fas fa-play"></i></div>
+                <video id="workshopVideo" autoplay muted loop playsinline poster="assets/images/dollhouse-kitchen.png"
+                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
+                    <source
+                        src="https://joy1.videvo.net/videvo_files/video/free/2019-11/large_watermarked/190828_07_Handmaking_05_preview.mp4"
+                        type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
         </div>
     </section>
 
-    <!-- 4. Premium Craft Collections -->
-    <section class="container">
-        <h2 style="text-align: center; margin-bottom: 50px;">Exclusive Artist Collections</h2>
-        <div class="grid-4">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Craft 1">
-                <div class="card-body">
-                    <h3 class="card-title">Miniature Tools Set</h3>
-                    <p class="card-text">Professional grade precision tools for builders.</p>
-                    <a href="services-details.html" class="btn btn-primary card-btn">View Details</a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Craft 2">
-                <div class="card-body">
-                    <h3 class="card-title">Deluxe Room Box</h3>
-                    <p class="card-text">Premium display box with anti-glare glass.</p>
-                    <a href="services-details.html" class="btn btn-primary card-btn">View Details</a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Craft 3">
-                <div class="card-body">
-                    <h3 class="card-title">Textile Archive</h3>
-                    <p class="card-text">Exclusive fabrics scaled for 1:12 furniture.</p>
-                    <a href="services-details.html" class="btn btn-primary card-btn">View Details</a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Craft 4">
-                <div class="card-body">
-                    <h3 class="card-title">Artistic Paint Kit</h3>
-                    <p class="card-text">Custom colors for realistic weathering effects.</p>
-                    <a href="services-details.html" class="btn btn-primary card-btn">View Details</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. Tutorials & Inspiration -->
-    <section style="background-color: #111; color: white;">
+    <!-- 4. Curated Style Themes -->
+    <section style="padding: 120px 0; background: var(--white);">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 50px;">Masterclass Tutorials</h2>
-            <div class="grid-4">
-                <div class="card" style="background: #222; border: none;">
-                    <img src="https://images.unsplash.com/photo-1516533075015-a3838414c3cb?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Tutorial 1">
-                    <div class="card-body">
-                        <h3 class="card-title">Advanced Upholstery</h3>
-                        <p class="card-text" style="color: #aaa;">Learn to cover tiny sofas like a pro.</p>
-                        <a href="blog-details.html" class="btn btn-outline" style="color: white; border-color: white;">Watch Now</a>
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 80px;">
+                <span
+                    style="color: var(--primary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 4px; display: block; margin-bottom: 20px;">Design
+                    Your World</span>
+                <h2 style="font-size: 3.5rem; margin-bottom: 25px;">Curated Style Themes</h2>
+                <p style="color: #666; font-size: 1.2rem; line-height: 1.8;">From the intricate patterns of the Victorian
+                    era to the minimalist lines of industrial lofts, our curated themes provide everything you need to
+                    create a cohesive masterpiece.</p>
+            </div>
+            <div class="style-grid">
+                <div class="style-card large">
+                    <img src="assets/images/dollhouse-boho.png" alt="Boho Style">
+                    <div class="style-content">
+                        <span>The Aesthetic</span>
+                        <h3>Modern Boho</h3>
                     </div>
                 </div>
-                <div class="card" style="background: #222; border: none;">
-                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Tutorial 2">
-                    <div class="card-body">
-                        <h3 class="card-title">Lighting 101</h3>
-                        <p class="card-text" style="color: #aaa;">Wiring your room box for magic.</p>
-                        <a href="blog-details.html" class="btn btn-outline" style="color: white; border-color: white;">Watch Now</a>
+                <div class="style-card">
+                    <img src="assets/images/dollhouse-victorian2.png" alt="Victorian Style">
+                    <div class="style-content">
+                        <span>The Heritage</span>
+                        <h3>Classic Victorian</h3>
                     </div>
                 </div>
-                <div class="card" style="background: #222; border: none;">
-                    <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Tutorial 3">
-                    <div class="card-body">
-                        <h3 class="card-title">Tiny Pastries</h3>
-                        <p class="card-text" style="color: #aaa;">Sculpting realistic food from clay.</p>
-                        <a href="blog-details.html" class="btn btn-outline" style="color: white; border-color: white;">Watch Now</a>
-                    </div>
-                </div>
-                <div class="card" style="background: #222; border: none;">
-                    <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Tutorial 4">
-                    <div class="card-body">
-                        <h3 class="card-title">Aging Wood</h3>
-                        <p class="card-text" style="color: #aaa;">Create antique finishes on new wood.</p>
-                        <a href="blog-details.html" class="btn btn-outline" style="color: white; border-color: white;">Watch Now</a>
+                <div class="style-card">
+                    <img src="assets/images/dollhouse-industorial.png" alt="Industrial Style">
+                    <div class="style-content">
+                        <span>The Urban</span>
+                        <h3>Industrial Loft</h3>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 6. Luxury CTA -->
-    <section class="container" style="text-align: center;">
-        <div style="background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)); padding: 100px 50px; border-radius: 40px; color: white; position: relative; overflow: hidden;">
-            <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: rgba(255,255,255,0.1); border-radius: 50%;"></div>
-            <h2 style="font-size: 3.5rem; margin-bottom: 20px;">Ready to Start Your World?</h2>
-            <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto 40px;">Join thousands of miniature enthusiasts and begin your crafting journey today with our exclusive starter kits.</p>
-            <a href="register.html" class="btn btn-primary" style="background: white; color: var(--primary-color); font-size: 1.2rem; padding: 15px 40px;">Get Started Free</a>
-            <div class="social-links" style="justify-content: center; margin-top: 50px;">
-                <a href="#" style="background: rgba(255,255,255,0.2);"><i class="fab fa-instagram"></i></a>
-                <a href="#" style="background: rgba(255,255,255,0.2);"><i class="fab fa-pinterest"></i></a>
-                <a href="#" style="background: rgba(255,255,255,0.2);"><i class="fab fa-tiktok"></i></a>
+    <!-- 5. Artisan Rarities -->
+    <section style="padding: 120px 0; background: var(--bg-soft); overflow: hidden;">
+        <div class="container">
+            <div class="rarity-wrapper">
+                <div class="rarity-info">
+                    <span style="color: var(--primary-color); font-weight: 700; letter-spacing: 3px;">THE ARTISAN
+                        VAULT</span>
+                    <h2 style="font-size: 4rem; margin: 25px 0; line-height: 1.1;">One-of-a-Kind Rarities</h2>
+                    <p style="font-size: 1.25rem; color: #555; margin-bottom: 50px; line-height: 1.8;">Our most exclusive
+                        offerings, hand-picked for the serious collector. These pieces represent the absolute pinnacle of
+                        micro-craftsmanship, featuring working mechanisms and museum-grade finishes.</p>
+
+                    <div class="rarity-features">
+                        <div class="r-feature">
+                            <i class="fas fa-certificate"></i>
+                            <div>
+                                <h4>Certified Authentic</h4>
+                                <p>Every rarity includes a hand-signed certificate from the master artist who created
+                                    it.</p>
+                            </div>
+                        </div>
+                        <div class="r-feature">
+                            <i class="fas fa-microchip"></i>
+                            <div>
+                                <h4>Mechanical Precision</h4>
+                                <p>Discover pieces with working hinges, rolling drawers, and integrated micro-lighting
+                                    systems.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="services.html" class="btn btn-primary" style="margin-top: 20px;">Explore the Vault</a>
+                </div>
+                <div class="rarity-images">
+                    <div class="rarity-img-box">
+                        <img src="assets/images/dollhouse-baby.png" alt="Baby Collection">
+                    </div>
+                    <div class="rarity-images-secondary rarity-img-box secondary">
+                        <img src="assets/images/dollhouse2.png" alt="Premium Dollhouse">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Engineering Excellence -->
+    <section class="anatomy-section" style="padding: 120px 0; background: #0a0a0a; color: white; overflow: hidden;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 80px;">
+                <span
+                    style="color: var(--primary-color); font-weight: 700; letter-spacing: 5px; text-transform: uppercase;">The
+                    Anatomy of Quality</span>
+                <h2 style="font-size: 3.5rem; margin: 20px 0;">Museum-Grade Engineering</h2>
+            </div>
+            <div class="anatomy-wrapper">
+                <div class="anatomy-image">
+                    <img src="assets/images/dollhouse-image.png" alt="Miniature Detail">
+                </div>
+
+                <div class="callout callout-1">
+                    <h4>Hand-Carved Wood</h4>
+                    <p>Every furniture frame is carved from solid sustainable birch and mahogany.</p>
+                </div>
+
+                <div class="callout callout-2">
+                    <h4>Micro-Wiring</h4>
+                    <p>Integrated LED systems with invisible copper threading for warm ambient light.</p>
+                </div>
+
+                <div class="callout callout-3">
+                    <h4>Premium Textiles</h4>
+                    <p>100% silk and velvet fabrics scaled perfectly to maintain realistic drape.</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 80px;">
+                <p style="font-size: 1.2rem; color: #666; max-width: 600px; margin: 0 auto 40px;">We don't just build
+                    miniatures; we engineer tiny legacies designed to be cherished for generations.</p>
+                <a href="about.html" class="btn btn-outline"
+                    style="color: white; border-color: #444; border-radius: 0; padding: 15px 40px;">Explore Our
+                    Craftsmanship</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Luxury CTA -->
+    <section class="container" style="text-align: center; margin-bottom: 100px;">
+        <div class="luxury-cta-box">
+            <div class="cta-content">
+                <h2 style="font-size: 4.5rem; margin-bottom: 25px; font-family: 'Playfair Display', serif; line-height: 1.1;">Ready to Start Your World?</h2>
+                <p style="font-size: 1.35rem; max-width: 750px; margin: 0 auto 50px; line-height: 1.8; opacity: 0.9; font-weight: 300;">Join thousands of miniature enthusiasts and begin your crafting journey today with our exclusive starter kits and museum-grade artisan supplies.</p>
+                <a href="register.html" class="btn btn-primary cta-btn">Get Started Free</a>
+                
+                <div class="social-links-cta">
+                    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
             </div>
         </div>
     </section>
@@ -313,12 +968,15 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h3 class="logo" style="color: var(--white); margin-bottom: 20px;">MiniCraft Shop</h3>
+                    <a href="index.html" class="logo" style="margin-bottom: 20px;">
+                        <i class="fas fa-house-chimney-window logo-icon"></i>
+                        MiniCraft Shop
+                    </a>
                     <p>Creating luxury worlds in 1:12 scale since 2015. Your destination for premium miniatures.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
@@ -356,6 +1014,14 @@
     <!-- Back to Top -->
     <div class="back-to-top"><i class="fas fa-chevron-up"></i></div>
 
+    <script>
+        // Force video play on first user interaction to bypass autoplay blocks
+        document.addEventListener('click', () => {
+            const v = document.getElementById('workshopVideo');
+            if (v && v.paused) v.play();
+        }, { once: true });
+    </script>
     <script src="assets/js/main.js"></script>
 </body>
+
 </html>

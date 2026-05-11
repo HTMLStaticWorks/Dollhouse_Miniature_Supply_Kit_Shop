@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/dark-mode.css">
@@ -16,9 +16,14 @@
     
     <style>
         .contact-hero {
-            padding: 120px 0 60px;
+            padding: 220px 0 160px;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/images/dollhouse-contact-hero.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             text-align: center;
-            background: var(--bg-soft);
+            color: var(--white);
+            position: relative;
         }
         .contact-grid {
             display: grid;
@@ -93,11 +98,17 @@
                     <a href="blog.html">Blog</a>
                     <a href="pricing.html">Pricing</a>
                     <a href="contact.html" class="active">Contact</a>
+
+                    <div class="mobile-nav-actions mobile-only">
+                        <button class="toggle-btn dark-mode-toggle"><i class="fas fa-moon"></i></button>
+                        <button class="toggle-btn rtl-toggle" title="Toggle RTL"><i class="fas fa-right-left"></i></button>
+                        <a href="login.html" class="btn btn-primary">Login</a>
+                    </div>
                 </div>
                 <div class="nav-actions">
-                    <button id="dark-mode-toggle" class="toggle-btn"><i class="fas fa-moon"></i></button>
-                    <button id="rtl-toggle" class="toggle-btn" title="Toggle RTL"><i class="fas fa-right-left"></i></button>
-                    <a href="login.html" class="btn btn-primary">Login</a>
+                    <button class="toggle-btn dark-mode-toggle desktop-only"><i class="fas fa-moon"></i></button>
+                    <button class="toggle-btn rtl-toggle desktop-only" title="Toggle RTL"><i class="fas fa-right-left"></i></button>
+                    <a href="login.html" class="btn btn-primary desktop-only">Login</a>
                     <div class="hamburger"><span></span><span></span><span></span></div>
                 </div>
             </nav>
@@ -107,90 +118,100 @@
     <!-- 1. Hero Section -->
     <section class="contact-hero">
         <div class="container">
-            <h1 style="font-size: 3rem; margin-bottom: 20px;">Get in Touch</h1>
-            <p style="max-width: 600px; margin: 0 auto; color: #666;">Have questions about our kits or want to discuss a custom commission? We're here to help.</p>
+            <h1 style="font-size: 4rem; margin-bottom: 25px; text-shadow: 0 4px 15px rgba(0,0,0,0.3);">Get in Touch</h1>
+            <p style="max-width: 700px; margin: 0 auto; font-size: 1.3rem; color: rgba(255,255,255,0.9); text-shadow: 0 2px 10px rgba(0,0,0,0.3);">Have questions about our kits or want to discuss a custom commission? We're here to help.</p>
         </div>
     </section>
 
     <!-- 2 & 3. Contact Form & Details -->
-    <section class="container">
-        <div class="contact-grid">
-            <div class="contact-info-card">
-                <h3 style="margin-bottom: 30px;">Contact Information</h3>
-                <div class="info-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <div>
-                        <h4>Our Workshop</h4>
-                        <p>123 Tiny Lane, Craft District, Craft City, CC 12345</p>
-                    </div>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-phone"></i>
-                    <div>
-                        <h4>Call Us</h4>
-                        <p>+1 (234) 567 890</p>
-                        <p>Mon - Fri: 9am - 6pm</p>
-                    </div>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-envelope"></i>
-                    <div>
-                        <h4>Email Us</h4>
-                        <p>hello@minicraftshop.com</p>
-                        <p>support@minicraftshop.com</p>
-                    </div>
-                </div>
-                <div class="social-links" style="margin-top: 50px;">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-pinterest"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-            
-            <div class="contact-form-box">
-                <form>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                        <div class="form-group">
-                            <label>First Name</label>
-                            <input type="text" placeholder="John" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Last Name</label>
-                            <input type="text" placeholder="Doe" required>
+    <section>
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info-card">
+                    <h3 style="margin-bottom: 30px;">Contact Information</h3>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Our Workshop</h4>
+                            <p>123 Tiny Lane, Craft District, Craft City, CC 12345</p>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label>Email Address</label>
-                        <input type="email" placeholder="john@example.com" required>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Call Us</h4>
+                            <p>+1 (234) 567 890</p>
+                            <p>Mon - Fri: 9am - 6pm</p>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label>Subject</label>
-                        <select style="width: 100%; padding: 15px; border-radius: 10px; border: 1px solid #ddd;">
-                            <option>General Inquiry</option>
-                            <option>Custom Commission</option>
-                            <option>Order Support</option>
-                            <option>Wholesale</option>
-                        </select>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email Us</h4>
+                            <p>hello@minicraftshop.com</p>
+                            <p>support@minicraftshop.com</p>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label>Message</label>
-                        <textarea rows="5" placeholder="How can we help you?" required></textarea>
+                    <div class="social-links" style="margin-top: 50px; justify-content: center;">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
-                </form>
+                </div>
+                
+                <div class="contact-form-box">
+                    <form>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div class="form-group">
+                                <label>First Name</label>
+                                <input type="text" placeholder="John" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Last Name</label>
+                                <input type="text" placeholder="Doe" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Subject</label>
+                            <select style="width: 100%; padding: 15px; border-radius: 10px; border: 1px solid #ddd;">
+                                <option>General Inquiry</option>
+                                <option>Custom Commission</option>
+                                <option>Order Support</option>
+                                <option>Wholesale</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea rows="5" placeholder="How can we help you?" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- 4. Google Map Placeholder -->
-    <div class="container">
-        <h2 style="text-align: center; margin-bottom: 50px;">Visit Our Studio</h2>
-        <div class="map-placeholder">
-            <i class="fas fa-map-marked-alt" style="font-size: 3rem; margin-right: 20px;"></i>
-            Interactive Map Interface (Coming Soon)
+    <!-- 4. Google Map -->
+    <section>
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 50px;">Visit Our Studio</h2>
+            <div style="border-radius: 24px; overflow: hidden; box-shadow: var(--shadow); height: 450px; border: 1px solid rgba(0,0,0,0.05);">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.7214539121!2d-0.1288591!3d51.5194133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761b315263a0a3%3A0x6968d90e9d6d391!2sThe%20British%20Museum!5e0!3m2!1sen!2suk!4v1715434500000!5m2!1sen!2suk" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
         </div>
-    </div>
+    </section>
 
     <!-- 5. FAQ/Contact CTA -->
     <section class="container" style="text-align: center; margin-bottom: 100px;">
@@ -205,12 +226,15 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h3 class="logo" style="color: var(--white); margin-bottom: 20px;">MiniCraft Shop</h3>
+                    <a href="index.html" class="logo" style="margin-bottom: 20px;">
+                        <i class="fas fa-house-chimney-window logo-icon"></i>
+                        MiniCraft Shop
+                    </a>
                     <p>Creating luxury worlds in 1:12 scale since 2015. Your destination for premium miniatures.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>

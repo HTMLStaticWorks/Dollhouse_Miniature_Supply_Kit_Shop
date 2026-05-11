@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Service Details - Dollhouse Miniature Supply & Kit Shop</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/dark-mode.css">
     <link rel="stylesheet" href="assets/css/rtl.css">
-    
+
     <style>
         .details-hero {
-            height: 400px;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1596464716127-f2a82984de30?q=80&w=1200&auto=format&fit=crop');
+            height: 350px;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/images/dollhouse-service-hero.png');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -26,12 +29,14 @@
             color: white;
             text-align: center;
         }
+
         .process-flow {
             display: flex;
             justify-content: space-between;
             margin-top: 50px;
             position: relative;
         }
+
         .process-flow::after {
             content: '';
             position: absolute;
@@ -42,11 +47,13 @@
             background: #eee;
             z-index: -1;
         }
+
         .flow-step {
             text-align: center;
             background: var(--bg-light);
             padding: 10px;
         }
+
         .flow-dot {
             width: 30px;
             height: 30px;
@@ -54,14 +61,57 @@
             border-radius: 50%;
             margin: 0 auto 15px;
         }
+
+        .responsive-flex {
+            display: flex;
+            gap: 60px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .responsive-flex {
+                flex-direction: column-reverse;
+                text-align: center;
+                gap: 40px;
+            }
+            #detail-title {
+                font-size: 2.2rem !important;
+            }
+            #service-info-bar {
+                flex-direction: column;
+                gap: 15px;
+            }
+            #service-info-bar div {
+                border: none !important;
+            }
+            #service-featured-image {
+                height: 300px !important;
+            }
+            .process-flow {
+                flex-direction: column;
+                gap: 40px;
+                align-items: center;
+            }
+            .process-flow::after {
+                display: none;
+            }
+            .flow-step {
+                width: 100%;
+                background: transparent;
+            }
+        }
     </style>
 </head>
+
 <body>
 
     <header>
         <div class="container">
             <nav>
-                <a href="index.html" class="logo">MiniCraft Shop</a>
+                <a href="index.html" class="logo">
+                    <i class="fas fa-house-chimney-window logo-icon"></i>
+                    MiniCraft Shop
+                </a>
                 <div class="nav-links">
                     <a href="index.html">Home 1</a>
                     <a href="home-2.html">Home 2</a>
@@ -70,11 +120,17 @@
                     <a href="blog.html">Blog</a>
                     <a href="pricing.html">Pricing</a>
                     <a href="contact.html">Contact</a>
+
+                    <div class="mobile-nav-actions mobile-only">
+                        <button class="toggle-btn dark-mode-toggle"><i class="fas fa-moon"></i></button>
+                        <button class="toggle-btn rtl-toggle" title="Toggle RTL"><i class="fas fa-right-left"></i></button>
+                        <a href="login.html" class="btn btn-primary">Login</a>
+                    </div>
                 </div>
                 <div class="nav-actions">
-                    <button id="dark-mode-toggle" class="toggle-btn"><i class="fas fa-moon"></i></button>
-                    <button id="rtl-toggle" class="toggle-btn"><i class="fas fa-globe"></i></button>
-                    <a href="login.html" class="btn btn-primary">Login</a>
+                    <button class="toggle-btn dark-mode-toggle desktop-only"><i class="fas fa-moon"></i></button>
+                    <button class="toggle-btn rtl-toggle desktop-only" title="Toggle RTL"><i class="fas fa-right-left"></i></button>
+                    <a href="login.html" class="btn btn-primary desktop-only">Login</a>
                     <div class="hamburger"><span></span><span></span><span></span></div>
                 </div>
             </nav>
@@ -82,62 +138,65 @@
     </header>
 
     <!-- 1. Hero Banner -->
-    <section class="details-hero">
+    <section class="details-hero" id="service-hero">
         <div class="container">
-            <h1 style="font-size: 3.5rem;">Miniature Furniture Kits</h1>
-            <p style="font-size: 1.2rem;">The Gold Standard in 1:12 Scale Crafting</p>
+            <h1 id="hero-title" style="font-size: 3.5rem;">Miniature Furniture Kits</h1>
+            <p id="hero-subtitle" style="font-size: 1.2rem;">The Gold Standard in 1:12 Scale Crafting</p>
         </div>
     </section>
+
+    <!-- 1.5 Featured Service Image -->
+    <div class="container" style="margin-top: 40px; position: relative; z-index: 10;">
+        <img id="service-featured-image" src="" alt="Service Detail" style="width: 100%; height: 500px; object-fit: cover; border-radius: 20px; box-shadow: var(--shadow-hover);">
+        
+        <div id="service-info-bar" style="background: white; padding: 20px 40px; border-radius: 15px; box-shadow: var(--shadow); margin-top: 20px; display: flex; justify-content: space-around; text-align: center;">
+            <div>
+                <span style="display: block; font-size: 0.8rem; color: #999; text-transform: uppercase; letter-spacing: 1px;">Build Time</span>
+                <strong id="info-time" style="font-size: 1.1rem; color: var(--primary-color);">12-15 Hours</strong>
+            </div>
+            <div style="border-left: 1px solid #eee; height: 40px;"></div>
+            <div>
+                <span style="display: block; font-size: 0.8rem; color: #999; text-transform: uppercase; letter-spacing: 1px;">Skill Level</span>
+                <strong id="info-level" style="font-size: 1.1rem; color: var(--primary-color);">Intermediate</strong>
+            </div>
+            <div style="border-left: 1px solid #eee; height: 40px;"></div>
+            <div>
+                <span style="display: block; font-size: 0.8rem; color: #999; text-transform: uppercase; letter-spacing: 1px;">Standard Scale</span>
+                <strong id="info-scale" style="font-size: 1.1rem; color: var(--primary-color);">1:12 Scale</strong>
+            </div>
+        </div>
+    </div>
 
     <!-- 2. Detailed Explanation -->
-    <section class="container">
-        <div style="display: flex; gap: 60px; align-items: center;">
+    <section class="container" style="padding: 80px 0;">
+        <div class="responsive-flex">
             <div style="flex: 1;">
-                <h2 style="font-size: 2.5rem; margin-bottom: 25px;">Elegance in Every Detail</h2>
-                <p style="font-size: 1.1rem; color: #555; margin-bottom: 20px;">Our furniture kits are designed for those who demand the absolute best. Each kit includes high-precision laser-cut pieces made from real hardwoods, detailed hardware like tiny brass hinges, and museum-grade textiles for upholstery.</p>
-                <p style="font-size: 1.1rem; color: #555;">Whether you are a seasoned miniature artist or a beginner starting your first room box, our kits provide the perfect balance of challenge and reward.</p>
+                <h2 id="detail-title" style="font-size: 2.5rem; margin-bottom: 25px;">Elegance in Every Detail</h2>
+                <p id="detail-text-1" style="font-size: 1.1rem; color: #555; margin-bottom: 20px;">Our furniture kits
+                    are designed for those who demand the absolute best. Each kit includes high-precision laser-cut
+                    pieces made from real hardwoods, detailed hardware like tiny brass hinges, and museum-grade textiles
+                    for upholstery.</p>
+                <p id="detail-text-2" style="font-size: 1.1rem; color: #555;">Whether you are a seasoned miniature
+                    artist or a beginner starting your first room box, our kits provide the perfect balance of challenge
+                    and reward.</p>
             </div>
             <div style="flex: 1;">
-                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop" style="border-radius: 20px; box-shadow: var(--shadow-hover);" alt="Detail">
+                <img id="detail-image"
+                    src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop"
+                    style="border-radius: 20px; box-shadow: var(--shadow-hover); width: 100%; height: 500px; object-fit: cover;"
+                    alt="Detail">
             </div>
         </div>
     </section>
 
-    <!-- 3. Process Timeline -->
-    <section style="background-color: var(--bg-soft);">
-        <div class="container">
-            <h2 style="text-align: center; margin-bottom: 30px;">How It Works</h2>
-            <div class="process-flow">
-                <div class="flow-step">
-                    <div class="flow-dot"></div>
-                    <h4>Selection</h4>
-                    <p>Choose your style.</p>
-                </div>
-                <div class="flow-step">
-                    <div class="flow-dot"></div>
-                    <h4>Delivery</h4>
-                    <p>Fast worldwide shipping.</p>
-                </div>
-                <div class="flow-step">
-                    <div class="flow-dot"></div>
-                    <h4>Assembly</h4>
-                    <p>Follow our guides.</p>
-                </div>
-                <div class="flow-step">
-                    <div class="flow-dot"></div>
-                    <h4>Display</h4>
-                    <p>Showcase your art.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- 4. Feature Highlights -->
     <section class="container">
         <h2 style="text-align: center; margin-bottom: 50px;">Why Our Kits?</h2>
         <div class="grid-4">
             <div class="card" style="padding: 30px; text-align: center;">
-                <i class="fas fa-microscope" style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 20px;"></i>
+                <i class="fas fa-microscope"
+                    style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 20px;"></i>
                 <h3>Precision Cut</h3>
                 <p>Pieces fit perfectly with zero sanding required.</p>
             </div>
@@ -147,12 +206,14 @@
                 <p>We use solid mahogany, cherry, and walnut.</p>
             </div>
             <div class="card" style="padding: 30px; text-align: center;">
-                <i class="fas fa-book-open" style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 20px;"></i>
+                <i class="fas fa-book-open"
+                    style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 20px;"></i>
                 <h3>Visual Guides</h3>
                 <p>Step-by-step photos and video links included.</p>
             </div>
             <div class="card" style="padding: 30px; text-align: center;">
-                <i class="fas fa-headset" style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 20px;"></i>
+                <i class="fas fa-headset"
+                    style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 20px;"></i>
                 <h3>Live Support</h3>
                 <p>Chat with an artist if you get stuck on a step.</p>
             </div>
@@ -164,17 +225,29 @@
         <div class="container" style="max-width: 800px;">
             <h2 style="text-align: center; margin-bottom: 50px;">Frequently Asked Questions</h2>
             <div class="accordion">
-                <div class="accordion-item" style="background: white; border-radius: 10px; margin-bottom: 10px; box-shadow: var(--shadow);">
-                    <div class="accordion-header" style="padding: 20px; cursor: pointer; display: flex; justify-content: space-between; font-weight: 700;">Do the kits include glue? <i class="fas fa-chevron-down"></i></div>
-                    <div class="accordion-content" style="padding: 0 20px 20px; display: none;">Yes, we include a precision applicator of professional-grade wood glue in every kit.</div>
+                <div class="accordion-item"
+                    style="background: white; border-radius: 10px; margin-bottom: 10px; box-shadow: var(--shadow);">
+                    <div class="accordion-header"
+                        style="padding: 20px; cursor: pointer; display: flex; justify-content: space-between; font-weight: 700;">
+                        Do the kits include glue? <i class="fas fa-chevron-down"></i></div>
+                    <div class="accordion-content" style="padding: 0 20px 20px; display: none;">Yes, we include a
+                        precision applicator of professional-grade wood glue in every kit.</div>
                 </div>
-                <div class="accordion-item" style="background: white; border-radius: 10px; margin-bottom: 10px; box-shadow: var(--shadow);">
-                    <div class="accordion-header" style="padding: 20px; cursor: pointer; display: flex; justify-content: space-between; font-weight: 700;">Can I paint the wood? <i class="fas fa-chevron-down"></i></div>
-                    <div class="accordion-content" style="padding: 0 20px 20px; display: none;">Absolutely! The wood is pre-sanded and ready for your choice of stain or acrylic paint.</div>
+                <div class="accordion-item"
+                    style="background: white; border-radius: 10px; margin-bottom: 10px; box-shadow: var(--shadow);">
+                    <div class="accordion-header"
+                        style="padding: 20px; cursor: pointer; display: flex; justify-content: space-between; font-weight: 700;">
+                        Can I paint the wood? <i class="fas fa-chevron-down"></i></div>
+                    <div class="accordion-content" style="padding: 0 20px 20px; display: none;">Absolutely! The wood is
+                        pre-sanded and ready for your choice of stain or acrylic paint.</div>
                 </div>
-                <div class="accordion-item" style="background: white; border-radius: 10px; margin-bottom: 10px; box-shadow: var(--shadow);">
-                    <div class="accordion-header" style="padding: 20px; cursor: pointer; display: flex; justify-content: space-between; font-weight: 700;">What scale are the kits? <i class="fas fa-chevron-down"></i></div>
-                    <div class="accordion-content" style="padding: 0 20px 20px; display: none;">All our furniture kits are standard 1:12 scale unless otherwise noted.</div>
+                <div class="accordion-item"
+                    style="background: white; border-radius: 10px; margin-bottom: 10px; box-shadow: var(--shadow);">
+                    <div class="accordion-header"
+                        style="padding: 20px; cursor: pointer; display: flex; justify-content: space-between; font-weight: 700;">
+                        What scale are the kits? <i class="fas fa-chevron-down"></i></div>
+                    <div class="accordion-content" style="padding: 0 20px 20px; display: none;">All our furniture kits
+                        are standard 1:12 scale unless otherwise noted.</div>
                 </div>
             </div>
         </div>
@@ -184,12 +257,15 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h3 class="logo" style="color: var(--white); margin-bottom: 20px;">MiniCraft Shop</h3>
+                    <a href="index.html" class="logo" style="margin-bottom: 20px;">
+                        <i class="fas fa-house-chimney-window logo-icon"></i>
+                        MiniCraft Shop
+                    </a>
                     <p>Creating luxury worlds in 1:12 scale since 2015. Your destination for premium miniatures.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
@@ -229,11 +305,168 @@
 
     <script src="assets/js/main.js"></script>
     <script>
-        document.querySelectorAll('.accordion-header').forEach(header => {
-            header.addEventListener('click', () => {
-                header.parentElement.classList.toggle('active');
+        (function () {
+            // Service Data Object
+            const serviceData = {
+                'furniture': {
+                    title: 'Miniature Furniture Kits',
+                    subtitle: 'The Gold Standard in 1:12 Scale Crafting',
+                    heroImage: 'assets/images/modern-kitchen.png',
+                    detailTitle: 'Elegance in Every Detail',
+                    detailText1: 'Our furniture kits are designed for those who demand the absolute best. Each kit includes high-precision laser-cut pieces made from real hardwoods like mahogany and walnut, detailed hardware like tiny brass hinges, and museum-grade textiles for upholstery.',
+                    detailText2: 'Whether you are a seasoned miniature artist or a beginner starting your first room box, our kits provide the perfect balance of challenge and reward. Every joint is engineered for a perfect fit.',
+                    detailImage: 'assets/images/dollhouse-kitchen.png',
+                    time: '12-15 Hours',
+                    level: 'Intermediate',
+                    scale: '1:12 Scale'
+                },
+                'roombox': {
+                    title: 'Room Box Creation',
+                    subtitle: 'Museum-Quality Display Frames',
+                    heroImage: 'assets/images/ballroom.png',
+                    detailTitle: 'Architecture in Miniature',
+                    detailText1: 'Our custom-built room boxes provide the perfect stage for your miniature worlds. Crafted from premium materials with anti-glare glass options, these boxes ensure your art is protected and showcased beautifully.',
+                    detailText2: 'From modern lofts to historical ballrooms, we provide the structural foundation for your creative vision.',
+                    detailImage: 'assets/images/dollhouse-loft.png',
+                    time: '20-25 Hours',
+                    level: 'Advanced',
+                    scale: '1:12 Scale'
+                },
+                'decor': {
+                    title: 'Custom Dollhouse Decor',
+                    subtitle: 'Bespoke Interiors for Tiny Worlds',
+                    heroImage: 'assets/images/dollhouse-bedroom.png',
+                    detailTitle: 'Luxury Wallpapers & Flooring',
+                    detailText1: 'Transform your dollhouse with our exclusive range of wallpapers, floorings, and textile designs. Each pattern is carefully scaled to 1:12 to ensure realistic texture and appearance.',
+                    detailText2: 'Our collection includes historical period designs as well as modern artisan styles to suit any project.',
+                    detailImage: 'assets/images/dollhouse-boho.png',
+                    time: '4-6 Hours',
+                    level: 'Beginner',
+                    scale: '1:12 Scale'
+                },
+                'lighting': {
+                    title: 'Tiny Lighting Systems',
+                    subtitle: 'Illuminate Your Miniature Masterpiece',
+                    heroImage: 'assets/images/dollhouse-light.png',
+                    detailTitle: 'Advanced LED Technology',
+                    detailText1: 'Bring your dollhouse to life with our advanced LED wiring systems. We offer realistic glowing chandeliers, wall sconces, and hidden floor lamps that provide a warm, inviting ambiance.',
+                    detailText2: 'Our systems are designed for easy installation, with both battery-powered and AC adapter options available.',
+                    detailImage: 'assets/images/dollhouse-floor-lamp.png',
+                    time: '2-4 Hours',
+                    level: 'Intermediate',
+                    scale: '1:12 Scale'
+                },
+                'accessories': {
+                    title: 'Handmade Accessories',
+                    subtitle: 'The Small Things That Make a Big Difference',
+                    heroImage: 'assets/images/dollhouse-clock.png',
+                    detailTitle: 'Artisan Crafted Objects',
+                    detailText1: 'Discover a world of tiny treasures, from leather-bound books and porcelain tea sets to hand-forged silver cutlery. Every piece is a work of art in itself, crafted by master miniaturists.',
+                    detailText2: 'Add personality and life to your rooms with our unique, one-of-a-kind accessories.',
+                    detailImage: 'assets/images/dollhouseimage3.png',
+                    time: 'N/A',
+                    level: 'Beginner',
+                    scale: '1:12 Scale'
+                },
+                'diy': {
+                    title: 'Beginner DIY Kits',
+                    subtitle: 'Your First Step into the World of Miniatures',
+                    heroImage: 'assets/images/dollhouse-garden.png',
+                    detailTitle: 'Easy & Rewarding Builds',
+                    detailText1: 'Our beginner kits come with everything you need to complete your first project, including pre-cut parts, glue, specialized paints, and detailed step-by-step video tutorials.',
+                    detailText2: 'Perfect for all ages, these kits are designed to build confidence and spark a lifelong passion for miniature art.',
+                    detailImage: 'assets/images/feature-assembly.png',
+                    time: '2-3 Hours',
+                    level: 'Beginner',
+                    scale: '1:12 Scale'
+                },
+                'workshop': {
+                    title: 'Artist Workshops',
+                    subtitle: 'Learn from the Masters of the Craft',
+                    heroImage: 'assets/images/artisan-study.png',
+                    detailTitle: 'Expert-Led Online Classes',
+                    detailText1: 'Join our live online workshops and learn specialized techniques in woodworking, upholstery, and architectural modeling. Our master artists provide personalized feedback and insider tips.',
+                    detailText2: 'Expand your skills and connect with a global community of passionate miniature makers.',
+                    detailImage: 'assets/images/dollhouse-desk.png',
+                    time: 'Ongoing',
+                    level: 'All Levels',
+                    scale: '1:12 Scale'
+                },
+                'restoration': {
+                    title: 'Restoration Services',
+                    subtitle: 'Preserving History in 1:12 Scale',
+                    heroImage: 'assets/images/dollhouse-vintage.png',
+                    detailTitle: 'Professional Repair & Refurbishing',
+                    detailText1: 'Give your vintage dollhouses and heirloom furniture a second life. Our restoration specialists handle everything from structural repairs to delicate paint matching and upholstery.',
+                    detailText2: 'We treat every piece with the care and respect it deserves, ensuring it lasts for generations to come.',
+                    detailImage: 'assets/images/dollhouse-victorian2.png',
+                    time: 'Custom',
+                    level: 'Professional',
+                    scale: '1:12 Scale'
+                }
+            };
+
+            function updateServiceDetails() {
+                // Get Service ID from Hash (#furniture)
+                const hash = window.location.hash.substring(1);
+                const serviceId = hash || 'furniture'; // Default to furniture if no hash
+
+                if (serviceData[serviceId]) {
+                    const data = serviceData[serviceId];
+
+                    // Update Featured Image (Now below hero)
+                    const featuredImg = document.getElementById('service-featured-image');
+                    if (featuredImg) {
+                        featuredImg.src = data.heroImage;
+                        featuredImg.alt = data.title;
+                    }
+
+                    // Update Hero Title/Subtitle
+                    const hTitle = document.getElementById('hero-title');
+                    const hSubtitle = document.getElementById('hero-subtitle');
+
+                    if (hTitle) hTitle.textContent = data.title;
+                    if (hSubtitle) hSubtitle.textContent = data.subtitle;
+
+                    // Update Details
+                    const dTitle = document.getElementById('detail-title');
+                    const dText1 = document.getElementById('detail-text-1');
+                    const dText2 = document.getElementById('detail-text-2');
+                    const dImg = document.getElementById('detail-image');
+
+                    if (dTitle) dTitle.textContent = data.detailTitle;
+                    if (dText1) dText1.textContent = data.detailText1;
+                    if (dText2) dText2.textContent = data.detailText2;
+                    if (dImg) {
+                        dImg.src = data.detailImage;
+                        dImg.alt = data.title;
+                    }
+
+                    // Update Info Bar
+                    document.getElementById('info-time').textContent = data.time;
+                    document.getElementById('info-level').textContent = data.level;
+                    document.getElementById('info-scale').textContent = data.scale;
+
+                    // Update Page Title
+                    document.title = `${data.title} - Service Details`;
+
+                    // Scroll to top
+                    window.scrollTo(0, 0);
+                }
+            }
+
+            // Run on load and on hash change
+            updateServiceDetails();
+            window.addEventListener('hashchange', updateServiceDetails);
+
+            // Accordion Logic
+            document.querySelectorAll('.accordion-header').forEach(header => {
+                header.addEventListener('click', () => {
+                    header.parentElement.classList.toggle('active');
+                });
             });
-        });
+        })();
     </script>
 </body>
+
 </html>

@@ -8,9 +8,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
     
     <style>
         body {
@@ -24,39 +26,26 @@
         }
         .auth-container {
             display: flex;
-            width: 1000px;
-            height: 650px;
+            width: 100%;
+            max-width: 500px;
             background: white;
             border-radius: 30px;
             overflow: hidden;
             box-shadow: 0 20px 60px rgba(0,0,0,0.1);
         }
-        .auth-image {
-            flex: 1;
-            background: url('https://images.unsplash.com/photo-1596464716127-f2a82984de30?q=80&w=800&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-        .auth-image-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0,0,0,0.3);
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 50px;
-            color: white;
-        }
         .auth-form-box {
             flex: 1;
-            padding: 60px;
+            padding: 60px 40px;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
         .auth-header {
             margin-bottom: 40px;
+            text-align: center;
+        }
+        .auth-header .logo {
+            justify-content: center;
         }
         .auth-header h1 {
             font-size: 2.5rem;
@@ -98,13 +87,25 @@
             background: #eee;
         }
         
-        .form-group { margin-bottom: 20px; }
+        .form-group { position: relative; margin-bottom: 20px; }
         .form-group input {
             width: 100%;
             padding: 15px;
             border-radius: 10px;
             border: 1px solid #ddd;
             background: #fdfdfd;
+        }
+        .form-group input[type="password"] {
+            padding-right: 45px;
+        }
+        .password-toggle {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #999;
+            z-index: 10;
         }
         
         .form-footer {
@@ -115,21 +116,50 @@
             font-size: 0.9rem;
         }
         
-        @media (max-width: 1024px) {
-            .auth-container { width: 90%; height: auto; }
-            .auth-image { display: none; }
+        @media (max-width: 576px) {
+            .auth-container { width: 95%; border-radius: 20px; }
+            .auth-form-box { padding: 40px 20px; }
+            .auth-header h1 { font-size: 2rem; }
+        }
+        
+        /* Page Controls */
+        .page-controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+        .toggle-btn {
+            background: white;
+            border: 1px solid #ddd;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+        .toggle-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
         }
     </style>
 </head>
 <body>
+    
+    <div class="page-controls">
+        <button id="dark-mode-toggle" class="toggle-btn"><i class="fas fa-moon"></i></button>
+        <button id="rtl-toggle" class="toggle-btn" title="Toggle RTL"><i class="fas fa-right-left"></i></button>
+    </div>
 
     <div class="auth-container">
-        <div class="auth-image">
-            <div class="auth-image-overlay">
-                <h2 style="font-size: 2rem;">"The detail is not just a part of the craft, it is the heart of it."</h2>
-                <p>- Elena Vance, Master Artist</p>
-            </div>
-        </div>
+
         
         <div class="auth-form-box">
             <div class="auth-header">
@@ -141,19 +171,15 @@
                 <p style="color: #666;">Enter your details to access your creative studio.</p>
             </div>
             
-            <div class="social-auth">
-                <button class="social-btn"><i class="fab fa-google" style="color: #ea4335;"></i> Google</button>
-                <button class="social-btn"><i class="fab fa-apple"></i> Apple</button>
-            </div>
-            
-            <div class="divider">Or login with email</div>
+
             
             <form action="index.html">
                 <div class="form-group">
                     <input type="email" placeholder="Email Address" required>
                 </div>
                 <div class="form-group">
-                    <input type="password" placeholder="Password" required>
+                    <input type="password" id="password" placeholder="Password" required>
+                    <i class="fas fa-eye password-toggle" onclick="togglePassword('password', this)"></i>
                 </div>
                 
                 <div class="form-footer">
@@ -163,9 +189,16 @@
                     <a href="#" style="color: var(--primary-color); font-weight: 600;">Forgot Password?</a>
                 </div>
                 
-                <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 20px;">Login</button>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 30px;">Login</button>
                 
-                <p style="text-align: center; color: #666;">Don't have an account? <a href="register.html" style="color: var(--primary-color); font-weight: 700;">Sign Up</a></p>
+                <div class="divider">Or login with</div>
+                
+                <div class="social-auth">
+                    <button type="button" class="social-btn"><i class="fab fa-google" style="color: #ea4335;"></i> Google</button>
+                    <button type="button" class="social-btn"><i class="fab fa-apple"></i> Apple</button>
+                </div>
+                
+                <p style="text-align: center; color: #666; margin-top: 20px;">Don't have an account? <a href="register.html" style="color: var(--primary-color); font-weight: 700;">Sign Up</a></p>
             </form>
         </div>
     </div>
@@ -173,6 +206,20 @@
     <!-- Back to Top -->
     <div class="back-to-top"><i class="fas fa-chevron-up"></i></div>
 
+    <script>
+        function togglePassword(id, icon) {
+            const input = document.getElementById(id);
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                input.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        }
+    </script>
     <script src="assets/js/main.js"></script>
 </body>
 </html>

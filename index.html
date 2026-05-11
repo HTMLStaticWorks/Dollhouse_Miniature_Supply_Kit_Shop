@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
     
     <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
@@ -45,31 +45,40 @@
             grid-row: span 2;
         }
         
-        .horizontal-scroll {
-            display: flex;
-            gap: 30px;
-            overflow-x: auto;
-            padding-bottom: 20px;
-            scrollbar-width: none;
-        }
-        .horizontal-scroll::-webkit-scrollbar {
-            display: none;
-        }
-        .horizontal-card {
-            min-width: 350px;
-            background: var(--bg-soft);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            padding: 20px;
+        .accessory-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            border-radius: 20px;
+            overflow: hidden;
             box-shadow: var(--shadow);
         }
+        .horizontal-card {
+            background: var(--bg-soft);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 0;
+            transition: var(--transition);
+            border-right: 1px solid rgba(0,0,0,0.05);
+        }
+        .horizontal-card:last-child {
+            border-right: none;
+        }
+        .horizontal-card:hover {
+            background: var(--white);
+            z-index: 1;
+            box-shadow: var(--shadow-hover);
+        }
         .horizontal-card img {
-            width: 120px;
-            height: 120px;
-            border-radius: 10px;
-            margin-right: 20px;
+            width: 100%;
+            height: 220px;
+            margin-bottom: 0;
             object-fit: cover;
+        }
+        .horizontal-card .card-content {
+            padding: 30px 20px;
         }
         .floating-icon {
             position: absolute;
@@ -81,6 +90,259 @@
         @keyframes float-hero {
             0%, 100% { transform: translateY(0) rotate(0); }
             50% { transform: translateY(-30px) rotate(15deg); }
+        }
+
+        /* Split Section Design */
+        .split-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .split-image {
+            position: relative;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: var(--shadow-hover);
+        }
+        .split-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            display: block;
+        }
+        .split-content {
+            padding: 20px;
+        }
+        .section-tag {
+            color: var(--primary-color);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            display: block;
+            margin-bottom: 15px;
+        }
+        .split-content h2 {
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+        }
+        .split-content p {
+            margin-bottom: 30px;
+            color: #666;
+        }
+        .feature-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+        .feature-item i {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-top: 5px;
+        }
+        .feature-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        .feature-item p {
+            margin-bottom: 0;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .split-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .split-content {
+                order: 2;
+            }
+            .split-image {
+                order: 1;
+                height: 350px;
+            }
+            .accessory-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .floating-icon {
+                display: none;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .accessory-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Masterclass Section */
+        .masterclass-section {
+            padding: 80px 0;
+            background: var(--bg-light);
+        }
+        .masterclass-card {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/images/dollhouse2.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 40px;
+            padding: 100px 60px;
+            text-align: center;
+            color: var(--white);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        .masterclass-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .masterclass-content h2 {
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+        .masterclass-content p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: rgba(255,255,255,0.9);
+        }
+        .masterclass-features {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+        .mc-feat {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+        }
+        .mc-feat i {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+
+        /* Testimonials */
+        .grid-4 .card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .testimonial-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            object-fit: cover;
+            object-position: center top; /* Prevent head from breaking */
+            border: 3px solid var(--accent-color);
+            display: block;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .testimonial-name {
+            white-space: nowrap; /* Keep name in same line */
+            display: inline-block;
+            margin-top: auto; /* Push to bottom for horizontal alignment */
+            padding-top: 20px;
+        }
+
+        /* Newsletter CTA */
+        .newsletter-cta {
+            background: var(--primary-color);
+            background-size: cover;
+            background-position: center;
+            padding: 80px 40px;
+            border-radius: 40px;
+            color: var(--white);
+            margin-top: 80px;
+            margin-bottom: 120px; /* Large gap before footer */
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            text-align: center;
+        }
+        .newsletter-cta h3 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            color: var(--white);
+        }
+        .newsletter-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: rgba(255,255,255,0.9);
+        }
+        .newsletter-form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 8px;
+            border-radius: 60px;
+            display: flex;
+            gap: 10px;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        .newsletter-form-container input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            padding: 15px 25px;
+            color: var(--white);
+            outline: none;
+            font-size: 1.1rem;
+        }
+        .newsletter-form-container input::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+        .newsletter-form-container button {
+            background: var(--white);
+            color: var(--primary-color);
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .newsletter-form-container button:hover {
+            background: var(--accent-color);
+            color: var(--white);
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .newsletter-form-container {
+                flex-direction: column;
+                border-radius: 30px;
+                background: transparent;
+                backdrop-filter: none;
+                border: none;
+                padding: 0;
+            }
+            .newsletter-form-container input {
+                background: rgba(255,255,255,0.2);
+                border-radius: 40px;
+                margin-bottom: 15px;
+            }
+            .newsletter-cta h3 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .masterclass-card {
+                padding: 60px 30px;
+            }
+            .masterclass-content h2 {
+                font-size: 2.2rem;
+            }
+            .masterclass-features {
+                gap: 20px;
+            }
         }
     </style>
 </head>
@@ -103,12 +365,18 @@
                     <a href="blog.html">Blog</a>
                     <a href="pricing.html">Pricing</a>
                     <a href="contact.html">Contact</a>
+                    
+                    <div class="mobile-nav-actions mobile-only">
+                        <button class="toggle-btn dark-mode-toggle"><i class="fas fa-moon"></i></button>
+                        <button class="toggle-btn rtl-toggle" title="Toggle RTL"><i class="fas fa-right-left"></i></button>
+                        <a href="login.html" class="btn btn-primary">Login</a>
+                    </div>
                 </div>
                 
                 <div class="nav-actions">
-                    <button id="dark-mode-toggle" class="toggle-btn"><i class="fas fa-moon"></i></button>
-                    <button id="rtl-toggle" class="toggle-btn" title="Toggle RTL"><i class="fas fa-right-left"></i></button>
-                    <a href="login.html" class="btn btn-primary">Login</a>
+                    <button class="toggle-btn dark-mode-toggle desktop-only"><i class="fas fa-moon"></i></button>
+                    <button class="toggle-btn rtl-toggle desktop-only" title="Toggle RTL"><i class="fas fa-right-left"></i></button>
+                    <a href="login.html" class="btn btn-primary desktop-only">Login</a>
                     
                     <div class="hamburger">
                         <span></span>
@@ -132,19 +400,19 @@
                 <p class="hero-subtitle">Premium handcrafted miniature kits and supplies for the creative artist in you. Discover luxury in 1:12 scale.</p>
                 <div class="hero-btns">
                     <a href="services.html" class="btn btn-primary">Shop Collections</a>
-                    <a href="about.html" class="btn btn-outline" style="margin-left: 15px;">Our Story</a>
+                    <a href="about.html" class="btn btn-outline">Our Story</a>
                 </div>
             </div>
         </div>
-        <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=1600&auto=format&fit=crop" alt="Miniature Hero" class="hero-image">
+        <img src="assets/images/home1-hero-img.png" alt="Miniature Hero" class="hero-image">
     </section>
 
     <!-- 2. Featured Collections -->
-    <section class="container">
+    <section class="container featured-collections">
         <h2 style="text-align: center; margin-bottom: 50px;">Featured Collections</h2>
         <div class="grid-4">
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Kitchen">
+                <img src="assets/images/dollhouse-kitchen.png" class="card-img" alt="Kitchen">
                 <div class="card-body">
                     <h3 class="card-title">Gourmet Kitchens</h3>
                     <p class="card-text">Ultra-realistic tiny kitchen sets with marble finishes.</p>
@@ -152,7 +420,7 @@
                 </div>
             </div>
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1615529328331-f8917597711f?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Living Room">
+                <img src="assets/images/dollhouse-space.png" class="card-img" alt="Living Room">
                 <div class="card-body">
                     <h3 class="card-title">Victorian Parlor</h3>
                     <p class="card-text">Classic elegance for your dollhouse's most formal space.</p>
@@ -160,7 +428,7 @@
                 </div>
             </div>
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Bedroom">
+                <img src="assets/images/dollhouse-bedroom.png" class="card-img" alt="Bedroom">
                 <div class="card-body">
                     <h3 class="card-title">Dreamy Bedrooms</h3>
                     <p class="card-text">Soft textiles and intricate woodcraft for tiny rest.</p>
@@ -168,7 +436,7 @@
                 </div>
             </div>
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1600585154340-be6199f7a009?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Garden">
+                <img src="assets/images/dollhouse-garden.png" class="card-img" alt="Garden">
                 <div class="card-body">
                     <h3 class="card-title">Miniature Gardens</h3>
                     <p class="card-text">Bring life to your patio with scale plants and fountains.</p>
@@ -178,101 +446,110 @@
         </div>
     </section>
 
-    <!-- 3. DIY Dollhouse Kits -->
-    <section style="background-color: var(--bg-soft);">
+    <!-- 3. The Artisan's Touch -->
+    <section class="artisan-section" style="background-color: var(--bg-soft);">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 50px;">DIY Dollhouse Kits</h2>
-            <div class="grid-4">
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Modern Loft">
-                    <div class="card-body">
-                        <h3 class="card-title">Modern Loft Kit</h3>
-                        <p class="card-text">Full DIY set including tiny LED lighting systems.</p>
-                        <a href="services-details.html" class="btn btn-primary card-btn">Buy Kit</a>
-                    </div>
+            <div class="split-grid">
+                <div class="split-image">
+                    <img src="assets/images/dollhouse.img" alt="Artisan Crafting">
                 </div>
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Bakery">
-                    <div class="card-body">
-                        <h3 class="card-title">Artisan Bakery</h3>
-                        <p class="card-text">Sweetest project with tiny pastries and bread.</p>
-                        <a href="services-details.html" class="btn btn-primary card-btn">Buy Kit</a>
+                <div class="split-content">
+                    <span class="section-tag">Quality First</span>
+                    <h2>The Artisan's Touch</h2>
+                    <p>We believe that beauty lies in the smallest details. Our team of expert miniaturists brings years of craftsmanship to every kit and piece of furniture.</p>
+                    
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Precision Engineering</h4>
+                            <p>Every piece is calculated to perfect 1:12 scale accuracy, ensuring a seamless fit for your collection.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Library">
-                    <div class="card-body">
-                        <h3 class="card-title">Scholar's Library</h3>
-                        <p class="card-text">Build thousands of tiny books for this kit.</p>
-                        <a href="services-details.html" class="btn btn-primary card-btn">Buy Kit</a>
+                    
+                    <div class="feature-item">
+                        <i class="fas fa-magic"></i>
+                        <div>
+                            <h4>Museum Grade Materials</h4>
+                            <p>We use real oak, hand-woven silk, and cast metals to achieve an authentic, high-end feel.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Beach House">
-                    <div class="card-body">
-                        <h3 class="card-title">Coastal Retreat</h3>
-                        <p class="card-text">Serene colors and nautical accessories included.</p>
-                        <a href="services-details.html" class="btn btn-primary card-btn">Buy Kit</a>
+                    
+                    <div class="feature-item" style="margin-bottom: 40px;">
+                        <i class="fas fa-award"></i>
+                        <div>
+                            <h4>Heirloom Quality</h4>
+                            <p>Built with traditional techniques, our miniatures are designed to be passed down through generations.</p>
+                        </div>
                     </div>
+                    
+                    <a href="about.html" class="btn btn-outline">Our Full Story</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 4. Maker Gallery -->
-    <section class="container">
-        <h2 style="text-align: center; margin-bottom: 50px;">Miniature Maker Gallery</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item large">
-                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=500&auto=format&fit=crop" alt="Gallery 1">
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=500&auto=format&fit=crop" alt="Gallery 2">
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=500&auto=format&fit=crop" alt="Gallery 3">
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=500&auto=format&fit=crop" alt="Gallery 4">
-            </div>
-            <div class="gallery-item large">
-                <img src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?q=80&w=500&auto=format&fit=crop" alt="Gallery 5">
+    <!-- 4. Miniature Masterclass -->
+    <section class="masterclass-section">
+        <div class="container">
+            <div class="masterclass-card">
+                <div class="masterclass-content">
+                    <span class="section-tag" style="color: var(--primary-color);">Level Up Your Hobby</span>
+                    <h2>Miniature Masterclass</h2>
+                    <p>Unlock the secrets of 1:12 scale artistry. From realistic wood aging to wiring tiny LED systems, learn from the world's most renowned makers in our exclusive video series.</p>
+                    
+                    <div class="masterclass-features">
+                        <div class="mc-feat">
+                            <i class="fas fa-video"></i>
+                            <span>80+ HD Tutorials</span>
+                        </div>
+                        <div class="mc-feat">
+                            <i class="fas fa-certificate"></i>
+                            <span>Artist Certification</span>
+                        </div>
+                        <div class="mc-feat">
+                            <i class="fas fa-users-viewfinder"></i>
+                            <span>Private Maker Forum</span>
+                        </div>
+                    </div>
+                    
+                    <a href="services.html" class="btn btn-primary" style="padding: 15px 40px; font-size: 1.1rem;">Enroll Now</a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- 5. Lighting & Accessories -->
-    <section style="background-color: #fafafa;">
+    <section id="lighting-section" style="background-color: #fafafa;">
         <div class="container">
             <h2 style="text-align: center; margin-bottom: 50px;">Lighting & Accessories</h2>
-            <div class="horizontal-scroll">
+            <div class="accessory-grid">
                 <div class="horizontal-card">
-                    <img src="https://images.unsplash.com/photo-1542728928-1413d1894ed1?q=80&w=500&auto=format&fit=crop" alt="Chandelier">
-                    <div>
+                    <img src="assets/images/dollhouse-light.png" alt="Chandelier">
+                    <div class="card-content">
                         <h4>Crystal Chandelier</h4>
                         <p>Real working LED lights.</p>
                         <span style="color: var(--primary-color); font-weight: 700;">$45.00</span>
                     </div>
                 </div>
                 <div class="horizontal-card">
-                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=500&auto=format&fit=crop" alt="Floor Lamp">
-                    <div>
+                    <img src="assets/images/dollhouse-floor-lamp.png" alt="Floor Lamp">
+                    <div class="card-content">
                         <h4>Modern Floor Lamp</h4>
                         <p>Sleek copper finish.</p>
                         <span style="color: var(--primary-color); font-weight: 700;">$18.00</span>
                     </div>
                 </div>
                 <div class="horizontal-card">
-                    <img src="https://images.unsplash.com/photo-1584622781564-1d987f7333c1?q=80&w=500&auto=format&fit=crop" alt="Wall Sconce">
-                    <div>
+                    <img src="assets/images/dollhouse-vintage.png" alt="Wall Sconce">
+                    <div class="card-content">
                         <h4>Vintage Sconce</h4>
                         <p>Battery operated.</p>
                         <span style="color: var(--primary-color); font-weight: 700;">$12.00</span>
                     </div>
                 </div>
                 <div class="horizontal-card">
-                    <img src="https://images.unsplash.com/photo-1534349762230-e0cadf78f5db?q=80&w=500&auto=format&fit=crop" alt="Candelabra">
-                    <div>
+                    <img src="assets/images/dollhouse-golden.png" alt="Candelabra">
+                    <div class="card-content">
                         <h4>Golden Candelabra</h4>
                         <p>Perfect for dining rooms.</p>
                         <span style="color: var(--primary-color); font-weight: 700;">$22.00</span>
@@ -286,30 +563,34 @@
     <section class="container" style="text-align: center;">
         <h2 style="margin-bottom: 50px;">What Our Makers Say</h2>
         <div class="grid-4" style="margin-bottom: 80px;">
-            <div class="card" style="padding: 30px; border-radius: 30px;">
+            <div class="card" style="padding: 40px 30px; border-radius: 30px;">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop" alt="Sarah Jenkins" class="testimonial-avatar">
                 <p style="font-style: italic; margin-bottom: 20px;">"The detail in the gourmet kitchen kit is absolutely stunning. My dollhouse looks real!"</p>
-                <strong>- Sarah Jenkins</strong>
+                <strong class="testimonial-name">- Sarah Jenkins</strong>
             </div>
-            <div class="card" style="padding: 30px; border-radius: 30px;">
+            <div class="card" style="padding: 40px 30px; border-radius: 30px;">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop" alt="Michael Chen" class="testimonial-avatar">
                 <p style="font-style: italic; margin-bottom: 20px;">"Fast shipping and the packaging was so elegant. Feels like a luxury brand."</p>
-                <strong>- Michael Chen</strong>
+                <strong class="testimonial-name">- Michael Chen</strong>
             </div>
-            <div class="card" style="padding: 30px; border-radius: 30px;">
+            <div class="card" style="padding: 40px 30px; border-radius: 30px;">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=150&auto=format&fit=crop" alt="Emily Rose" class="testimonial-avatar">
                 <p style="font-style: italic; margin-bottom: 20px;">"The lighting systems are easy to install. Highly recommend for beginners."</p>
-                <strong>- Emily Rose</strong>
+                <strong class="testimonial-name">- Emily Rose</strong>
             </div>
-            <div class="card" style="padding: 30px; border-radius: 30px;">
+            <div class="card" style="padding: 40px 30px; border-radius: 30px;">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&auto=format&fit=crop" alt="David Wilson" class="testimonial-avatar">
                 <p style="font-style: italic; margin-bottom: 20px;">"Customer support helped me when I lost a tiny piece. Best shop ever."</p>
-                <strong>- David Wilson</strong>
+                <strong class="testimonial-name">- David Wilson</strong>
             </div>
         </div>
         
-        <div style="background: var(--primary-color); padding: 60px; border-radius: 30px; color: var(--white);">
+        <div class="newsletter-cta">
             <h3>Join Our Creative Circle</h3>
-            <p style="margin-bottom: 30px;">Get 10% off your first order and weekly miniature inspiration.</p>
-            <form class="newsletter-form" style="max-width: 500px; margin: 0 auto;">
+            <p>Get 10% off your first order and weekly miniature inspiration.</p>
+            <form class="newsletter-form-container">
                 <input type="email" placeholder="Your Email Address" required>
-                <button type="submit" class="btn btn-outline" style="background: white; border: none;">Subscribe</button>
+                <button type="submit">Subscribe Now</button>
             </form>
         </div>
     </section>
@@ -319,12 +600,15 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h3 class="logo" style="color: var(--white); margin-bottom: 20px;">MiniCraft Shop</h3>
+                    <a href="index.html" class="logo" style="margin-bottom: 20px;">
+                        <i class="fas fa-house-chimney-window logo-icon"></i>
+                        MiniCraft Shop
+                    </a>
                     <p>Creating luxury worlds in 1:12 scale since 2015. Your destination for premium miniatures.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
