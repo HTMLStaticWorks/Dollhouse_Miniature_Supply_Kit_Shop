@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
     <title>Pricing & Plans - Dollhouse Miniature Supply & Kit Shop</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,6 +47,51 @@
         .comparison-table tr:hover {
             background: #fafafa;
         }
+        
+        .sticky-col {
+            text-align: left;
+            position: sticky;
+            left: 0;
+            background: white;
+            z-index: 1;
+            border-right: 1px solid #eee;
+        }
+        
+        .bg-soft-row {
+            background: #fafafa;
+        }
+
+        /* Dark Mode Overrides for Pricing Table */
+        body.dark-mode .comparison-table {
+            background: #111;
+            color: white;
+        }
+        body.dark-mode .comparison-table td,
+        body.dark-mode .comparison-table th {
+            border-bottom: 1px solid #333;
+        }
+        body.dark-mode .sticky-col {
+            background: #111 !important;
+            border-right: 1px solid #333;
+        }
+        body.dark-mode .bg-soft-row {
+            background: #1a1a1a !important;
+        }
+        body.dark-mode .comparison-table tr:hover {
+            background: #222 !important;
+        }
+
+        .cta-box {
+            background: #1d1d1d;
+            color: white;
+            padding: 80px;
+            border-radius: 40px;
+        }
+        body.dark-mode .cta-box {
+            background: #111 !important;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
         .check-icon { color: #2ecc71; }
         .times-icon { color: #e74c3c; }
         .section-padding {
@@ -189,35 +235,35 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td style="text-align: left; position: sticky; left: 0; background: white; z-index: 1; border-right: 1px solid #eee;">Shop Discount</td>
+                            <td class="sticky-col">Shop Discount</td>
                             <td>5%</td>
                             <td>10%</td>
                             <td>15%</td>
                             <td>25%</td>
                         </tr>
-                        <tr>
-                            <td style="text-align: left; position: sticky; left: 0; background: #fafafa; z-index: 1; border-right: 1px solid #eee;">Tutorial Access</td>
+                        <tr class="bg-soft-row">
+                            <td class="sticky-col">Tutorial Access</td>
                             <td>1/mo</td>
                             <td>2/mo</td>
                             <td>5/mo</td>
                             <td>Unlimited</td>
                         </tr>
                         <tr>
-                            <td style="text-align: left; position: sticky; left: 0; background: white; z-index: 1; border-right: 1px solid #eee;">Monthly Kits</td>
+                            <td class="sticky-col">Monthly Kits</td>
                             <td><i class="fas fa-times times-icon"></i></td>
                             <td>1 Surprise Box</td>
                             <td>1 Deluxe Box</td>
                             <td>2 Deluxe Boxes</td>
                         </tr>
-                        <tr>
-                            <td style="text-align: left; position: sticky; left: 0; background: #fafafa; z-index: 1; border-right: 1px solid #eee;">Shipping</td>
+                        <tr class="bg-soft-row">
+                            <td class="sticky-col">Shipping</td>
                             <td>Standard</td>
                             <td>Standard</td>
                             <td>Priority</td>
                             <td>Free Express</td>
                         </tr>
                         <tr>
-                            <td style="text-align: left; position: sticky; left: 0; background: white; z-index: 1; border-right: 1px solid #eee;">Custom Support</td>
+                            <td class="sticky-col">Custom Support</td>
                             <td>Email</td>
                             <td>Email</td>
                             <td>Priority Chat</td>
@@ -229,14 +275,12 @@
         </div>
     </section>
 
-
-
     <!-- 5. Join CTA -->
     <section class="section-padding" style="text-align: center;">
         <div class="container">
-            <div style="background: var(--text-dark); color: white; padding: 80px; border-radius: 40px;">
-                <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Not sure which one to pick?</h2>
-                <p style="margin-bottom: 40px; color: #aaa;">Start with our free newsletter and get a taste of the community first.</p>
+            <div class="cta-box">
+                <h2 style="font-size: 2.5rem; margin-bottom: 20px; color: white !important;">Not sure which one to pick?</h2>
+                <p style="margin-bottom: 40px; color: #aaa !important;">Start with our free newsletter and get a taste of the community first.</p>
                 <a href="register.html" class="btn btn-primary">Sign Up for Free</a>
             </div>
         </div>

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home 2 - Dollhouse Miniature Supply & Kit Shop</title>
 
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -220,7 +221,7 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            padding: 40px;
+            padding: 30px;
             color: white;
             opacity: 0.9;
             transition: opacity 0.4s ease;
@@ -242,15 +243,20 @@
             transition: transform 0.5s ease;
         }
 
+        body:not(.dark-mode) .premium-category {
+            color: #ffffff;
+        }
+
         .premium-card:hover .premium-category {
             transform: translateY(0);
         }
 
         .premium-card h3 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             margin-bottom: 15px;
             transform: translateY(20px);
             transition: transform 0.5s ease 0.1s;
+            white-space: nowrap;
         }
 
         .premium-card:hover h3 {
@@ -596,6 +602,12 @@
 
             .workshop-split {
                 flex-direction: column;
+                text-align: center;
+            }
+
+            .workshop-text ul {
+                display: inline-block;
+                text-align: left;
             }
 
             .premium-card {

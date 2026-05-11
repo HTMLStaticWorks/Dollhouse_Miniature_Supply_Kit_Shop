@@ -10,9 +10,15 @@ body.dark-mode {
 body.dark-mode,
 body.dark-mode section,
 body.dark-mode footer,
-body.dark-mode .auth-container,
 body.dark-mode .coming-soon-box {
   background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode .auth-container {
+  background-color: #111111 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8) !important;
   color: #ffffff !important;
 }
 

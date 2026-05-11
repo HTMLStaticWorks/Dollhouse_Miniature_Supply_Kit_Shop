@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
     <title>Login - Dollhouse Miniature Supply & Kit Shop</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,6 +40,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            position: relative;
         }
         .auth-header {
             margin-bottom: 40px;
@@ -70,7 +72,17 @@
             font-weight: 600;
             transition: var(--transition);
         }
-        .social-btn:hover { background: #f9f9f9; }
+        .social-btn:hover { 
+            background: #fdfdfd;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            border-color: #ddd;
+        }
+        
+        body.dark-mode .social-btn:hover {
+            background: rgba(255, 255, 255, 0.08) !important;
+            border-color: rgba(255, 255, 255, 0.2) !important;
+        }
         
         .divider {
             display: flex;
@@ -116,41 +128,53 @@
             font-size: 0.9rem;
         }
         
-        @media (max-width: 576px) {
-            .auth-container { width: 95%; border-radius: 20px; }
+        @media (max-width: 991px) {
+            body {
+                align-items: flex-start;
+                padding-top: 80px;
+                height: auto;
+                min-height: 100vh;
+            }
+            .auth-container { 
+                width: 95%; 
+                max-width: 550px;
+                border-radius: 20px;
+                margin: 0 auto 40px auto;
+            }
             .auth-form-box { padding: 40px 20px; }
             .auth-header h1 { font-size: 2rem; }
             .page-controls {
-                top: 15px !important;
-                right: 15px !important;
+                top: 20px !important;
+                right: 20px !important;
             }
         }
         
         /* Page Controls */
         .page-controls {
             position: fixed;
-            top: 20px;
-            right: 20px;
+            top: 25px;
+            right: 25px;
             display: flex;
-            gap: 10px;
+            gap: 12px;
             z-index: 1000;
         }
         .toggle-btn {
             background: white;
             border: 1px solid #ddd;
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
             transition: var(--transition);
         }
         .toggle-btn:hover {
             background: var(--primary-color);
             color: white;
+            transform: translateY(-3px);
             border-color: var(--primary-color);
         }
     </style>
@@ -158,13 +182,11 @@
 <body>
     
     <div class="page-controls">
-        <button id="dark-mode-toggle" class="toggle-btn"><i class="fas fa-moon"></i></button>
-        <button id="rtl-toggle" class="toggle-btn" title="Toggle RTL"><i class="fas fa-right-left"></i></button>
+        <button class="toggle-btn dark-mode-toggle" title="Toggle Theme"><i class="fas fa-moon"></i></button>
+        <button class="toggle-btn rtl-toggle" title="Toggle RTL"><i class="fas fa-right-left"></i></button>
     </div>
 
     <div class="auth-container">
-
-        
         <div class="auth-form-box">
             <div class="auth-header">
                 <a href="index.html" class="logo" style="margin-bottom: 20px; display: flex;">

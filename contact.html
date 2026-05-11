@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
     <title>Contact Us - Dollhouse Miniature Supply & Kit Shop</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,7 +30,10 @@
             display: grid;
             grid-template-columns: 1fr 2fr;
             gap: 50px;
-            margin-bottom: 100px;
+            margin-bottom: 40px;
+        }
+        .map-section {
+            padding-top: 0;
         }
         .contact-info-card {
             background: var(--white);
@@ -80,6 +84,40 @@
             margin-bottom: 100px;
         }
 
+        /* Social Links Hover Effect */
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            background: #f8f8f8;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 1.1rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid #eee;
+        }
+
+        .social-links a:hover {
+            background: var(--primary-color);
+            color: white !important;
+            transform: translateY(-5px) rotate(8deg);
+            box-shadow: 0 10px 20px rgba(212, 160, 107, 0.3);
+            border-color: var(--primary-color);
+        }
+
+        body.dark-mode .social-links a {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        body.dark-mode .social-links a:hover {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
         @media (max-width: 768px) {
             .contact-hero h1 {
                 font-size: 2.5rem !important;
@@ -97,6 +135,23 @@
             .map-placeholder, iframe {
                 height: 300px !important;
             }
+        }
+
+        .help-cta-box {
+            background: var(--bg-soft);
+            padding: 60px;
+            border-radius: 30px;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode .help-cta-box {
+            background: #0a0a0a !important;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        body.dark-mode .help-cta-box p {
+            color: #aaa !important;
         }
     </style>
 </head>
@@ -216,9 +271,9 @@
     </section>
 
     <!-- 4. Google Map -->
-    <section>
+    <section class="map-section">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 50px;">Visit Our Studio</h2>
+            <h2 style="text-align: center; margin-bottom: 30px;">Visit Our Studio</h2>
             <div style="border-radius: 24px; overflow: hidden; box-shadow: var(--shadow); height: 450px; border: 1px solid rgba(0,0,0,0.05);">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.7214539121!2d-0.1288591!3d51.5194133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761b315263a0a3%3A0x6968d90e9d6d391!2sThe%20British%20Museum!5e0!3m2!1sen!2suk!4v1715434500000!5m2!1sen!2suk" 
                     width="100%" 
@@ -234,7 +289,7 @@
 
     <!-- 5. FAQ/Contact CTA -->
     <section class="container" style="text-align: center; margin-bottom: 100px;">
-        <div style="background: var(--bg-soft); padding: 60px; border-radius: 30px;">
+        <div class="help-cta-box">
             <h2 style="margin-bottom: 20px;">Check Our Help Center</h2>
             <p style="margin-bottom: 30px; color: #666;">Maybe your question has already been answered? Explore our comprehensive FAQ and Tutorial archive.</p>
             <a href="services.html" class="btn btn-outline">Explore FAQ</a>
