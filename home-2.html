@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home 2 - Dollhouse Miniature Supply & Kit Shop</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    
+    <style>
+        .hero-cinematic {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=1600&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        .hero-cinematic-content h1 {
+            font-size: 5rem;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease;
+        }
+        .hero-cinematic-content p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            animation: fadeInUp 1s ease 0.3s;
+            animation-fill-mode: both;
+        }
+        
+        .zoom-card {
+            overflow: hidden;
+            border-radius: 20px;
+            position: relative;
+        }
+        .zoom-card img {
+            transition: transform 0.5s ease;
+        }
+        .zoom-card:hover img {
+            transform: scale(1.15);
+        }
+        .zoom-card-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            padding: 30px;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .zoom-card:hover .zoom-card-overlay {
+            opacity: 1;
+        }
+        
+        .workshop-split {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        .workshop-text { flex: 1; }
+        .workshop-video { 
+            flex: 1; 
+            height: 400px;
+            background: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop');
+            background-size: cover;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-hover);
+        }
+        .play-btn {
+            width: 80px;
+            height: 80px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .play-btn:hover { transform: scale(1.1); }
+        
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .hero-cinematic-content h1 { font-size: 3rem; }
+            .workshop-split { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <i class="fas fa-house-chimney-window logo-icon"></i>
+                    MiniCraft Shop
+                </a>
+                <div class="nav-links">
+                    <a href="index.html">Home 1</a>
+                    <a href="home-2.html" class="active">Home 2</a>
+                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="nav-actions">
+                    <button id="dark-mode-toggle" class="toggle-btn"><i class="fas fa-moon"></i></button>
+                    <button id="rtl-toggle" class="toggle-btn" title="Toggle RTL"><i class="fas fa-right-left"></i></button>
+                    <a href="login.html" class="btn btn-primary">Login</a>
+                    <div class="hamburger"><span></span><span></span><span></span></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 1. Cinematic Hero -->
+    <section class="hero-cinematic">
+        <div class="hero-cinematic-content">
+            <h1>Artistry in Miniature</h1>
+            <p>Elevate your collection with world-class craftsmanship and exclusive DIY kits designed for the true connoisseur.</p>
+            <div class="hero-btns">
+                <a href="services.html" class="btn btn-primary" style="background: white; color: black; border: none;">View Collections</a>
+                <a href="contact.html" class="btn btn-outline" style="border-color: white; color: white; margin-left: 15px;">Custom Inquiries</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Room Showcase -->
+    <section class="container">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 50px;">
+            <div>
+                <span style="color: var(--primary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">Curated Spaces</span>
+                <h2 style="font-size: 3rem;">Luxury Room Showcase</h2>
+            </div>
+            <a href="services.html" class="btn btn-outline">View All Rooms</a>
+        </div>
+        <div class="grid-4">
+            <div class="zoom-card">
+                <img src="https://images.unsplash.com/photo-1615529328331-f8917597711f?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Luxury Room 1">
+                <div class="zoom-card-overlay">
+                    <h3>Imperial Ballroom</h3>
+                    <p>Gold leaf details & silk wallcoverings.</p>
+                </div>
+            </div>
+            <div class="zoom-card">
+                <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Luxury Room 2">
+                <div class="zoom-card-overlay">
+                    <h3>French Country Kitchen</h3>
+                    <p>Real copper pots & limestone floors.</p>
+                </div>
+            </div>
+            <div class="zoom-card">
+                <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Luxury Room 3">
+                <div class="zoom-card-overlay">
+                    <h3>Master Conservatory</h3>
+                    <p>Glass ceiling & tropical scale plants.</p>
+                </div>
+            </div>
+            <div class="zoom-card">
+                <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Luxury Room 4">
+                <div class="zoom-card-overlay">
+                    <h3>Private Study</h3>
+                    <p>Leather-bound books & mahogany desk.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Artisan Workshop -->
+    <section style="background-color: var(--bg-soft);">
+        <div class="container workshop-split">
+            <div class="workshop-text">
+                <span style="color: var(--primary-color); font-weight: 700;">THE PROCESS</span>
+                <h2 style="font-size: 2.5rem; margin: 20px 0;">Handcrafted With Precision</h2>
+                <p style="font-size: 1.1rem; color: #555; margin-bottom: 30px;">Every piece in our shop is either hand-assembled by master artists or precision-cut for your own assembly. We use only the finest woods, metals, and textiles to ensure museum-quality results.</p>
+                <ul style="margin-bottom: 40px;">
+                    <li style="margin-bottom: 15px;"><i class="fas fa-check-circle" style="color: var(--primary-color); margin-right: 10px;"></i> Sustainable birch and mahogany woods</li>
+                    <li style="margin-bottom: 15px;"><i class="fas fa-check-circle" style="color: var(--primary-color); margin-right: 10px;"></i> Professional grade LED systems</li>
+                    <li style="margin-bottom: 15px;"><i class="fas fa-check-circle" style="color: var(--primary-color); margin-right: 10px;"></i> Exclusive artist-designed patterns</li>
+                </ul>
+                <a href="about.html" class="btn btn-primary">Learn Our Story</a>
+            </div>
+            <div class="workshop-video">
+                <div class="play-btn"><i class="fas fa-play"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Premium Craft Collections -->
+    <section class="container">
+        <h2 style="text-align: center; margin-bottom: 50px;">Exclusive Artist Collections</h2>
+        <div class="grid-4">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Craft 1">
+                <div class="card-body">
+                    <h3 class="card-title">Miniature Tools Set</h3>
+                    <p class="card-text">Professional grade precision tools for builders.</p>
+                    <a href="services-details.html" class="btn btn-primary card-btn">View Details</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Craft 2">
+                <div class="card-body">
+                    <h3 class="card-title">Deluxe Room Box</h3>
+                    <p class="card-text">Premium display box with anti-glare glass.</p>
+                    <a href="services-details.html" class="btn btn-primary card-btn">View Details</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Craft 3">
+                <div class="card-body">
+                    <h3 class="card-title">Textile Archive</h3>
+                    <p class="card-text">Exclusive fabrics scaled for 1:12 furniture.</p>
+                    <a href="services-details.html" class="btn btn-primary card-btn">View Details</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Craft 4">
+                <div class="card-body">
+                    <h3 class="card-title">Artistic Paint Kit</h3>
+                    <p class="card-text">Custom colors for realistic weathering effects.</p>
+                    <a href="services-details.html" class="btn btn-primary card-btn">View Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Tutorials & Inspiration -->
+    <section style="background-color: #111; color: white;">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 50px;">Masterclass Tutorials</h2>
+            <div class="grid-4">
+                <div class="card" style="background: #222; border: none;">
+                    <img src="https://images.unsplash.com/photo-1516533075015-a3838414c3cb?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Tutorial 1">
+                    <div class="card-body">
+                        <h3 class="card-title">Advanced Upholstery</h3>
+                        <p class="card-text" style="color: #aaa;">Learn to cover tiny sofas like a pro.</p>
+                        <a href="blog-details.html" class="btn btn-outline" style="color: white; border-color: white;">Watch Now</a>
+                    </div>
+                </div>
+                <div class="card" style="background: #222; border: none;">
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Tutorial 2">
+                    <div class="card-body">
+                        <h3 class="card-title">Lighting 101</h3>
+                        <p class="card-text" style="color: #aaa;">Wiring your room box for magic.</p>
+                        <a href="blog-details.html" class="btn btn-outline" style="color: white; border-color: white;">Watch Now</a>
+                    </div>
+                </div>
+                <div class="card" style="background: #222; border: none;">
+                    <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Tutorial 3">
+                    <div class="card-body">
+                        <h3 class="card-title">Tiny Pastries</h3>
+                        <p class="card-text" style="color: #aaa;">Sculpting realistic food from clay.</p>
+                        <a href="blog-details.html" class="btn btn-outline" style="color: white; border-color: white;">Watch Now</a>
+                    </div>
+                </div>
+                <div class="card" style="background: #222; border: none;">
+                    <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Tutorial 4">
+                    <div class="card-body">
+                        <h3 class="card-title">Aging Wood</h3>
+                        <p class="card-text" style="color: #aaa;">Create antique finishes on new wood.</p>
+                        <a href="blog-details.html" class="btn btn-outline" style="color: white; border-color: white;">Watch Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Luxury CTA -->
+    <section class="container" style="text-align: center;">
+        <div style="background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)); padding: 100px 50px; border-radius: 40px; color: white; position: relative; overflow: hidden;">
+            <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: rgba(255,255,255,0.1); border-radius: 50%;"></div>
+            <h2 style="font-size: 3.5rem; margin-bottom: 20px;">Ready to Start Your World?</h2>
+            <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto 40px;">Join thousands of miniature enthusiasts and begin your crafting journey today with our exclusive starter kits.</p>
+            <a href="register.html" class="btn btn-primary" style="background: white; color: var(--primary-color); font-size: 1.2rem; padding: 15px 40px;">Get Started Free</a>
+            <div class="social-links" style="justify-content: center; margin-top: 50px;">
+                <a href="#" style="background: rgba(255,255,255,0.2);"><i class="fab fa-instagram"></i></a>
+                <a href="#" style="background: rgba(255,255,255,0.2);"><i class="fab fa-pinterest"></i></a>
+                <a href="#" style="background: rgba(255,255,255,0.2);"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="logo" style="color: var(--white); margin-bottom: 20px;">MiniCraft Shop</h3>
+                    <p>Creating luxury worlds in 1:12 scale since 2015. Your destination for premium miniatures.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Custom Kits</a></li>
+                        <li><a href="services.html">Furniture</a></li>
+                        <li><a href="services.html">Lighting</a></li>
+                        <li><a href="services.html">Accessories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> 123 Tiny Lane, Craft City</p>
+                    <p><i class="fas fa-phone" style="margin-right: 10px;"></i> +1 234 567 890</p>
+                    <p><i class="fas fa-envelope" style="margin-right: 10px;"></i> hello@minicraftshop.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Dollhouse Miniature Supply & Kit Shop. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <div class="back-to-top"><i class="fas fa-chevron-up"></i></div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

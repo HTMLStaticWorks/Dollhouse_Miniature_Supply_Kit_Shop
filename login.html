@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Dollhouse Miniature Supply & Kit Shop</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fdfaf5;
+            margin: 0;
+            padding: 0;
+        }
+        .auth-container {
+            display: flex;
+            width: 1000px;
+            height: 650px;
+            background: white;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+        .auth-image {
+            flex: 1;
+            background: url('https://images.unsplash.com/photo-1596464716127-f2a82984de30?q=80&w=800&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .auth-image-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 50px;
+            color: white;
+        }
+        .auth-form-box {
+            flex: 1;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .auth-header {
+            margin-bottom: 40px;
+        }
+        .auth-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .social-auth {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .social-btn {
+            flex: 1;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid #eee;
+            background: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        .social-btn:hover { background: #f9f9f9; }
+        
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            color: #999;
+            font-size: 0.9rem;
+        }
+        .divider::before, .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: #eee;
+        }
+        
+        .form-group { margin-bottom: 20px; }
+        .form-group input {
+            width: 100%;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            background: #fdfdfd;
+        }
+        
+        .form-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 1024px) {
+            .auth-container { width: 90%; height: auto; }
+            .auth-image { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="auth-container">
+        <div class="auth-image">
+            <div class="auth-image-overlay">
+                <h2 style="font-size: 2rem;">"The detail is not just a part of the craft, it is the heart of it."</h2>
+                <p>- Elena Vance, Master Artist</p>
+            </div>
+        </div>
+        
+        <div class="auth-form-box">
+            <div class="auth-header">
+                <a href="index.html" class="logo" style="margin-bottom: 20px; display: flex;">
+                    <i class="fas fa-house-chimney-window logo-icon"></i>
+                    MiniCraft Shop
+                </a>
+                <h1>Welcome Back</h1>
+                <p style="color: #666;">Enter your details to access your creative studio.</p>
+            </div>
+            
+            <div class="social-auth">
+                <button class="social-btn"><i class="fab fa-google" style="color: #ea4335;"></i> Google</button>
+                <button class="social-btn"><i class="fab fa-apple"></i> Apple</button>
+            </div>
+            
+            <div class="divider">Or login with email</div>
+            
+            <form action="index.html">
+                <div class="form-group">
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Password" required>
+                </div>
+                
+                <div class="form-footer">
+                    <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                        <input type="checkbox" style="width: auto;"> Remember me
+                    </label>
+                    <a href="#" style="color: var(--primary-color); font-weight: 600;">Forgot Password?</a>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 20px;">Login</button>
+                
+                <p style="text-align: center; color: #666;">Don't have an account? <a href="register.html" style="color: var(--primary-color); font-weight: 700;">Sign Up</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Back to Top -->
+    <div class="back-to-top"><i class="fas fa-chevron-up"></i></div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

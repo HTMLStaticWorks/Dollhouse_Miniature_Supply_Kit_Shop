@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Dollhouse Miniature Supply & Kit Shop</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    
+    <style>
+        .contact-hero {
+            padding: 120px 0 60px;
+            text-align: center;
+            background: var(--bg-soft);
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 50px;
+            margin-bottom: 100px;
+        }
+        .contact-info-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .info-item i {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+        .contact-form-box {
+            background: var(--white);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+        }
+        .map-placeholder {
+            width: 100%;
+            height: 400px;
+            background: #eee;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #999;
+            margin-bottom: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <i class="fas fa-house-chimney-window logo-icon"></i>
+                    MiniCraft Shop
+                </a>
+                <div class="nav-links">
+                    <a href="index.html">Home 1</a>
+                    <a href="home-2.html">Home 2</a>
+                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="contact.html" class="active">Contact</a>
+                </div>
+                <div class="nav-actions">
+                    <button id="dark-mode-toggle" class="toggle-btn"><i class="fas fa-moon"></i></button>
+                    <button id="rtl-toggle" class="toggle-btn" title="Toggle RTL"><i class="fas fa-right-left"></i></button>
+                    <a href="login.html" class="btn btn-primary">Login</a>
+                    <div class="hamburger"><span></span><span></span><span></span></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 1. Hero Section -->
+    <section class="contact-hero">
+        <div class="container">
+            <h1 style="font-size: 3rem; margin-bottom: 20px;">Get in Touch</h1>
+            <p style="max-width: 600px; margin: 0 auto; color: #666;">Have questions about our kits or want to discuss a custom commission? We're here to help.</p>
+        </div>
+    </section>
+
+    <!-- 2 & 3. Contact Form & Details -->
+    <section class="container">
+        <div class="contact-grid">
+            <div class="contact-info-card">
+                <h3 style="margin-bottom: 30px;">Contact Information</h3>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Our Workshop</h4>
+                        <p>123 Tiny Lane, Craft District, Craft City, CC 12345</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h4>Call Us</h4>
+                        <p>+1 (234) 567 890</p>
+                        <p>Mon - Fri: 9am - 6pm</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email Us</h4>
+                        <p>hello@minicraftshop.com</p>
+                        <p>support@minicraftshop.com</p>
+                    </div>
+                </div>
+                <div class="social-links" style="margin-top: 50px;">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="contact-form-box">
+                <form>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <input type="text" placeholder="John" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" placeholder="Doe" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" placeholder="john@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Subject</label>
+                        <select style="width: 100%; padding: 15px; border-radius: 10px; border: 1px solid #ddd;">
+                            <option>General Inquiry</option>
+                            <option>Custom Commission</option>
+                            <option>Order Support</option>
+                            <option>Wholesale</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea rows="5" placeholder="How can we help you?" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Google Map Placeholder -->
+    <div class="container">
+        <h2 style="text-align: center; margin-bottom: 50px;">Visit Our Studio</h2>
+        <div class="map-placeholder">
+            <i class="fas fa-map-marked-alt" style="font-size: 3rem; margin-right: 20px;"></i>
+            Interactive Map Interface (Coming Soon)
+        </div>
+    </div>
+
+    <!-- 5. FAQ/Contact CTA -->
+    <section class="container" style="text-align: center; margin-bottom: 100px;">
+        <div style="background: var(--bg-soft); padding: 60px; border-radius: 30px;">
+            <h2 style="margin-bottom: 20px;">Check Our Help Center</h2>
+            <p style="margin-bottom: 30px; color: #666;">Maybe your question has already been answered? Explore our comprehensive FAQ and Tutorial archive.</p>
+            <a href="services.html" class="btn btn-outline">Explore FAQ</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="logo" style="color: var(--white); margin-bottom: 20px;">MiniCraft Shop</h3>
+                    <p>Creating luxury worlds in 1:12 scale since 2015. Your destination for premium miniatures.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Custom Kits</a></li>
+                        <li><a href="services.html">Furniture</a></li>
+                        <li><a href="services.html">Lighting</a></li>
+                        <li><a href="services.html">Accessories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> 123 Tiny Lane, Craft City</p>
+                    <p><i class="fas fa-phone" style="margin-right: 10px;"></i> +1 234 567 890</p>
+                    <p><i class="fas fa-envelope" style="margin-right: 10px;"></i> hello@minicraftshop.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Dollhouse Miniature Supply & Kit Shop. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <div class="back-to-top"><i class="fas fa-chevron-up"></i></div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

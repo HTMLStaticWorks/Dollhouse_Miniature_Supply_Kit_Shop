@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon - Dollhouse Miniature Shop</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <style>
+        body {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1600&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin: 0;
+        }
+        .countdown {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin: 50px 0;
+        }
+        .count-item {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 15px;
+            min-width: 100px;
+        }
+        .count-item span {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 800;
+        }
+        .count-item label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .coming-soon-box {
+            max-width: 700px;
+            padding: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="coming-soon-box">
+        <h3 class="logo" style="color: white; font-size: 2.5rem; margin-bottom: 30px;">MiniCraft Shop</h3>
+        <h1 style="font-size: 3.5rem; margin-bottom: 20px;">Something Tiny is Coming</h1>
+        <p style="font-size: 1.2rem; opacity: 0.8;">We're currently handcrafting our new digital workshop. Stay tuned for our grand opening!</p>
+        
+        <div class="countdown">
+            <div class="count-item"><span id="days">12</span><label>Days</label></div>
+            <div class="count-item"><span id="hours">08</span><label>Hours</label></div>
+            <div class="count-item"><span id="minutes">45</span><label>Mins</label></div>
+            <div class="count-item"><span id="seconds">22</span><label>Secs</label></div>
+        </div>
+        
+        <form class="newsletter-form" style="max-width: 500px; margin: 0 auto 40px;">
+            <input type="email" placeholder="Email Address" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); color: white;" required>
+            <button type="submit" class="btn btn-primary" style="background: white; color: black;">Notify Me</button>
+        </form>
+        
+        <div class="social-links" style="justify-content: center;">
+            <a href="#" style="background: rgba(255,255,255,0.1); color: white;"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" style="background: rgba(255,255,255,0.1); color: white;"><i class="fab fa-instagram"></i></a>
+            <a href="#" style="background: rgba(255,255,255,0.1); color: white;"><i class="fab fa-pinterest"></i></a>
+            <a href="#" style="background: rgba(255,255,255,0.1); color: white;"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+
+    <!-- Back to Top -->
+    <div class="back-to-top"><i class="fas fa-chevron-up"></i></div>
+
+    <script>
+        // Simple countdown logic
+        function updateCountdown() {
+            const now = new Date().getTime();
+            // Just for demo, target is 12 days from now
+            const target = now + (12 * 24 * 60 * 60 * 1000); 
+            
+            // In a real app, you'd use a fixed date
+        }
+        // This is static for the demo
+    </script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

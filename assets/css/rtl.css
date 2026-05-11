@@ -1,0 +1,38 @@
+/* RTL Support Styles */
+
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .nav-links {
+  margin-right: auto;
+  margin-left: 0;
+}
+
+[dir="rtl"] .hero-image {
+  right: auto;
+  left: 0;
+  border-radius: 0 20px 20px 0;
+}
+
+[dir="rtl"] .footer-col ul li a:hover {
+  padding-left: 0;
+  padding-right: 5px;
+}
+
+[dir="rtl"] .card-btn {
+  text-align: right;
+}
+
+[dir="rtl"] .btn {
+  direction: rtl;
+}
+
+/* Flex reversals */
+[dir="rtl"] .nav-actions {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .social-links {
+  flex-direction: row-reverse;
+}

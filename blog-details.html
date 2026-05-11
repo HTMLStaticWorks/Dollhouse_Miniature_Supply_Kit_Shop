@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Details - Dollhouse Miniature Supply & Kit Shop</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    
+    <style>
+        .post-hero {
+            height: 500px;
+            background: url('https://images.unsplash.com/photo-1596464716127-f2a82984de30?q=80&w=1200&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        .post-container {
+            max-width: 800px;
+            margin: -100px auto 100px;
+            background: var(--white);
+            padding: 60px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-hover);
+            position: relative;
+        }
+        .quote-section {
+            border-left: 5px solid var(--primary-color);
+            padding: 30px;
+            background: var(--bg-soft);
+            font-style: italic;
+            font-size: 1.25rem;
+            margin: 40px 0;
+        }
+        .comment-form {
+            background: var(--bg-soft);
+            padding: 40px;
+            border-radius: 15px;
+            margin-top: 60px;
+        }
+        .comment-form input, .comment-form textarea {
+            width: 100%;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">MiniCraft Shop</a>
+                <div class="nav-links">
+                    <a href="index.html">Home 1</a>
+                    <a href="home-2.html">Home 2</a>
+                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="nav-actions">
+                    <button id="dark-mode-toggle" class="toggle-btn"><i class="fas fa-moon"></i></button>
+                    <button id="rtl-toggle" class="toggle-btn"><i class="fas fa-globe"></i></button>
+                    <a href="login.html" class="btn btn-primary">Login</a>
+                    <div class="hamburger"><span></span><span></span><span></span></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 1. Blog Hero Image -->
+    <div class="post-hero"></div>
+
+    <!-- 2. Article Content -->
+    <div class="container">
+        <article class="post-container">
+            <div class="blog-meta" style="margin-bottom: 20px; color: #999;">
+                <span><i class="far fa-calendar-alt"></i> May 10, 2026</span> | <span><i class="far fa-user"></i> By Elena Vance</span> | <span><i class="far fa-folder"></i> Tutorials</span>
+            </div>
+            <h1 style="font-size: 3rem; margin-bottom: 30px;">Realism in 1:12 Scale: The Ultimate Guide</h1>
+            
+            <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">The secret to a truly stunning dollhouse isn't just about how much you spend on furniture, but how you handle the tiny details that trick the eye into seeing reality. When we talk about "realism" in miniature, we're talking about scale, texture, and light.</p>
+            
+            <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">Scale is the foundation. If a single item is slightly off—say, a coffee mug that would be the size of a bucket in real life—it breaks the magic instantly. Always carry a scale ruler and verify every purchase.</p>
+
+            <!-- 3. Quote Section -->
+            <div class="quote-section">
+                "Miniature art is the only medium where the artist attempts to shrink the soul of an object without losing its essence."
+            </div>
+
+            <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">Texture is the next hurdle. Plastic shiny surfaces are the enemy of realism. We recommend weathering your pieces. A bit of fine sandpaper and some watered-down acrylic paint can turn a brand new "wood" chair into a cherished family heirloom with decades of history.</p>
+            
+            <h2 style="margin: 40px 0 20px;">The Power of Light</h2>
+            <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">Nothing kills the illusion faster than flat, overhead lighting. Use multiple sources. Tiny floor lamps, hidden LEDs behind valances, and even the glow of a "fireplace" create shadows that give your rooms depth and life.</p>
+
+            <!-- 5. Comment Form -->
+            <div class="comment-form">
+                <h3>Leave a Comment</h3>
+                <p style="margin-bottom: 25px;">Your email address will not be published.</p>
+                <form>
+                    <textarea rows="5" placeholder="Your Comment" required></textarea>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Post Comment</button>
+                </form>
+            </div>
+        </article>
+    </div>
+
+    <!-- 4. Related Posts -->
+    <section class="container" style="margin-bottom: 100px;">
+        <h2 style="text-align: center; margin-bottom: 50px;">Related Articles</h2>
+        <div class="grid-4">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Related 1">
+                <div class="card-body">
+                    <h3 class="card-title">Top 5 Tools</h3>
+                    <a href="#" class="btn btn-outline card-btn">Read More</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Related 2">
+                <div class="card-body">
+                    <h3 class="card-title">Wiring 101</h3>
+                    <a href="#" class="btn btn-outline card-btn">Read More</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Related 3">
+                <div class="card-body">
+                    <h3 class="card-title">Tiny Bookmaking</h3>
+                    <a href="#" class="btn btn-outline card-btn">Read More</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Related 4">
+                <div class="card-body">
+                    <h3 class="card-title">Fantasy Worlds</h3>
+                    <a href="#" class="btn btn-outline card-btn">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="logo" style="color: var(--white); margin-bottom: 20px;">MiniCraft Shop</h3>
+                    <p>Creating luxury worlds in 1:12 scale since 2015. Your destination for premium miniatures.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Custom Kits</a></li>
+                        <li><a href="services.html">Furniture</a></li>
+                        <li><a href="services.html">Lighting</a></li>
+                        <li><a href="services.html">Accessories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> 123 Tiny Lane, Craft City</p>
+                    <p><i class="fas fa-phone" style="margin-right: 10px;"></i> +1 234 567 890</p>
+                    <p><i class="fas fa-envelope" style="margin-right: 10px;"></i> hello@minicraftshop.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Dollhouse Miniature Supply & Kit Shop. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <div class="back-to-top"><i class="fas fa-chevron-up"></i></div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

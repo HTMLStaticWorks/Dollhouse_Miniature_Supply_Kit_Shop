@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Dollhouse Miniature Supply & Kit Shop</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    
+    <style>
+        .services-hero {
+            padding: 120px 0 80px;
+            background: linear-gradient(rgba(212, 163, 115, 0.1), rgba(212, 163, 115, 0.05));
+            text-align: center;
+        }
+        .accordion-item {
+            background: var(--white);
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+        .accordion-header {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+        }
+        .accordion-content {
+            padding: 0 20px 20px;
+            display: none;
+            color: #666;
+        }
+        .accordion-item.active .accordion-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <i class="fas fa-house-chimney-window logo-icon"></i>
+                    MiniCraft Shop
+                </a>
+                <div class="nav-links">
+                    <a href="index.html">Home 1</a>
+                    <a href="home-2.html">Home 2</a>
+                    <a href="about.html">About</a>
+                    <a href="services.html" class="active">Services</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="nav-actions">
+                    <button id="dark-mode-toggle" class="toggle-btn"><i class="fas fa-moon"></i></button>
+                    <button id="rtl-toggle" class="toggle-btn" title="Toggle RTL"><i class="fas fa-right-left"></i></button>
+                    <a href="login.html" class="btn btn-primary">Login</a>
+                    <div class="hamburger"><span></span><span></span><span></span></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 1. Hero Header -->
+    <section class="services-hero">
+        <div class="container">
+            <h1 style="font-size: 3rem; margin-bottom: 20px;">Artisan Miniature Services</h1>
+            <p style="max-width: 600px; margin: 0 auto; color: #666;">From ready-to-build kits to bespoke commissions, we offer everything you need to create your tiny masterpieces.</p>
+        </div>
+    </section>
+
+    <!-- 2. Main Services Grid (4 per row) -->
+    <section class="container">
+        <div class="grid-4">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Service 1">
+                <div class="card-body">
+                    <h3 class="card-title">Miniature Furniture Kits</h3>
+                    <p class="card-text">Precision-cut wooden furniture kits for every room in the house.</p>
+                    <a href="services-details.html" class="btn btn-primary card-btn">Learn More</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Service 2">
+                <div class="card-body">
+                    <h3 class="card-title">Room Box Creation</h3>
+                    <p class="card-text">Custom-built room boxes with anti-glare glass and sturdy frames.</p>
+                    <a href="services-details.html" class="btn btn-primary card-btn">Learn More</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1615529328331-f8917597711f?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Service 3">
+                <div class="card-body">
+                    <h3 class="card-title">Custom Dollhouse Decor</h3>
+                    <p class="card-text">Bespoke wallpaper, flooring, and textile designs for your project.</p>
+                    <a href="services-details.html" class="btn btn-primary card-btn">Learn More</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1542728928-1413d1894ed1?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Service 4">
+                <div class="card-body">
+                    <h3 class="card-title">Tiny Lighting Systems</h3>
+                    <p class="card-text">Advanced LED wiring and scale lighting fixtures for realistic glow.</p>
+                    <a href="services-details.html" class="btn btn-primary card-btn">Learn More</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Service 5">
+                <div class="card-body">
+                    <h3 class="card-title">Handmade Accessories</h3>
+                    <p class="card-text">One-of-a-kind tiny objects, from books to kitchenware.</p>
+                    <a href="services-details.html" class="btn btn-primary card-btn">Learn More</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Service 6">
+                <div class="card-body">
+                    <h3 class="card-title">Beginner DIY Kits</h3>
+                    <p class="card-text">Perfect starting point with everything included for a first build.</p>
+                    <a href="services-details.html" class="btn btn-primary card-btn">Learn More</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Service 7">
+                <div class="card-body">
+                    <h3 class="card-title">Artist Workshops</h3>
+                    <p class="card-text">Live online classes with master miniature artists.</p>
+                    <a href="services-details.html" class="btn btn-primary card-btn">Learn More</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Service 8">
+                <div class="card-body">
+                    <h3 class="card-title">Restoration Services</h3>
+                    <p class="card-text">Professional repair of vintage dollhouses and furniture.</p>
+                    <a href="services-details.html" class="btn btn-primary card-btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Custom Commission Section -->
+    <section style="background-color: var(--text-dark); color: white;">
+        <div class="container" style="display: flex; align-items: center; gap: 50px;">
+            <div style="flex: 1;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Bespoke Commissions</h2>
+                <p style="font-size: 1.1rem; color: #aaa; margin-bottom: 30px;">Have a specific vision for a tiny world? Our master artists take on a limited number of custom commissions each year. From replicating your real home in 1:12 scale to creating a fantastical movie set, we bring your dreams to life.</p>
+                <a href="contact.html" class="btn btn-primary">Submit Inquiry</a>
+            </div>
+            <div style="flex: 1;">
+                <img src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?q=80&w=800&auto=format&fit=crop" style="border-radius: 20px; box-shadow: 0 0 50px rgba(212,163,115,0.2);" alt="Commission">
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Workshop Membership -->
+    <section class="container">
+        <h2 style="text-align: center; margin-bottom: 50px;">Maker Memberships</h2>
+        <div class="grid-4">
+            <div class="card" style="border: 2px solid #eee;">
+                <div class="card-body" style="text-align: center;">
+                    <h3 class="card-title">Hobbyist</h3>
+                    <p style="font-size: 2rem; font-weight: 800; color: var(--primary-color); margin: 20px 0;">$9.99<small>/mo</small></p>
+                    <ul style="text-align: left; margin-bottom: 30px;">
+                        <li><i class="fas fa-check" style="color: green; margin-right: 10px;"></i> Monthly digital tutorial</li>
+                        <li><i class="fas fa-check" style="color: green; margin-right: 10px;"></i> 5% shop discount</li>
+                    </ul>
+                    <a href="pricing.html" class="btn btn-outline card-btn">Join Now</a>
+                </div>
+            </div>
+            <div class="card" style="border: 2px solid var(--primary-color); position: relative;">
+                <span style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--primary-color); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: 700;">MOST POPULAR</span>
+                <div class="card-body" style="text-align: center;">
+                    <h3 class="card-title">Enthusiast</h3>
+                    <p style="font-size: 2rem; font-weight: 800; color: var(--primary-color); margin: 20px 0;">$24.99<small>/mo</small></p>
+                    <ul style="text-align: left; margin-bottom: 30px;">
+                        <li><i class="fas fa-check" style="color: green; margin-right: 10px;"></i> All Hobbyist perks</li>
+                        <li><i class="fas fa-check" style="color: green; margin-right: 10px;"></i> Monthly "Surprise Box"</li>
+                        <li><i class="fas fa-check" style="color: green; margin-right: 10px;"></i> 10% shop discount</li>
+                    </ul>
+                    <a href="pricing.html" class="btn btn-primary card-btn">Join Now</a>
+                </div>
+            </div>
+            <div class="card" style="border: 2px solid #eee;">
+                <div class="card-body" style="text-align: center;">
+                    <h3 class="card-title">Master Maker</h3>
+                    <p style="font-size: 2rem; font-weight: 800; color: var(--primary-color); margin: 20px 0;">$49.99<small>/mo</small></p>
+                    <ul style="text-align: left; margin-bottom: 30px;">
+                        <li><i class="fas fa-check" style="color: green; margin-right: 10px;"></i> All Enthusiast perks</li>
+                        <li><i class="fas fa-check" style="color: green; margin-right: 10px;"></i> VIP workshop access</li>
+                        <li><i class="fas fa-check" style="color: green; margin-right: 10px;"></i> 15% shop discount</li>
+                    </ul>
+                    <a href="pricing.html" class="btn btn-outline card-btn">Join Now</a>
+                </div>
+            </div>
+            <div class="card" style="border: 2px solid #eee;">
+                <div class="card-body" style="text-align: center;">
+                    <h3 class="card-title">Collector</h3>
+                    <p style="font-size: 2rem; font-weight: 800; color: var(--primary-color); margin: 20px 0;">$99.99<small>/mo</small></p>
+                    <ul style="text-align: left; margin-bottom: 30px;">
+                        <li><i class="fas fa-check" style="color: green; margin-right: 10px;"></i> All Master perks</li>
+                        <li><i class="fas fa-check" style="color: green; margin-right: 10px;"></i> Early access to new drops</li>
+                        <li><i class="fas fa-check" style="color: green; margin-right: 10px;"></i> Free international shipping</li>
+                    </ul>
+                    <a href="pricing.html" class="btn btn-outline card-btn">Join Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. FAQ Section -->
+    <section class="container" style="max-width: 800px;">
+        <h2 style="text-align: center; margin-bottom: 50px;">Service Questions</h2>
+        <div class="accordion">
+            <div class="accordion-item">
+                <div class="accordion-header">What is the typical lead time for custom commissions? <i class="fas fa-chevron-down"></i></div>
+                <div class="accordion-content">Most custom projects take between 4 to 12 weeks depending on the complexity and scale of the request.</div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">Do you ship built dollhouses or just kits? <i class="fas fa-chevron-down"></i></div>
+                <div class="accordion-content">We ship both! Kits are sent worldwide, while fully built dollhouses are shipped via specialized furniture couriers to ensure safety.</div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">Are your lighting systems compatible with standard batteries? <i class="fas fa-chevron-down"></i></div>
+                <div class="accordion-content">Yes, most of our systems use standard button cell batteries, but we also offer USB and AC adapter options for larger displays.</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="logo" style="color: var(--white); margin-bottom: 20px;">MiniCraft Shop</h3>
+                    <p>Creating luxury worlds in 1:12 scale since 2015. Your destination for premium miniatures.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Custom Kits</a></li>
+                        <li><a href="services.html">Furniture</a></li>
+                        <li><a href="services.html">Lighting</a></li>
+                        <li><a href="services.html">Accessories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> 123 Tiny Lane, Craft City</p>
+                    <p><i class="fas fa-phone" style="margin-right: 10px;"></i> +1 234 567 890</p>
+                    <p><i class="fas fa-envelope" style="margin-right: 10px;"></i> hello@minicraftshop.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Dollhouse Miniature Supply & Kit Shop. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <div class="back-to-top"><i class="fas fa-chevron-up"></i></div>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Simple accordion logic
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                header.parentElement.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

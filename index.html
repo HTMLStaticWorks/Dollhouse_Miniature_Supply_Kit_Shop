@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Dollhouse Miniature Supply & Kit Shop</title>
+    <meta name="description" content="Premium Miniature Craft Store & DIY Kit Shop. Explore high-end dollhouse furniture, kits, and accessories.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    
+    <style>
+        /* Home 1 specific styling */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: 250px;
+            gap: 20px;
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        .gallery-item.large {
+            grid-row: span 2;
+        }
+        
+        .horizontal-scroll {
+            display: flex;
+            gap: 30px;
+            overflow-x: auto;
+            padding-bottom: 20px;
+            scrollbar-width: none;
+        }
+        .horizontal-scroll::-webkit-scrollbar {
+            display: none;
+        }
+        .horizontal-card {
+            min-width: 350px;
+            background: var(--bg-soft);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            box-shadow: var(--shadow);
+        }
+        .horizontal-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 10px;
+            margin-right: 20px;
+            object-fit: cover;
+        }
+        .floating-icon {
+            position: absolute;
+            color: var(--primary-color);
+            opacity: 0.2;
+            animation: float-hero 8s ease-in-out infinite;
+            z-index: 1;
+        }
+        @keyframes float-hero {
+            0%, 100% { transform: translateY(0) rotate(0); }
+            50% { transform: translateY(-30px) rotate(15deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <i class="fas fa-house-chimney-window logo-icon"></i>
+                    MiniCraft Shop
+                </a>
+                
+                <div class="nav-links">
+                    <a href="index.html" class="active">Home 1</a>
+                    <a href="home-2.html">Home 2</a>
+                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                
+                <div class="nav-actions">
+                    <button id="dark-mode-toggle" class="toggle-btn"><i class="fas fa-moon"></i></button>
+                    <button id="rtl-toggle" class="toggle-btn" title="Toggle RTL"><i class="fas fa-right-left"></i></button>
+                    <a href="login.html" class="btn btn-primary">Login</a>
+                    
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 1. Hero Section -->
+    <section class="hero">
+        <i class="fas fa-hammer floating-icon" style="top: 20%; left: 5%;"></i>
+        <i class="fas fa-couch floating-icon" style="top: 15%; right: 40%; animation-delay: 2s;"></i>
+        <i class="fas fa-paint-brush floating-icon" style="bottom: 10%; left: 10%; animation-delay: 4s;"></i>
+        
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Create Your Tiny Dream World</h1>
+                <p class="hero-subtitle">Premium handcrafted miniature kits and supplies for the creative artist in you. Discover luxury in 1:12 scale.</p>
+                <div class="hero-btns">
+                    <a href="services.html" class="btn btn-primary">Shop Collections</a>
+                    <a href="about.html" class="btn btn-outline" style="margin-left: 15px;">Our Story</a>
+                </div>
+            </div>
+        </div>
+        <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=1600&auto=format&fit=crop" alt="Miniature Hero" class="hero-image">
+    </section>
+
+    <!-- 2. Featured Collections -->
+    <section class="container">
+        <h2 style="text-align: center; margin-bottom: 50px;">Featured Collections</h2>
+        <div class="grid-4">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Kitchen">
+                <div class="card-body">
+                    <h3 class="card-title">Gourmet Kitchens</h3>
+                    <p class="card-text">Ultra-realistic tiny kitchen sets with marble finishes.</p>
+                    <a href="services-details.html" class="btn btn-primary card-btn">Explore</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1615529328331-f8917597711f?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Living Room">
+                <div class="card-body">
+                    <h3 class="card-title">Victorian Parlor</h3>
+                    <p class="card-text">Classic elegance for your dollhouse's most formal space.</p>
+                    <a href="services-details.html" class="btn btn-primary card-btn">Explore</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Bedroom">
+                <div class="card-body">
+                    <h3 class="card-title">Dreamy Bedrooms</h3>
+                    <p class="card-text">Soft textiles and intricate woodcraft for tiny rest.</p>
+                    <a href="services-details.html" class="btn btn-primary card-btn">Explore</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6199f7a009?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Garden">
+                <div class="card-body">
+                    <h3 class="card-title">Miniature Gardens</h3>
+                    <p class="card-text">Bring life to your patio with scale plants and fountains.</p>
+                    <a href="services-details.html" class="btn btn-primary card-btn">Explore</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. DIY Dollhouse Kits -->
+    <section style="background-color: var(--bg-soft);">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 50px;">DIY Dollhouse Kits</h2>
+            <div class="grid-4">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Modern Loft">
+                    <div class="card-body">
+                        <h3 class="card-title">Modern Loft Kit</h3>
+                        <p class="card-text">Full DIY set including tiny LED lighting systems.</p>
+                        <a href="services-details.html" class="btn btn-primary card-btn">Buy Kit</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Bakery">
+                    <div class="card-body">
+                        <h3 class="card-title">Artisan Bakery</h3>
+                        <p class="card-text">Sweetest project with tiny pastries and bread.</p>
+                        <a href="services-details.html" class="btn btn-primary card-btn">Buy Kit</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Library">
+                    <div class="card-body">
+                        <h3 class="card-title">Scholar's Library</h3>
+                        <p class="card-text">Build thousands of tiny books for this kit.</p>
+                        <a href="services-details.html" class="btn btn-primary card-btn">Buy Kit</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Beach House">
+                    <div class="card-body">
+                        <h3 class="card-title">Coastal Retreat</h3>
+                        <p class="card-text">Serene colors and nautical accessories included.</p>
+                        <a href="services-details.html" class="btn btn-primary card-btn">Buy Kit</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Maker Gallery -->
+    <section class="container">
+        <h2 style="text-align: center; margin-bottom: 50px;">Miniature Maker Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item large">
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=500&auto=format&fit=crop" alt="Gallery 1">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=500&auto=format&fit=crop" alt="Gallery 2">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=500&auto=format&fit=crop" alt="Gallery 3">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=500&auto=format&fit=crop" alt="Gallery 4">
+            </div>
+            <div class="gallery-item large">
+                <img src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?q=80&w=500&auto=format&fit=crop" alt="Gallery 5">
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Lighting & Accessories -->
+    <section style="background-color: #fafafa;">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 50px;">Lighting & Accessories</h2>
+            <div class="horizontal-scroll">
+                <div class="horizontal-card">
+                    <img src="https://images.unsplash.com/photo-1542728928-1413d1894ed1?q=80&w=500&auto=format&fit=crop" alt="Chandelier">
+                    <div>
+                        <h4>Crystal Chandelier</h4>
+                        <p>Real working LED lights.</p>
+                        <span style="color: var(--primary-color); font-weight: 700;">$45.00</span>
+                    </div>
+                </div>
+                <div class="horizontal-card">
+                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=500&auto=format&fit=crop" alt="Floor Lamp">
+                    <div>
+                        <h4>Modern Floor Lamp</h4>
+                        <p>Sleek copper finish.</p>
+                        <span style="color: var(--primary-color); font-weight: 700;">$18.00</span>
+                    </div>
+                </div>
+                <div class="horizontal-card">
+                    <img src="https://images.unsplash.com/photo-1584622781564-1d987f7333c1?q=80&w=500&auto=format&fit=crop" alt="Wall Sconce">
+                    <div>
+                        <h4>Vintage Sconce</h4>
+                        <p>Battery operated.</p>
+                        <span style="color: var(--primary-color); font-weight: 700;">$12.00</span>
+                    </div>
+                </div>
+                <div class="horizontal-card">
+                    <img src="https://images.unsplash.com/photo-1534349762230-e0cadf78f5db?q=80&w=500&auto=format&fit=crop" alt="Candelabra">
+                    <div>
+                        <h4>Golden Candelabra</h4>
+                        <p>Perfect for dining rooms.</p>
+                        <span style="color: var(--primary-color); font-weight: 700;">$22.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Testimonials & Newsletter -->
+    <section class="container" style="text-align: center;">
+        <h2 style="margin-bottom: 50px;">What Our Makers Say</h2>
+        <div class="grid-4" style="margin-bottom: 80px;">
+            <div class="card" style="padding: 30px; border-radius: 30px;">
+                <p style="font-style: italic; margin-bottom: 20px;">"The detail in the gourmet kitchen kit is absolutely stunning. My dollhouse looks real!"</p>
+                <strong>- Sarah Jenkins</strong>
+            </div>
+            <div class="card" style="padding: 30px; border-radius: 30px;">
+                <p style="font-style: italic; margin-bottom: 20px;">"Fast shipping and the packaging was so elegant. Feels like a luxury brand."</p>
+                <strong>- Michael Chen</strong>
+            </div>
+            <div class="card" style="padding: 30px; border-radius: 30px;">
+                <p style="font-style: italic; margin-bottom: 20px;">"The lighting systems are easy to install. Highly recommend for beginners."</p>
+                <strong>- Emily Rose</strong>
+            </div>
+            <div class="card" style="padding: 30px; border-radius: 30px;">
+                <p style="font-style: italic; margin-bottom: 20px;">"Customer support helped me when I lost a tiny piece. Best shop ever."</p>
+                <strong>- David Wilson</strong>
+            </div>
+        </div>
+        
+        <div style="background: var(--primary-color); padding: 60px; border-radius: 30px; color: var(--white);">
+            <h3>Join Our Creative Circle</h3>
+            <p style="margin-bottom: 30px;">Get 10% off your first order and weekly miniature inspiration.</p>
+            <form class="newsletter-form" style="max-width: 500px; margin: 0 auto;">
+                <input type="email" placeholder="Your Email Address" required>
+                <button type="submit" class="btn btn-outline" style="background: white; border: none;">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="logo" style="color: var(--white); margin-bottom: 20px;">MiniCraft Shop</h3>
+                    <p>Creating luxury worlds in 1:12 scale since 2015. Your destination for premium miniatures.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Custom Kits</a></li>
+                        <li><a href="services.html">Furniture</a></li>
+                        <li><a href="services.html">Lighting</a></li>
+                        <li><a href="services.html">Accessories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> 123 Tiny Lane, Craft City</p>
+                    <p><i class="fas fa-phone" style="margin-right: 10px;"></i> +1 234 567 890</p>
+                    <p><i class="fas fa-envelope" style="margin-right: 10px;"></i> hello@minicraftshop.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Dollhouse Miniature Supply & Kit Shop. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <div class="back-to-top"><i class="fas fa-chevron-up"></i></div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Dollhouse Miniature Supply & Kit Shop</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fdfaf5;
+            margin: 0;
+            padding: 20px;
+        }
+        .auth-container {
+            display: flex;
+            width: 1000px;
+            background: white;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+        .auth-image {
+            flex: 1;
+            background: linear-gradient(rgba(212, 163, 115, 0.8), rgba(212, 163, 115, 0.8)), url('https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=800&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px;
+            color: white;
+        }
+        .auth-form-box {
+            flex: 1;
+            padding: 60px;
+        }
+        .auth-header {
+            margin-bottom: 30px;
+        }
+        .auth-header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        .form-group { margin-bottom: 20px; }
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+        }
+        .password-strength {
+            height: 5px;
+            width: 100%;
+            background: #eee;
+            border-radius: 10px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+        .strength-bar {
+            height: 100%;
+            width: 30%;
+            background: #e74c3c;
+            transition: var(--transition);
+        }
+        
+        @media (max-width: 1024px) {
+            .auth-container { width: 100%; max-width: 500px; }
+            .auth-image { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="auth-container">
+        <div class="auth-image">
+            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Join the Community</h2>
+            <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 40px;">Get exclusive access to masterclass tutorials, early kit releases, and a global network of miniature artists.</p>
+            <div style="display: flex; gap: 20px; align-items: center;">
+                <div style="width: 50px; height: 50px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-magic"></i>
+                </div>
+                <span>Curated DIY Kits every month.</span>
+            </div>
+        </div>
+        
+        <div class="auth-form-box">
+            <div class="auth-header">
+                <a href="index.html" class="logo" style="margin-bottom: 20px; display: flex;">
+                    <i class="fas fa-house-chimney-window logo-icon"></i>
+                    MiniCraft Shop
+                </a>
+                <h1>Start Your Journey</h1>
+                <p style="color: #666;">Create your free account today.</p>
+            </div>
+            
+            <form action="index.html">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <div class="form-group">
+                        <input type="text" placeholder="First Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Last Name" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" placeholder="Create Password" required>
+                    <div class="password-strength">
+                        <div class="strength-bar" id="strength-bar"></div>
+                    </div>
+                    <small style="color: #999; margin-top: 5px; display: block;">Must be at least 8 characters.</small>
+                </div>
+                
+                <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer; margin-bottom: 30px; font-size: 0.9rem; color: #666;">
+                    <input type="checkbox" style="width: auto; margin-top: 3px;" required>
+                    <span>I agree to the <a href="#" style="color: var(--primary-color);">Terms of Service</a> and <a href="#" style="color: var(--primary-color);">Privacy Policy</a>.</span>
+                </label>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 20px;">Create Account</button>
+                
+                <p style="text-align: center; color: #666;">Already a member? <a href="login.html" style="color: var(--primary-color); font-weight: 700;">Login</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Back to Top -->
+    <div class="back-to-top"><i class="fas fa-chevron-up"></i></div>
+
+    <script>
+        const password = document.getElementById('password');
+        const bar = document.getElementById('strength-bar');
+        
+        password.addEventListener('input', () => {
+            const val = password.value;
+            if (val.length === 0) {
+                bar.style.width = '0';
+            } else if (val.length < 5) {
+                bar.style.width = '30%';
+                bar.style.background = '#e74c3c';
+            } else if (val.length < 8) {
+                bar.style.width = '60%';
+                bar.style.background = '#f1c40f';
+            } else {
+                bar.style.width = '100%';
+                bar.style.background = '#2ecc71';
+            }
+        });
+    </script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
