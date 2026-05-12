@@ -84,8 +84,8 @@
             margin-bottom: 100px;
         }
 
-        /* Social Links Hover Effect */
-        .social-links a {
+        /* Social Links Hover Effect - Scoped to Contact Card */
+        .contact-info-card .social-links a {
             width: 45px;
             height: 45px;
             background: #f8f8f8;
@@ -99,7 +99,7 @@
             border: 1px solid #eee;
         }
 
-        .social-links a:hover {
+        .contact-info-card .social-links a:hover {
             background: var(--primary-color);
             color: white !important;
             transform: translateY(-5px) rotate(8deg);
@@ -107,13 +107,13 @@
             border-color: var(--primary-color);
         }
 
-        body.dark-mode .social-links a {
+        body.dark-mode .contact-info-card .social-links a {
             background: rgba(255, 255, 255, 0.05);
             border-color: rgba(255, 255, 255, 0.1);
             color: white;
         }
 
-        body.dark-mode .social-links a:hover {
+        body.dark-mode .contact-info-card .social-links a:hover {
             background: var(--primary-color);
             border-color: var(--primary-color);
         }

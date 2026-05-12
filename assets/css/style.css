@@ -541,6 +541,14 @@ footer {
   justify-content: center;
   border-radius: 50%;
   font-size: 1rem;
+  transition: var(--transition);
+}
+
+.social-links a:hover {
+  background-color: var(--primary-color);
+  color: #ffffff !important;
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(212, 163, 115, 0.3);
 }
 
 .footer-bottom {
