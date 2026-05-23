@@ -85,6 +85,28 @@
             padding: 3px 8px;
             border-radius: 20px;
         }
+        .filter-toggle {
+            display: none;
+            width: 100%;
+            background: var(--bg-soft);
+            color: var(--text-dark);
+            border: 1px solid rgba(0,0,0,0.08);
+            border-radius: 12px;
+            padding: 12px 18px;
+            font-weight: 700;
+            text-align: left;
+            gap: 10px;
+            align-items: center;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-bottom: 25px;
+        }
+        .filter-toggle i {
+            margin-right: 10px;
+        }
+        .filter-toggle:hover {
+            background: var(--white);
+        }
         
         /* Product Directory */
         .shop-header {
@@ -254,6 +276,15 @@
             border-color: #444;
         }
         
+        @media (max-width: 1024px) {
+            .shop-layout {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .filter-toggle {
+                display: flex;
+            }
+        }
         @media (max-width: 991px) {
             .shop-layout {
                 grid-template-columns: 1fr;
@@ -349,6 +380,7 @@
             
             <!-- Sidebar Filters -->
             <aside class="filter-sidebar">
+                <button type="button" class="filter-toggle"><i class="fas fa-filter"></i> Filters</button>
                 <div class="filter-section">
                     <h3 class="filter-title">Categories</h3>
                     <ul class="filter-list">
