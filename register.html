@@ -11,8 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=2">
+    <link rel="stylesheet" href="assets/css/dark-mode.css?v=2">
     <link rel="stylesheet" href="assets/css/rtl.css">
     
     <style>
@@ -55,7 +55,17 @@
             width: 100%;
             padding: 12px;
             border-radius: 10px;
-            border: 1px solid #ddd;
+            border: 1px solid #ccc;
+            background: #eaeaea;
+            color: #111111;
+        }
+        body.dark-mode .form-group input {
+            background: #cccccc !important;
+            color: #111111 !important;
+            border-color: #bbbbbb !important;
+        }
+        .auth-form-box .btn {
+            border-radius: 10px !important;
         }
         .form-group input[type="password"] {
             padding-right: 45px;

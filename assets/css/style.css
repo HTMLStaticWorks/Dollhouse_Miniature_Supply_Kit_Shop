@@ -4,22 +4,25 @@
 */
 
 :root {
-  --primary-color: #d4a373;
-  /* Warm Beige */
-  --primary-dark: #bc8a5f;
-  --secondary-color: #ccd5ae;
-  /* Soft Sage */
-  --accent-color: #faedcd;
-  /* Creamy Yellow */
-  --text-dark: #1d1d1d;
-  --text-light: #fefae0;
+  --primary-color: #e07a5f;
+  /* Whimsical Terracotta/Peach */
+  --primary-dark: #c15c3d;
+  /* Rich Gingerbread/Mahogany */
+  --secondary-color: #81b29a;
+  /* Cozy Sage Green */
+  --accent-color: #f2cc8f;
+  /* Sweet Honey/Custard */
+  --text-dark: #3d342f;
+  /* Cozy Espresso */
+  --text-light: #fbf8f3;
   --bg-light: #ffffff;
-  --bg-soft: #fcfaf7;
+  --bg-soft: #fbf8f3;
+  /* Warm Cream */
   --white: #ffffff;
   --black: #000000;
   --glass: rgba(255, 255, 255, 0.15);
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.12);
+  --shadow: 0 10px 30px rgba(61, 52, 47, 0.05);
+  --shadow-hover: 0 20px 40px rgba(61, 52, 47, 0.1);
   --transition: all 0.3s ease;
   --border-radius: 12px;
   --max-width: 1200px;
@@ -641,14 +644,43 @@ footer {
 
   .mobile-nav-actions {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 30px;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    gap: 15px;
+    margin-top: 30px;
     width: 100%;
     padding-top: 25px;
     border-top: 2px solid var(--bg-soft);
+  }
+
+  /* Group for the 3 toggle buttons — always on one row */
+  .mobile-toggle-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    order: 1;
+  }
+
+  /* Force uniform 40x40 square for every toggle inside the group */
+  .mobile-toggle-group .toggle-btn,
+  .mobile-toggle-group a.toggle-btn {
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    border-radius: 12px !important;
+    background: var(--bg-soft) !important;
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 1rem !important;
+    color: var(--text-dark) !important;
+    flex-shrink: 0 !important;
+    flex-grow: 0 !important;
+    position: relative !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02) !important;
+    cursor: pointer !important;
+    padding: 0 !important;
   }
 
   .mobile-nav-actions .toggle-btn {
@@ -657,7 +689,7 @@ footer {
 
   .mobile-nav-actions .btn-primary {
     order: 2;
-    flex-basis: 100%;
+    width: 100%;
     max-width: 250px;
     margin: 0 auto;
     text-align: center;

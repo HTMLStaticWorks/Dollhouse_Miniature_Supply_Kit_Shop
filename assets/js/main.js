@@ -118,4 +118,30 @@ document.addEventListener('DOMContentLoaded', () => {
             form.classList.add('was-validated');
         });
     });
+
+    // --- Gallery Category Filtering ---
+    const galleryBtns = document.querySelectorAll('.gallery-category-btn');
+    const galleryCards = document.querySelectorAll('.gallery-card');
+
+    if (galleryBtns.length > 0 && galleryCards.length > 0) {
+        galleryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                galleryBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-filter');
+
+                galleryCards.forEach(card => {
+                    const category = card.getAttribute('data-category');
+                    if (filter === 'all' || filter === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    }
 });

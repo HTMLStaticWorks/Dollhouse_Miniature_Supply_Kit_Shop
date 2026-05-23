@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -22,6 +22,171 @@
     
     <style>
         /* Home 1 specific styling */
+        .section-subheading {
+            font-size: 1.25rem;
+            color: #666;
+            margin-top: 15px;
+            margin-bottom: 50px;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+        body.dark-mode .section-subheading {
+            color: #bbbbbb !important;
+        }
+        .artisan-intro {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        body.dark-mode .artisan-intro {
+            color: #cccccc !important;
+        }
+        .hero-title {
+            font-size: 4rem !important;
+            line-height: 1.15;
+        }
+        .hero-subtitle {
+            font-size: 1.35rem !important;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+        /* Best Sellers & Newly Launched Section Styling */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        .product-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--primary-color);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            z-index: 10;
+        }
+        .product-badge.new {
+            background: var(--secondary-color);
+        }
+        .product-img-wrapper {
+            position: relative;
+            height: 280px;
+            overflow: hidden;
+        }
+        .product-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        .product-card:hover .product-img-wrapper img {
+            transform: scale(1.08);
+        }
+        .product-details {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .product-category {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .product-title {
+            font-size: 1.35rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+        .product-rating {
+            color: #ffb100;
+            font-size: 0.85rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .product-rating span {
+            color: #888;
+            font-size: 0.8rem;
+        }
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            margin-top: auto;
+        }
+        .product-actions {
+            display: flex;
+            gap: 8px;
+        }
+        .product-actions .btn {
+            padding: 10px 5px !important;
+            font-size: 0.85rem !important;
+            white-space: nowrap !important;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px !important;
+        }
+        .product-actions .btn-outline {
+            flex: 1 !important;
+        }
+        .product-actions .btn-primary {
+            flex: 1.4 !important;
+        }
+        
+        body.dark-mode .product-card {
+            background: #111111 !important;
+            border-color: rgba(255,255,255,0.08) !important;
+        }
+        
+        @media (max-width: 991px) {
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 640px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -345,6 +510,113 @@
                 gap: 20px;
             }
         }
+
+        /* ====== Shop by Category Section ====== */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 10px;
+        }
+        .cat-card {
+            text-decoration: none;
+            color: inherit;
+            border-radius: 20px;
+            overflow: hidden;
+            background: var(--white);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+        .cat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+        .cat-img-wrap {
+            position: relative;
+            height: 190px;
+            overflow: hidden;
+        }
+        .cat-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            display: block;
+        }
+        .cat-card:hover .cat-img-wrap img {
+            transform: scale(1.1);
+        }
+        .cat-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.05), rgba(0,0,0,0.45));
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+            padding: 15px;
+            transition: background 0.3s ease;
+        }
+        .cat-card:hover .cat-overlay {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(167,101,70,0.65));
+        }
+        .cat-icon {
+            font-size: 1.5rem;
+            color: white;
+            opacity: 0.85;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .cat-card:hover .cat-icon {
+            transform: scale(1.2);
+            opacity: 1;
+        }
+        .cat-info {
+            padding: 18px 20px;
+            flex-grow: 1;
+        }
+        .cat-info h3 {
+            font-size: 1.05rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin: 0 0 5px 0;
+        }
+        .cat-count {
+            font-size: 0.82rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        /* Dark mode overrides for category cards */
+        body.dark-mode .cat-card {
+            background: #111111 !important;
+            border-color: rgba(255,255,255,0.08) !important;
+        }
+        body.dark-mode .cat-info h3 {
+            color: #e8e8e8 !important;
+        }
+        @media (max-width: 1100px) {
+            .category-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        @media (max-width: 900px) {
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 480px) {
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            .cat-img-wrap {
+                height: 140px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -362,14 +634,18 @@
                     <a href="index.html" class="active">Home 1</a>
                     <a href="home-2.html">Home 2</a>
                     <a href="about.html">About</a>
-                    <a href="services.html">Services</a>
-                    <a href="blog.html">Blog</a>
-                    <a href="pricing.html">Pricing</a>
+                    <a href="services.html">Collections</a>
+                    <a href="shop.html">Shop</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="diy-ideas.html">DIY Ideas</a>
                     <a href="contact.html">Contact</a>
                     
                     <div class="mobile-nav-actions mobile-only">
-                        <button class="toggle-btn dark-mode-toggle"><i class="fas fa-moon"></i></button>
-                        <button class="toggle-btn rtl-toggle" title="Toggle RTL"><i class="fas fa-right-left"></i></button>
+                        <div class="mobile-toggle-group">
+                            <button class="toggle-btn dark-mode-toggle"><i class="fas fa-moon"></i></button>
+                            <button class="toggle-btn rtl-toggle" title="Toggle RTL"><i class="fas fa-right-left"></i></button>
+                            <a href="cart.html" class="toggle-btn" title="Cart"><i class="fas fa-shopping-cart"></i><span style="position:absolute;top:-5px;right:-5px;background:var(--primary-color);color:white;font-size:0.6rem;font-weight:700;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center;">3</span></a>
+                        </div>
                         <a href="login.html" class="btn btn-primary">Login</a>
                     </div>
                 </div>
@@ -377,6 +653,7 @@
                 <div class="nav-actions">
                     <button class="toggle-btn dark-mode-toggle desktop-only"><i class="fas fa-moon"></i></button>
                     <button class="toggle-btn rtl-toggle desktop-only" title="Toggle RTL"><i class="fas fa-right-left"></i></button>
+                    <a href="cart.html" class="toggle-btn desktop-only" title="Cart" style="position:relative;"><i class="fas fa-shopping-cart"></i><span style="position:absolute;top:-5px;right:-5px;background:var(--primary-color);color:white;font-size:0.6rem;font-weight:700;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;">3</span></a>
                     <a href="login.html" class="btn btn-primary desktop-only">Login</a>
                     
                     <div class="hamburger">
@@ -408,9 +685,124 @@
         <img src="assets/images/home1-hero-img.png" alt="Miniature Hero" class="hero-image">
     </section>
 
+    <!-- 2. Shop by Category -->
+    <section style="padding: 100px 0; background-color: var(--bg-soft);">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 10px; font-size: 3rem;">Shop by Category</h2>
+            <p class="section-subheading">Explore everything we offer — from handcrafted tiny furniture to complete custom dollhouse builds. Find your perfect miniature world.</p>
+            <div class="category-grid">
+                <!-- Cat 1: Mini Furniture -->
+                <a href="shop.html" class="cat-card" id="cat-mini-furniture">
+                    <div class="cat-img-wrap">
+                        <img src="assets/images/cat-mini-furniture.png" alt="Mini Furniture">
+                        <div class="cat-overlay">
+                            <i class="fas fa-couch cat-icon"></i>
+                        </div>
+                    </div>
+                    <div class="cat-info">
+                        <h3>Mini Furniture</h3>
+                        <span class="cat-count">24 Products</span>
+                    </div>
+                </a>
+                <!-- Cat 2: DIY Kits -->
+                <a href="shop.html" class="cat-card" id="cat-diy-kits">
+                    <div class="cat-img-wrap">
+                        <img src="assets/images/cat-diy-kits.png" alt="DIY Kits">
+                        <div class="cat-overlay">
+                            <i class="fas fa-tools cat-icon"></i>
+                        </div>
+                    </div>
+                    <div class="cat-info">
+                        <h3>DIY Kits</h3>
+                        <span class="cat-count">18 Products</span>
+                    </div>
+                </a>
+                <!-- Cat 3: Wallpaper -->
+                <a href="shop.html" class="cat-card" id="cat-wallpaper">
+                    <div class="cat-img-wrap">
+                        <img src="assets/images/cat-wallpaper.png" alt="Wallpaper">
+                        <div class="cat-overlay">
+                            <i class="fas fa-scroll cat-icon"></i>
+                        </div>
+                    </div>
+                    <div class="cat-info">
+                        <h3>Wallpaper</h3>
+                        <span class="cat-count">35 Designs</span>
+                    </div>
+                </a>
+                <!-- Cat 4: Lighting -->
+                <a href="shop.html" class="cat-card" id="cat-lighting">
+                    <div class="cat-img-wrap">
+                        <img src="assets/images/dollhouse-light.png" alt="Lighting">
+                        <div class="cat-overlay">
+                            <i class="fas fa-lightbulb cat-icon"></i>
+                        </div>
+                    </div>
+                    <div class="cat-info">
+                        <h3>Lighting</h3>
+                        <span class="cat-count">12 Products</span>
+                    </div>
+                </a>
+                <!-- Cat 5: Tiny Decor -->
+                <a href="shop.html" class="cat-card" id="cat-tiny-decor">
+                    <div class="cat-img-wrap">
+                        <img src="assets/images/cat-tiny-decor.png" alt="Tiny Decor">
+                        <div class="cat-overlay">
+                            <i class="fas fa-star cat-icon"></i>
+                        </div>
+                    </div>
+                    <div class="cat-info">
+                        <h3>Tiny Decor</h3>
+                        <span class="cat-count">40+ Items</span>
+                    </div>
+                </a>
+                <!-- Cat 6: Kitchen Sets -->
+                <a href="shop.html" class="cat-card" id="cat-kitchen-sets">
+                    <div class="cat-img-wrap">
+                        <img src="assets/images/cat-kitchen-sets.png" alt="Kitchen Sets">
+                        <div class="cat-overlay">
+                            <i class="fas fa-utensils cat-icon"></i>
+                        </div>
+                    </div>
+                    <div class="cat-info">
+                        <h3>Kitchen Sets</h3>
+                        <span class="cat-count">16 Sets</span>
+                    </div>
+                </a>
+                <!-- Cat 7: Garden Accessories -->
+                <a href="shop.html" class="cat-card" id="cat-garden-accessories">
+                    <div class="cat-img-wrap">
+                        <img src="assets/images/cat-garden-accessories.png" alt="Garden Accessories">
+                        <div class="cat-overlay">
+                            <i class="fas fa-seedling cat-icon"></i>
+                        </div>
+                    </div>
+                    <div class="cat-info">
+                        <h3>Garden Accessories</h3>
+                        <span class="cat-count">22 Products</span>
+                    </div>
+                </a>
+                <!-- Cat 8: Custom Dollhouse Pieces -->
+                <a href="shop.html" class="cat-card" id="cat-custom-dollhouse">
+                    <div class="cat-img-wrap">
+                        <img src="assets/images/cat-custom-dollhouse.png" alt="Custom Dollhouse Pieces">
+                        <div class="cat-overlay">
+                            <i class="fas fa-house-chimney-window cat-icon"></i>
+                        </div>
+                    </div>
+                    <div class="cat-info">
+                        <h3>Custom Dollhouse Pieces</h3>
+                        <span class="cat-count">Bespoke Orders</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- 2. Featured Collections -->
     <section class="container featured-collections">
-        <h2 style="text-align: center; margin-bottom: 50px;">Featured Collections</h2>
+        <h2 style="text-align: center; margin-bottom: 10px; font-size: 3rem;">Featured Collections</h2>
+        <p class="section-subheading">Explore our handcrafted miniature rooms and luxury furniture, designed precisely in 1:12 scale.</p>
         <div class="grid-4">
             <div class="card">
                 <img src="assets/images/dollhouse-kitchen.png" class="card-img" alt="Kitchen">
@@ -447,6 +839,89 @@
         </div>
     </section>
 
+    <!-- 2.5. Best Sellers Section -->
+    <section class="container best-sellers" style="margin-top: 100px; margin-bottom: 100px;">
+        <h2 style="text-align: center; margin-bottom: 10px; font-size: 3rem;">Our Best Sellers</h2>
+        <p class="section-subheading">Highly curated, top-rated products that makers around the globe love to build.</p>
+        <div class="products-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <span class="product-badge">Best Seller</span>
+                <div class="product-img-wrapper">
+                    <img src="assets/images/dollhouse-space.png" alt="Victorian Mansion Kit">
+                </div>
+                <div class="product-details">
+                    <span class="product-category">DIY Craft Kits</span>
+                    <h3 class="product-title">Victorian Mansion DIY Kit</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>(42 reviews)</span>
+                    </div>
+                    <div class="product-price">$149.00</div>
+                    <div class="product-actions">
+                        <a href="shop.html" class="btn btn-outline">View Details</a>
+                        <a href="shop.html" class="btn btn-primary">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="product-card">
+                <span class="product-badge">Best Seller</span>
+                <div class="product-img-wrapper">
+                    <img src="assets/images/dollhouse-garden.png" alt="Deluxe Greenhouse Kit">
+                </div>
+                <div class="product-details">
+                    <span class="product-category">DIY Craft Kits</span>
+                    <h3 class="product-title">Deluxe Greenhouse Kit</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-stroke"></i>
+                        <span>(28 reviews)</span>
+                    </div>
+                    <div class="product-price">$89.00</div>
+                    <div class="product-actions">
+                        <a href="shop.html" class="btn btn-outline">View Details</a>
+                        <a href="shop.html" class="btn btn-primary">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 3 -->
+            <div class="product-card">
+                <span class="product-badge">Best Seller</span>
+                <div class="product-img-wrapper">
+                    <img src="assets/images/dollhouse-light.png" alt="Working Brass Candelabra">
+                </div>
+                <div class="product-details">
+                    <span class="product-category">Lighting</span>
+                    <h3 class="product-title">Working Crystal LED Chandelier</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>(19 reviews)</span>
+                    </div>
+                    <div class="product-price">$45.00</div>
+                    <div class="product-actions">
+                        <a href="shop.html" class="btn btn-outline">View Details</a>
+                        <a href="shop.html" class="btn btn-primary">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center;">
+            <a href="shop.html" class="btn btn-outline" style="padding: 12px 40px;">View Full Shop Directory <i class="fas fa-arrow-right" style="margin-left: 10px;"></i></a>
+        </div>
+    </section>
+
     <!-- 3. The Artisan's Touch -->
     <section class="artisan-section" style="background-color: var(--bg-soft);">
         <div class="container">
@@ -456,8 +931,8 @@
                 </div>
                 <div class="split-content">
                     <span class="section-tag">Quality First</span>
-                    <h2>The Artisan's Touch</h2>
-                    <p>We believe that beauty lies in the smallest details. Our team of expert miniaturists brings years of craftsmanship to every kit and piece of furniture.</p>
+                    <h2 style="font-size: 3rem; margin-bottom: 15px;">The Artisan's Touch</h2>
+                    <p class="artisan-intro">We believe that beauty lies in the smallest details. Our team of expert miniaturists brings years of craftsmanship to every kit and piece of furniture.</p>
                     
                     <div class="feature-item">
                         <i class="fas fa-check-circle"></i>
@@ -494,9 +969,9 @@
         <div class="container">
             <div class="masterclass-card">
                 <div class="masterclass-content">
-                    <span class="section-tag" style="color: var(--primary-color);">Level Up Your Hobby</span>
-                    <h2>Miniature Masterclass</h2>
-                    <p>Unlock the secrets of 1:12 scale artistry. From realistic wood aging to wiring tiny LED systems, learn from the world's most renowned makers in our exclusive video series.</p>
+                    <span class="section-tag" style="color: var(--primary-color); font-size: 0.9rem; font-weight: 700;">Level Up Your Hobby</span>
+                    <h2 style="font-size: 3.4rem; margin-bottom: 15px; color: var(--white);">Miniature Masterclass</h2>
+                    <p style="font-size: 1.35rem; line-height: 1.6; color: rgba(255,255,255,0.95); margin-bottom: 40px;">Unlock the secrets of 1:12 scale artistry. From realistic wood aging to wiring tiny LED systems, learn from the world's most renowned makers in our exclusive video series.</p>
                     
                     <div class="masterclass-features">
                         <div class="mc-feat">
@@ -522,7 +997,8 @@
     <!-- 5. Lighting & Accessories -->
     <section id="lighting-section" style="background-color: #fafafa;">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 50px;">Lighting & Accessories</h2>
+            <h2 style="text-align: center; margin-bottom: 10px; font-size: 3rem;">Lighting & Accessories</h2>
+            <p class="section-subheading">Illuminate your tiny spaces with realistic working LED fixtures and luxury crystal chandeliers.</p>
             <div class="accessory-grid">
                 <div class="horizontal-card">
                     <img src="assets/images/dollhouse-light.png" alt="Chandelier">
@@ -560,9 +1036,87 @@
         </div>
     </section>
 
+    <!-- 5.5. Newly Launched Section -->
+    <section class="container newly-launched" style="margin-top: 100px; margin-bottom: 100px;">
+        <h2 style="text-align: center; margin-bottom: 10px; font-size: 3rem;">Newly Launched</h2>
+        <p class="section-subheading">Just fresh off our artisan workshop tables! Be the first to build these newly designed kits.</p>
+        <div class="products-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <span class="product-badge new">New Arrival</span>
+                <div class="product-img-wrapper">
+                    <img src="assets/images/dollhouse-kitchen.png" alt="French Bakery DIY Room Box">
+                </div>
+                <div class="product-details">
+                    <span class="product-category">DIY Room Box</span>
+                    <h3 class="product-title">French Bakery DIY Room Box</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>(Brand New)</span>
+                    </div>
+                    <div class="product-price">$115.00</div>
+                    <div class="product-actions">
+                        <a href="shop.html" class="btn btn-primary" style="width: 100%;">Shop New Arrival</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="product-card">
+                <span class="product-badge new">New Arrival</span>
+                <div class="product-img-wrapper">
+                    <img src="assets/images/dollhouse-bedroom.png" alt="Charming Cobblestone Cottage">
+                </div>
+                <div class="product-details">
+                    <span class="product-category">DIY Craft Kits</span>
+                    <h3 class="product-title">Charming Cobblestone Cottage</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>(Brand New)</span>
+                    </div>
+                    <div class="product-price">$95.00</div>
+                    <div class="product-actions">
+                        <a href="shop.html" class="btn btn-primary" style="width: 100%;">Shop New Arrival</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 3 -->
+            <div class="product-card">
+                <span class="product-badge new">Limited Run</span>
+                <div class="product-img-wrapper">
+                    <img src="assets/images/dollhouse-space.png" alt="Cozy Craft Studio Kit">
+                </div>
+                <div class="product-details">
+                    <span class="product-category">DIY Room Box</span>
+                    <h3 class="product-title">Cozy Craft Studio Kit</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-stroke"></i>
+                        <span>(5 reviews)</span>
+                    </div>
+                    <div class="product-price">$75.00</div>
+                    <div class="product-actions">
+                        <a href="shop.html" class="btn btn-primary" style="width: 100%;">Shop New Arrival</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- 6. Testimonials & Newsletter -->
     <section class="container" style="text-align: center;">
-        <h2 style="margin-bottom: 50px;">What Our Makers Say</h2>
+        <h2 style="text-align: center; margin-bottom: 10px; font-size: 3rem;">What Our Makers Say</h2>
+        <p class="section-subheading">Hear from fellow miniaturists and creators who have built their dream worlds with our scale kits.</p>
         <div class="grid-4" style="margin-bottom: 80px;">
             <div class="card" style="padding: 40px 30px; border-radius: 30px;">
                 <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop" alt="Sarah Jenkins" class="testimonial-avatar">
@@ -587,8 +1141,8 @@
         </div>
         
         <div class="newsletter-cta">
-            <h3>Join Our Creative Circle</h3>
-            <p>Get 10% off your first order and weekly miniature inspiration.</p>
+            <h3 style="font-size: 3.2rem; margin-bottom: 15px; color: var(--white);">Join Our Creative Circle</h3>
+            <p style="font-size: 1.35rem; margin-bottom: 40px; color: rgba(255,255,255,0.95);">Get 10% off your first order and weekly miniature inspiration delivered to your inbox.</p>
             <form class="newsletter-form-container">
                 <input type="email" placeholder="Your Email Address" required>
                 <button type="submit">Subscribe Now</button>
@@ -618,7 +1172,7 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
-                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="diy-ideas.html">DIY Ideas</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>

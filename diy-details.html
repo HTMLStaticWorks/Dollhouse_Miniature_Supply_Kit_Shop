@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-    <title>Blog Details - Dollhouse Miniature Supply & Kit Shop</title>
+    <title>DIY Crafting Guide - Dollhouse Miniature Supply & Kit Shop</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -67,20 +67,25 @@
                     <a href="index.html">Home 1</a>
                     <a href="home-2.html">Home 2</a>
                     <a href="about.html">About</a>
-                    <a href="services.html">Services</a>
-                    <a href="blog.html">Blog</a>
-                    <a href="pricing.html">Pricing</a>
+                    <a href="services.html">Collections</a>
+                    <a href="shop.html">Shop</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="diy-ideas.html">DIY Ideas</a>
                     <a href="contact.html">Contact</a>
 
                     <div class="mobile-nav-actions mobile-only">
-                        <button class="toggle-btn dark-mode-toggle"><i class="fas fa-moon"></i></button>
-                        <button class="toggle-btn rtl-toggle" title="Toggle RTL"><i class="fas fa-right-left"></i></button>
+                        <div class="mobile-toggle-group">
+                            <button class="toggle-btn dark-mode-toggle"><i class="fas fa-moon"></i></button>
+                            <button class="toggle-btn rtl-toggle" title="Toggle RTL"><i class="fas fa-right-left"></i></button>
+                            <a href="cart.html" class="toggle-btn" title="Cart"><i class="fas fa-shopping-cart"></i><span style="position:absolute;top:-5px;right:-5px;background:var(--primary-color);color:white;font-size:0.6rem;font-weight:700;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center;">3</span></a>
+                        </div>
                         <a href="login.html" class="btn btn-primary">Login</a>
                     </div>
                 </div>
                 <div class="nav-actions">
                     <button class="toggle-btn dark-mode-toggle desktop-only"><i class="fas fa-moon"></i></button>
                     <button class="toggle-btn rtl-toggle desktop-only" title="Toggle RTL"><i class="fas fa-right-left"></i></button>
+                    <a href="cart.html" class="toggle-btn desktop-only" title="Cart" style="position:relative;"><i class="fas fa-shopping-cart"></i><span style="position:absolute;top:-5px;right:-5px;background:var(--primary-color);color:white;font-size:0.6rem;font-weight:700;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;">3</span></a>
                     <a href="login.html" class="btn btn-primary desktop-only">Login</a>
                     <div class="hamburger"><span></span><span></span><span></span></div>
                 </div>
@@ -88,26 +93,26 @@
         </div>
     </header>
 
-    <!-- 1. Blog Hero Image -->
-    <div class="post-hero" id="blog-hero"></div>
+    <!-- 1. DIY Hero Image -->
+    <div class="post-hero" id="diy-hero"></div>
 
     <!-- 2. Article Content -->
     <div class="container">
         <article class="post-container">
-            <div class="blog-meta" id="blog-meta" style="margin-bottom: 20px; color: #999;">
+            <div class="diy-meta" id="diy-meta" style="margin-bottom: 20px; color: #999;">
                 <span><i class="far fa-calendar-alt"></i> <span id="post-date">May 10, 2026</span></span> | <span><i class="far fa-user"></i> By <span id="post-author">Elena Vance</span></span> | <span><i class="far fa-folder"></i> <span id="post-category">Tutorials</span></span>
             </div>
-            <h1 id="blog-title" style="font-size: 3rem; margin-bottom: 30px;">Realism in 1:12 Scale: The Ultimate Guide</h1>
+            <h1 id="diy-title" style="font-size: 3rem; margin-bottom: 30px;">Realism in 1:12 Scale: The Ultimate Guide</h1>
             
-            <img id="blog-featured-image" src="" alt="Featured Image" style="width: 100%; height: 500px; object-fit: cover; border-radius: 15px; margin-bottom: 40px; box-shadow: var(--shadow);">
+            <img id="diy-featured-image" src="" alt="Featured Image" style="width: 100%; height: 500px; object-fit: cover; border-radius: 15px; margin-bottom: 40px; box-shadow: var(--shadow);">
             
-            <div id="blog-content">
+            <div id="diy-content">
                 <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">The secret to a truly stunning dollhouse isn't just about how much you spend on furniture, but how you handle the tiny details that trick the eye into seeing reality. When we talk about "realism" in miniature, we're talking about scale, texture, and light.</p>
                 
                 <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">Scale is the foundation. If a single item is slightly off—say, a coffee mug that would be the size of a bucket in real life—it breaks the magic instantly. Always carry a scale ruler and verify every purchase.</p>
 
                 <!-- 3. Quote Section -->
-                <div class="quote-section" id="blog-quote">
+                <div class="quote-section" id="diy-quote">
                     "Miniature art is the only medium where the artist attempts to shrink the soul of an object without losing its essence."
                 </div>
 
@@ -135,34 +140,34 @@
 
     <!-- 4. Related Posts -->
     <section class="container" style="margin-bottom: 100px;">
-        <h2 style="text-align: center; margin-bottom: 50px;">Related Articles</h2>
+        <h2 style="text-align: center; margin-bottom: 50px;">Related Guides</h2>
         <div class="grid-4">
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Related 1">
+                <img src="assets/images/diy-tools.png" class="card-img" alt="Top 5 Tools">
                 <div class="card-body">
                     <h3 class="card-title">Top 5 Tools</h3>
-                    <a href="blog-details.html#tools" class="btn btn-outline card-btn">Read More</a>
+                    <a href="diy-details.html#tools" class="btn btn-outline card-btn">Read More</a>
                 </div>
             </div>
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Related 2">
+                <img src="assets/images/diy-wiring.png" class="card-img" alt="Wiring 101">
                 <div class="card-body">
                     <h3 class="card-title">Wiring 101</h3>
-                    <a href="blog-details.html#lighting" class="btn btn-outline card-btn">Read More</a>
+                    <a href="diy-details.html#lighting" class="btn btn-outline card-btn">Read More</a>
                 </div>
             </div>
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Related 3">
+                <img src="assets/images/diy-books.png" class="card-img" alt="Tiny Bookmaking">
                 <div class="card-body">
                     <h3 class="card-title">Tiny Bookmaking</h3>
-                    <a href="blog-details.html#books" class="btn btn-outline card-btn">Read More</a>
+                    <a href="diy-details.html#books" class="btn btn-outline card-btn">Read More</a>
                 </div>
             </div>
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?q=80&w=500&auto=format&fit=crop" class="card-img" alt="Related 4">
+                <img src="assets/images/diy-fantasy.png" class="card-img" alt="Fantasy Worlds">
                 <div class="card-body">
                     <h3 class="card-title">Fantasy Worlds</h3>
-                    <a href="blog-details.html#fantasy" class="btn btn-outline card-btn">Read More</a>
+                    <a href="diy-details.html#fantasy" class="btn btn-outline card-btn">Read More</a>
                 </div>
             </div>
         </div>
@@ -189,7 +194,7 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
-                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="diy-ideas.html">DIY Ideas</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
@@ -221,10 +226,10 @@
     <script src="assets/js/main.js"></script>
     <script>
         (function() {
-            const blogData = {
+            const diyData = {
                 'tools': {
                     title: 'Top 5 Tools for Beginners',
-                    heroImage: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200&auto=format&fit=crop',
+                    heroImage: 'assets/images/diy-tools.png',
                     date: 'May 10, 2026',
                     author: 'Julian Thorne',
                     category: 'Tutorials',
@@ -237,7 +242,7 @@
                 },
                 'realism': {
                     title: 'Realism in 1:12 Scale: The Ultimate Guide',
-                    heroImage: 'https://images.unsplash.com/photo-1596464716127-f2a82984de30?q=80&w=1200&auto=format&fit=crop',
+                    heroImage: 'assets/images/diy-realism.png',
                     date: 'May 08, 2026',
                     author: 'Elena Vance',
                     category: 'Design',
@@ -250,7 +255,7 @@
                 },
                 'lighting': {
                     title: 'Wiring Your First House',
-                    heroImage: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=1200&auto=format&fit=crop',
+                    heroImage: 'assets/images/diy-wiring.png',
                     date: 'May 05, 2026',
                     author: 'Marcus Flint',
                     category: 'Engineering',
@@ -263,7 +268,7 @@
                 },
                 'books': {
                     title: 'Miniature Bookmaking',
-                    heroImage: 'https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=1200&auto=format&fit=crop',
+                    heroImage: 'assets/images/diy-books.png',
                     date: 'May 01, 2026',
                     author: 'Sophia Reed',
                     category: 'Crafts',
@@ -276,7 +281,7 @@
                 },
                 'spotlight': {
                     title: 'Inside the Artisan\'s Studio: Elena Vance',
-                    heroImage: 'https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=1200&auto=format&fit=crop',
+                    heroImage: 'assets/images/diy-tools.png',
                     date: 'April 28, 2026',
                     author: 'Editorial Team',
                     category: 'Interviews',
@@ -289,7 +294,7 @@
                 },
                 'victorian': {
                     title: 'Gallery: Victorian Elegance',
-                    heroImage: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=1200&auto=format&fit=crop',
+                    heroImage: 'assets/images/diy-realism.png',
                     date: 'April 20, 2026',
                     author: 'Elena Vance',
                     category: 'Inspiration',
@@ -301,7 +306,7 @@
                 },
                 'modern': {
                     title: 'Gallery: Modern Minimalism',
-                    heroImage: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=1200&auto=format&fit=crop',
+                    heroImage: 'assets/images/diy-modern.png',
                     date: 'April 15, 2026',
                     author: 'Julian Thorne',
                     category: 'Inspiration',
@@ -313,7 +318,7 @@
                 },
                 'fantasy': {
                     title: 'Gallery: Fantasy Worlds',
-                    heroImage: 'https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?q=80&w=1200&auto=format&fit=crop',
+                    heroImage: 'assets/images/diy-fantasy.png',
                     date: 'April 10, 2026',
                     author: 'Sophia Reed',
                     category: 'Inspiration',
@@ -325,7 +330,7 @@
                 },
                 'coastal': {
                     title: 'Gallery: Coastal Tiny Living',
-                    heroImage: 'https://images.unsplash.com/photo-1615529328331-f8917597711f?q=80&w=1200&auto=format&fit=crop',
+                    heroImage: 'assets/images/diy-coastal.png',
                     date: 'April 05, 2026',
                     author: 'Elena Vance',
                     category: 'Inspiration',
@@ -337,12 +342,12 @@
                 }
             };
 
-            function updateBlogDetails() {
+            function updateDIYDetails() {
                 const hash = window.location.hash.substring(1);
-                const data = blogData[hash] || blogData['realism'];
+                const data = diyData[hash] || diyData['realism'];
 
                 // Update Featured Image (Now below hero)
-                const featuredImg = document.getElementById('blog-featured-image');
+                const featuredImg = document.getElementById('diy-featured-image');
                 if (featuredImg) {
                     featuredImg.src = data.heroImage;
                     featuredImg.alt = data.title;
@@ -354,23 +359,23 @@
                 document.getElementById('post-category').textContent = data.category;
 
                 // Update Title
-                document.getElementById('blog-title').textContent = data.title;
+                document.getElementById('diy-title').textContent = data.title;
 
                 // Update Content
-                document.getElementById('blog-content').innerHTML = `
-                    <div id="blog-body">${data.content}</div>
-                    <div class="quote-section" id="blog-quote">${data.quote}</div>
+                document.getElementById('diy-content').innerHTML = `
+                    <div id="diy-body">${data.content}</div>
+                    <div class="quote-section" id="diy-quote">${data.quote}</div>
                 `;
 
                 // Update Document Title
-                document.title = `${data.title} - Blog Details`;
+                document.title = `${data.title} - DIY Crafting Guide`;
 
                 // Scroll to top
                 window.scrollTo(0, 0);
             }
 
-            window.addEventListener('hashchange', updateBlogDetails);
-            updateBlogDetails();
+            window.addEventListener('hashchange', updateDIYDetails);
+            updateDIYDetails();
         })();
     </script>
 </body>

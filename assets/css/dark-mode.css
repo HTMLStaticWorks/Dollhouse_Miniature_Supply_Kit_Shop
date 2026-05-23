@@ -59,13 +59,13 @@ body.dark-mode .toggle-btn {
 }
 
 body.dark-mode input {
-  background: #ffffff !important;
-  color: #000000 !important;
-  border: 1px solid #444 !important;
+  background: #eaeaea !important;
+  color: #111111 !important;
+  border: 1px solid #cccccc !important;
 }
 
 body.dark-mode input::placeholder {
-  color: #666 !important;
+  color: #666666 !important;
 }
 
 body.dark-mode .logo,
@@ -85,13 +85,21 @@ body.dark-mode .divider::after {
 
 /* Process Cards Exception */
 body.dark-mode .process-card-3d {
-  background-color: #ffffff !important;
-  color: #000000 !important;
+  background-color: #111111 !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 
-body.dark-mode .process-card-3d h3,
+body.dark-mode .process-card-3d:hover {
+  background-color: #1a1a1a !important;
+}
+
+body.dark-mode .process-card-3d h3 {
+  color: var(--primary-color) !important;
+}
+
 body.dark-mode .process-card-3d p {
-  color: #000000 !important;
+  color: #cccccc !important;
 }
 
 body.dark-mode .process-card-3d .step-num {

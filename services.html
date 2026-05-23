@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -91,14 +91,18 @@
                     <a href="index.html">Home 1</a>
                     <a href="home-2.html">Home 2</a>
                     <a href="about.html">About</a>
-                    <a href="services.html" class="active">Services</a>
-                    <a href="blog.html">Blog</a>
-                    <a href="pricing.html">Pricing</a>
+                    <a href="services.html" class="active">Collections</a>
+                    <a href="shop.html">Shop</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="diy-ideas.html">DIY Ideas</a>
                     <a href="contact.html">Contact</a>
 
                     <div class="mobile-nav-actions mobile-only">
-                        <button class="toggle-btn dark-mode-toggle"><i class="fas fa-moon"></i></button>
-                        <button class="toggle-btn rtl-toggle" title="Toggle RTL"><i class="fas fa-right-left"></i></button>
+                        <div class="mobile-toggle-group">
+                            <button class="toggle-btn dark-mode-toggle"><i class="fas fa-moon"></i></button>
+                            <button class="toggle-btn rtl-toggle" title="Toggle RTL"><i class="fas fa-right-left"></i></button>
+                            <a href="cart.html" class="toggle-btn" title="Cart"><i class="fas fa-shopping-cart"></i><span style="position:absolute;top:-5px;right:-5px;background:var(--primary-color);color:white;font-size:0.6rem;font-weight:700;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center;">3</span></a>
+                        </div>
                         <a href="login.html" class="btn btn-primary">Login</a>
                     </div>
                 </div>
@@ -106,6 +110,7 @@
                     <button class="toggle-btn dark-mode-toggle desktop-only"><i class="fas fa-moon"></i></button>
                     <button class="toggle-btn rtl-toggle desktop-only" title="Toggle RTL"><i
                             class="fas fa-right-left"></i></button>
+                    <a href="cart.html" class="toggle-btn desktop-only" title="Cart" style="position:relative;"><i class="fas fa-shopping-cart"></i><span style="position:absolute;top:-5px;right:-5px;background:var(--primary-color);color:white;font-size:0.6rem;font-weight:700;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;">3</span></a>
                     <a href="login.html" class="btn btn-primary desktop-only">Login</a>
                     <div class="hamburger"><span></span><span></span><span></span></div>
                 </div>
@@ -200,10 +205,47 @@
         <div class="container services-split">
             <div style="flex: 1;">
                 <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Bespoke Commissions</h2>
-                <p style="font-size: 1.1rem; color: #aaa; margin-bottom: 30px;">Have a specific vision for a tiny world?
-                    Our master artists take on a limited number of custom commissions each year. From replicating your
-                    real home in 1:12 scale to creating a fantastical movie set, we bring your dreams to life.</p>
-                <a href="contact.html" class="btn btn-primary">Submit Inquiry</a>
+                <p style="font-size: 1.1rem; color: #ccc; margin-bottom: 25px; line-height: 1.6;">
+                    Have a specific vision for a tiny world? Our master artists take on a limited number of museum-grade custom commissions each year. From replicating family ancestral homes in perfect 1:12 scale to crafting high-fidelity historical rooms or fantastical cinematic scale sets, we bring your architectural dreams to life.
+                </p>
+                
+                <!-- Custom Process Timeline / Steps -->
+                <div style="margin-bottom: 30px;">
+                    <h4 style="color: var(--primary-color); font-family: 'Playfair Display', serif; margin-bottom: 15px; font-size: 1.25rem;">Our Bespoke Process:</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 15px; text-align: left;">
+                        <li style="display: flex; gap: 12px; align-items: flex-start;">
+                            <div style="width: 24px; height: 24px; border-radius: 50%; background: var(--primary-color); color: white; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; flex-shrink: 0; margin-top: 3px;">1</div>
+                            <div>
+                                <strong style="color: white;">Detailed Design Consultation</strong>
+                                <p style="font-size: 0.9rem; color: #aaa; margin: 2px 0 0;">Share blueprints, real-world photos, or concept art. We'll consult with you to map out exact scales, materials, and internal lighting systems.</p>
+                            </div>
+                        </li>
+                        <li style="display: flex; gap: 12px; align-items: flex-start;">
+                            <div style="width: 24px; height: 24px; border-radius: 50%; background: var(--primary-color); color: white; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; flex-shrink: 0; margin-top: 3px;">2</div>
+                            <div>
+                                <strong style="color: white;">Fabrication & Curation</strong>
+                                <p style="font-size: 0.9rem; color: #aaa; margin: 2px 0 0;">Our woodcarvers, textile specialists, and electronics engineers construct your model using luxury hardwoods, fine fabrics, and microscopic 12V LED circuits.</p>
+                            </div>
+                        </li>
+                        <li style="display: flex; gap: 12px; align-items: flex-start;">
+                            <div style="width: 24px; height: 24px; border-radius: 50%; background: var(--primary-color); color: white; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; flex-shrink: 0; margin-top: 3px;">3</div>
+                            <div>
+                                <strong style="color: white;">Quality Inspection & Safe Delivery</strong>
+                                <p style="font-size: 0.9rem; color: #aaa; margin: 2px 0 0;">Upon completion, we perform high-detail photography checks and package your masterpiece in shock-absorbent custom crating for global transit.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Sample Commissions Showcase Links/Text -->
+                <div style="margin-bottom: 35px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-align: left;">
+                    <h4 style="color: var(--primary-color); font-family: 'Playfair Display', serif; margin-bottom: 10px; font-size: 1.25rem;">Popular Commission Examples:</h4>
+                    <p style="font-size: 0.95rem; color: #aaa; line-height: 1.5; margin: 0;">
+                        Recent successful commissions include replicating a <strong>19th-century French Bakery</strong>, building an immersive <strong>Gothic Cathedral Room Box</strong>, and engineering a working <strong>Steampunk Laboratory</strong> complete with custom copper piping and moving micro-wheels.
+                    </p>
+                </div>
+                
+                <a href="contact.html" class="btn btn-primary">Submit Inquiry <i class="fas fa-arrow-right" style="margin-left: 8px;"></i></a>
             </div>
             <div style="flex: 1; width: 100%;">
                 <img src="assets/images/dollhouse-service-section.png"
@@ -263,7 +305,7 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
-                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="diy-ideas.html">DIY Ideas</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>

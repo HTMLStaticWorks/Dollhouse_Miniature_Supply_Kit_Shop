@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -175,6 +175,91 @@
         @media (max-width: 768px) {
             .process-card-3d { width: 100%; align-self: center !important; transform: none !important; margin-top: 0 !important; }
         }
+
+        /* Decorative Miniature Visual Grid */
+        .decor-grid-section {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        .decor-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            margin-top: 50px;
+        }
+        .decor-card {
+            background: var(--bg-soft);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            border: 1px solid rgba(0,0,0,0.03);
+            display: flex;
+            flex-direction: column;
+        }
+        .decor-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+        .decor-img-wrapper {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+        }
+        .decor-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        .decor-card:hover .decor-img-wrapper img {
+            transform: scale(1.1);
+        }
+        .decor-info {
+            padding: 25px 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .decor-icon {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        .decor-title {
+            font-size: 1.15rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+        .decor-text {
+            font-size: 0.88rem;
+            color: #777;
+            line-height: 1.4;
+        }
+        body.dark-mode .decor-grid-section {
+            background-color: var(--black) !important;
+        }
+        body.dark-mode .decor-card {
+            background: #111111;
+            border-color: rgba(255,255,255,0.08);
+        }
+        body.dark-mode .decor-text {
+            color: #aaa;
+        }
+        @media (max-width: 1024px) {
+            .decor-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 640px) {
+            .decor-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -190,20 +275,25 @@
                     <a href="index.html">Home 1</a>
                     <a href="home-2.html">Home 2</a>
                     <a href="about.html" class="active">About</a>
-                    <a href="services.html">Services</a>
-                    <a href="blog.html">Blog</a>
-                    <a href="pricing.html">Pricing</a>
+                    <a href="services.html">Collections</a>
+                    <a href="shop.html">Shop</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="diy-ideas.html">DIY Ideas</a>
                     <a href="contact.html">Contact</a>
 
                     <div class="mobile-nav-actions mobile-only">
-                        <button class="toggle-btn dark-mode-toggle"><i class="fas fa-moon"></i></button>
-                        <button class="toggle-btn rtl-toggle" title="Toggle RTL"><i class="fas fa-right-left"></i></button>
+                        <div class="mobile-toggle-group">
+                            <button class="toggle-btn dark-mode-toggle"><i class="fas fa-moon"></i></button>
+                            <button class="toggle-btn rtl-toggle" title="Toggle RTL"><i class="fas fa-right-left"></i></button>
+                            <a href="cart.html" class="toggle-btn" title="Cart"><i class="fas fa-shopping-cart"></i><span style="position:absolute;top:-5px;right:-5px;background:var(--primary-color);color:white;font-size:0.6rem;font-weight:700;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center;">3</span></a>
+                        </div>
                         <a href="login.html" class="btn btn-primary">Login</a>
                     </div>
                 </div>
                 <div class="nav-actions">
                     <button class="toggle-btn dark-mode-toggle desktop-only"><i class="fas fa-moon"></i></button>
                     <button class="toggle-btn rtl-toggle desktop-only" title="Toggle RTL"><i class="fas fa-right-left"></i></button>
+                    <a href="cart.html" class="toggle-btn desktop-only" title="Cart" style="position:relative;"><i class="fas fa-shopping-cart"></i><span style="position:absolute;top:-5px;right:-5px;background:var(--primary-color);color:white;font-size:0.6rem;font-weight:700;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;">3</span></a>
                     <a href="login.html" class="btn btn-primary desktop-only">Login</a>
                     <div class="hamburger"><span></span><span></span><span></span></div>
                 </div>
@@ -284,6 +374,67 @@
                 <div class="overlay">
                     <h3 style="font-family: 'Playfair Display', serif; margin-bottom: 10px;">Artist First</h3>
                     <p style="font-size: 0.9rem; line-height: 1.4; opacity: 0.9;">Designed by miniature artists, for miniature artists.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Decorative Miniature Elements Grid Section -->
+    <section class="decor-grid-section">
+        <div class="container">
+            <div style="text-align: center; max-width: 700px; margin: 0 auto 50px;">
+                <span class="section-tag" style="display: inline-block;">Decorative Elements</span>
+                <h2 style="font-size: 2.8rem; margin-bottom: 15px; font-family: 'Playfair Display', serif;">Our Tiny Crafting World</h2>
+                <p style="color: #666; font-size: 1.1rem; line-height: 1.6;">Explore a handful of the meticulous 1:12 scale dollhouse elements and visual details that bring our worlds to life.</p>
+            </div>
+            
+            <div class="decor-grid">
+                <!-- Card 1 -->
+                <div class="decor-card">
+                    <div class="decor-img-wrapper">
+                        <img src="assets/images/dollhouse-desk.png" alt="Miniature Mahogany Rolltop Desk">
+                    </div>
+                    <div class="decor-info">
+                        <div class="decor-icon"><i class="fas fa-couch"></i></div>
+                        <h3 class="decor-title">Intricate Tiny Furniture</h3>
+                        <p class="decor-text">Hand-finished mahogany desks, velvet armchairs, and styled kitchen cabinets with actual working drawers.</p>
+                    </div>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="decor-card">
+                    <div class="decor-img-wrapper">
+                        <img src="assets/images/dollhouse-light.png" alt="Working Crystal LED Chandelier">
+                    </div>
+                    <div class="decor-info">
+                        <div class="decor-icon"><i class="fas fa-lightbulb"></i></div>
+                        <h3 class="decor-title">Working LED Lighting</h3>
+                        <p class="decor-text">Micro-engineered chandeliers, brass sconces, and candle setups wired with tiny warm-glowing 12V LED bulbs.</p>
+                    </div>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="decor-card">
+                    <div class="decor-img-wrapper">
+                        <img src="assets/images/dollhouse-kitchen.png" alt="Teeny Ceramic & Decor Items">
+                    </div>
+                    <div class="decor-info">
+                        <div class="decor-icon"><i class="fas fa-wine-glass"></i></div>
+                        <h3 class="decor-title">Micro Decors & Ceramics</h3>
+                        <p class="decor-text">Hand-painted ceramic plates, real glass goblets, and teeny copper pots that dress up scale rooms in rich detail.</p>
+                    </div>
+                </div>
+                
+                <!-- Card 4 -->
+                <div class="decor-card">
+                    <div class="decor-img-wrapper">
+                        <img src="assets/images/dollhouse-garden.png" alt="Teeny Bonsai and Plant Setups">
+                    </div>
+                    <div class="decor-info">
+                        <div class="decor-icon"><i class="fas fa-seedling"></i></div>
+                        <h3 class="decor-title">Micro Garden Botanicals</h3>
+                        <p class="decor-text">Ultra-realistic moss, styled tiny potted boxwood hedges, and intricate paper-cut greenhouse florals.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -380,7 +531,7 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
-                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="diy-ideas.html">DIY Ideas</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
