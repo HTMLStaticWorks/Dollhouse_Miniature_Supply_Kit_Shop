@@ -144,4 +144,14 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // --- Filter Sidebar Toggle ---
+    const filterToggle = document.querySelector('.filter-toggle');
+    const filterSidebar = document.querySelector('.filter-sidebar');
+
+    if (filterToggle && filterSidebar) {
+        filterToggle.addEventListener('click', () => {
+            filterSidebar.classList.toggle('open');
+        });
+    }
 });

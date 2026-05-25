@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop - Dollhouse Miniature Supply & Kit Shop</title>
-    <meta name="description" content="Explore our catalog of premium miniature craft supplies, working LED lights, DIY room box kits, and luxury scale furniture.">
+    <meta name="description"
+        content="Explore our catalog of premium miniature craft supplies, working LED lights, DIY room box kits, and luxury scale furniture.">
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-    
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700;800&display=swap"
+        rel="stylesheet">
+
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
+
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css?v=2">
     <link rel="stylesheet" href="assets/css/dark-mode.css?v=2">
     <link rel="stylesheet" href="assets/css/rtl.css">
-    
+
     <style>
         .shop-layout {
             display: grid;
@@ -28,7 +32,7 @@
             margin-top: 50px;
             margin-bottom: 100px;
         }
-        
+
         /* Filter Sidebar */
         .filter-sidebar {
             background: var(--white);
@@ -36,18 +40,21 @@
             padding: 30px;
             box-shadow: var(--shadow);
             height: fit-content;
-            border: 1px solid rgba(0,0,0,0.03);
+            border: 1px solid rgba(0, 0, 0, 0.03);
         }
+
         .filter-section {
             margin-bottom: 30px;
             padding-bottom: 25px;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
+
         .filter-section:last-child {
             border-bottom: none;
             margin-bottom: 0;
             padding-bottom: 0;
         }
+
         .filter-title {
             font-size: 1.1rem;
             font-family: 'Playfair Display', serif;
@@ -58,14 +65,17 @@
             justify-content: space-between;
             align-items: center;
         }
+
         .filter-list {
             list-style: none;
             padding: 0;
             margin: 0;
         }
+
         .filter-item {
             margin-bottom: 12px;
         }
+
         .filter-link {
             display: flex;
             justify-content: space-between;
@@ -75,9 +85,12 @@
             font-size: 0.95rem;
             transition: var(--transition);
         }
-        .filter-link:hover, .filter-link.active {
+
+        .filter-link:hover,
+        .filter-link.active {
             color: var(--primary-color);
         }
+
         .filter-count {
             background: var(--bg-soft);
             color: #888;
@@ -85,29 +98,35 @@
             padding: 3px 8px;
             border-radius: 20px;
         }
+
         .filter-toggle {
             display: none;
             width: 100%;
             background: var(--bg-soft);
             color: var(--text-dark);
-            border: 1px solid rgba(0,0,0,0.08);
+            border: 1px solid rgba(0, 0, 0, 0.08);
             border-radius: 12px;
             padding: 12px 18px;
             font-weight: 700;
-            text-align: left;
+            text-align: center;
             gap: 10px;
             align-items: center;
+            justify-content: center;
             cursor: pointer;
             transition: var(--transition);
             margin-bottom: 25px;
+            position: relative;
         }
+
         .filter-toggle i {
-            margin-right: 10px;
+            position: absolute;
+            right: 18px;
         }
+
         .filter-toggle:hover {
             background: var(--white);
         }
-        
+
         /* Product Directory */
         .shop-header {
             display: flex;
@@ -118,12 +137,14 @@
             padding: 15px 30px;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
-            border: 1px solid rgba(0,0,0,0.03);
+            border: 1px solid rgba(0, 0, 0, 0.03);
         }
+
         .shop-results-count {
             font-size: 0.95rem;
             color: #666;
         }
+
         .shop-sorting select {
             padding: 8px 15px;
             border-radius: 8px;
@@ -134,14 +155,14 @@
             cursor: pointer;
             font-size: 0.9rem;
         }
-        
+
         /* Shop Grid overrides */
         .shop-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 30px;
         }
-        
+
         .product-card {
             background: var(--white);
             border-radius: var(--border-radius);
@@ -151,12 +172,14 @@
             display: flex;
             flex-direction: column;
             position: relative;
-            border: 1px solid rgba(0,0,0,0.03);
+            border: 1px solid rgba(0, 0, 0, 0.03);
         }
+
         .product-card:hover {
             transform: translateY(-10px);
             box-shadow: var(--shadow-hover);
         }
+
         .product-badge {
             position: absolute;
             top: 15px;
@@ -171,29 +194,35 @@
             letter-spacing: 1px;
             z-index: 10;
         }
+
         .product-badge.new {
             background: var(--secondary-color);
         }
+
         .product-img-wrapper {
             position: relative;
             height: 250px;
             overflow: hidden;
         }
+
         .product-img-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: var(--transition);
         }
+
         .product-card:hover .product-img-wrapper img {
             transform: scale(1.08);
         }
+
         .product-details {
             padding: 25px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
         }
+
         .product-category {
             font-size: 0.8rem;
             text-transform: uppercase;
@@ -202,6 +231,7 @@
             font-weight: 600;
             margin-bottom: 8px;
         }
+
         .product-title {
             font-size: 1.25rem;
             font-family: 'Playfair Display', serif;
@@ -211,9 +241,11 @@
             height: 48px;
             display: -webkit-box;
             -webkit-line-clamp: 2;
+            line-clamp: 2;
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
+
         .product-rating {
             color: #ffb100;
             font-size: 0.85rem;
@@ -222,10 +254,12 @@
             align-items: center;
             gap: 5px;
         }
+
         .product-rating span {
             color: #888;
             font-size: 0.8rem;
         }
+
         .product-price {
             font-size: 1.4rem;
             font-weight: 700;
@@ -233,10 +267,12 @@
             margin-bottom: 20px;
             margin-top: auto;
         }
+
         .product-actions {
             display: flex;
             gap: 8px;
         }
+
         .product-actions .btn {
             padding: 10px 5px !important;
             font-size: 0.85rem !important;
@@ -247,57 +283,81 @@
             justify-content: center;
             border-radius: 10px !important;
         }
+
         .product-actions .btn-outline {
             flex: 1 !important;
         }
+
         .product-actions .btn-primary {
             flex: 1.4 !important;
         }
-        
+
         /* Dark Mode overrides */
         body.dark-mode .filter-sidebar,
         body.dark-mode .shop-header,
         body.dark-mode .product-card {
             background: #111111 !important;
-            border-color: rgba(255,255,255,0.08) !important;
+            border-color: rgba(255, 255, 255, 0.08) !important;
         }
+
         body.dark-mode .filter-link {
             color: #bbb;
         }
+
         body.dark-mode .filter-link:hover,
         body.dark-mode .filter-link.active {
             color: var(--primary-color);
         }
+
         body.dark-mode .filter-count {
             background: #222;
             color: #aaa;
         }
+
         body.dark-mode .shop-sorting select {
             border-color: #444;
         }
-        
+
         @media (max-width: 1024px) {
             .shop-layout {
                 grid-template-columns: 1fr;
-                gap: 30px;
+                gap: 10px;
+                margin-top: 20px;
             }
+
+            .filter-sidebar {
+                padding: 10px;
+            }
+
             .filter-toggle {
                 display: flex;
+                margin-bottom: 0;
+            }
+
+            .filter-sidebar.open .filter-toggle {
+                margin-bottom: 20px;
+            }
+
+            .filter-section {
+                display: none;
+            }
+
+            .filter-sidebar.open .filter-section {
+                display: block;
             }
         }
+
         @media (max-width: 991px) {
-            .shop-layout {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
             .shop-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
+
         @media (max-width: 640px) {
             .shop-grid {
                 grid-template-columns: 1fr;
             }
+
             .shop-header {
                 flex-direction: column;
                 gap: 15px;
@@ -305,20 +365,18 @@
                 padding: 15px 20px;
                 text-align: center;
             }
+
             .shop-results-count {
                 text-align: center;
             }
+
             .shop-sorting select {
                 width: 100%;
             }
         }
-        @media (max-width: 480px) {
-            .filter-sidebar {
-                padding: 20px;
-            }
-        }
     </style>
 </head>
+
 <body>
 
     <!-- Header -->
@@ -329,7 +387,7 @@
                     <i class="fas fa-house-chimney-window logo-icon"></i>
                     MiniCraft Shop
                 </a>
-                
+
                 <div class="nav-links">
                     <a href="index.html">Home 1</a>
                     <a href="home-2.html">Home 2</a>
@@ -339,23 +397,29 @@
                     <a href="gallery.html">Gallery</a>
                     <a href="diy-ideas.html">DIY Ideas</a>
                     <a href="contact.html">Contact</a>
-                    
+
                     <div class="mobile-nav-actions mobile-only">
                         <div class="mobile-toggle-group">
                             <button class="toggle-btn dark-mode-toggle"><i class="fas fa-moon"></i></button>
-                            <button class="toggle-btn rtl-toggle" title="Toggle RTL"><i class="fas fa-right-left"></i></button>
-                            <a href="cart.html" class="toggle-btn" title="Cart"><i class="fas fa-shopping-cart"></i><span style="position:absolute;top:-5px;right:-5px;background:var(--primary-color);color:white;font-size:0.6rem;font-weight:700;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center;">3</span></a>
+                            <button class="toggle-btn rtl-toggle" title="Toggle RTL"><i
+                                    class="fas fa-right-left"></i></button>
+                            <a href="cart.html" class="toggle-btn" title="Cart"><i
+                                    class="fas fa-shopping-cart"></i><span
+                                    style="position:absolute;top:-5px;right:-5px;background:var(--primary-color);color:white;font-size:0.6rem;font-weight:700;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center;">3</span></a>
                         </div>
                         <a href="login.html" class="btn btn-primary">Login</a>
                     </div>
                 </div>
-                
+
                 <div class="nav-actions">
                     <button class="toggle-btn dark-mode-toggle desktop-only"><i class="fas fa-moon"></i></button>
-                    <button class="toggle-btn rtl-toggle desktop-only" title="Toggle RTL"><i class="fas fa-right-left"></i></button>
-                    <a href="cart.html" class="toggle-btn desktop-only" title="Cart" style="position:relative;"><i class="fas fa-shopping-cart"></i><span style="position:absolute;top:-5px;right:-5px;background:var(--primary-color);color:white;font-size:0.6rem;font-weight:700;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;">3</span></a>
+                    <button class="toggle-btn rtl-toggle desktop-only" title="Toggle RTL"><i
+                            class="fas fa-right-left"></i></button>
+                    <a href="cart.html" class="toggle-btn desktop-only" title="Cart" style="position:relative;"><i
+                            class="fas fa-shopping-cart"></i><span
+                            style="position:absolute;top:-5px;right:-5px;background:var(--primary-color);color:white;font-size:0.6rem;font-weight:700;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;">3</span></a>
                     <a href="login.html" class="btn btn-primary desktop-only">Login</a>
-                    
+
                     <div class="hamburger">
                         <span></span>
                         <span></span>
@@ -370,22 +434,24 @@
     <section style="background-color: var(--bg-soft); padding: 60px 0; text-align: center;">
         <div class="container">
             <h1 style="font-size: 3rem; margin-bottom: 10px;">Our Workshop Shop</h1>
-            <p class="section-subheading" style="margin-bottom: 0;">Stock up on ultra-realistic scale components, premium tools, and complete DIY building kits.</p>
+            <p class="section-subheading" style="margin-bottom: 0;">Stock up on ultra-realistic scale components,
+                premium tools, and complete DIY building kits.</p>
         </div>
     </section>
 
     <!-- Main Catalog Directory -->
     <main class="container">
         <div class="shop-layout">
-            
+
             <!-- Sidebar Filters -->
             <aside class="filter-sidebar">
-                <button type="button" class="filter-toggle"><i class="fas fa-filter"></i> Filters</button>
+                <button type="button" class="filter-toggle">Filters <i class="fas fa-filter"></i></button>
                 <div class="filter-section">
                     <h3 class="filter-title">Categories</h3>
                     <ul class="filter-list">
                         <li class="filter-item">
-                            <a href="#" class="filter-link active">All Categories <span class="filter-count">18</span></a>
+                            <a href="#" class="filter-link active">All Categories <span
+                                    class="filter-count">18</span></a>
                         </li>
                         <li class="filter-item">
                             <a href="#" class="filter-link">Mini Furniture <span class="filter-count">24</span></a>
@@ -409,11 +475,12 @@
                             <a href="#" class="filter-link">Garden Accessories <span class="filter-count">22</span></a>
                         </li>
                         <li class="filter-item">
-                            <a href="#" class="filter-link">Custom Dollhouse Pieces <span class="filter-count">✦</span></a>
+                            <a href="#" class="filter-link">Custom Dollhouse Pieces <span
+                                    class="filter-count">✦</span></a>
                         </li>
                     </ul>
                 </div>
-                
+
                 <div class="filter-section">
                     <h3 class="filter-title">Filter by Price</h3>
                     <ul class="filter-list">
@@ -429,7 +496,7 @@
                     </ul>
                 </div>
             </aside>
-            
+
             <!-- Products Showcase -->
             <section>
                 <div class="shop-header">
@@ -443,7 +510,7 @@
                         </select>
                     </div>
                 </div>
-                
+
                 <div class="shop-grid">
                     <!-- Product 1 -->
                     <div class="product-card">
@@ -715,4 +782,5 @@
 
     <script src="assets/js/main.js"></script>
 </body>
+
 </html>

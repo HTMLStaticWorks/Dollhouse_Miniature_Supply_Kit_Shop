@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -73,6 +73,105 @@
             }
             .services-split h2 {
                 font-size: 2.2rem !important;
+            }
+        }
+        
+        /* Pricing Section */
+        .pricing-section {
+            background-color: var(--bg-soft);
+            padding: 100px 0;
+            text-align: center;
+        }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .pricing-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 40px 30px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(0,0,0,0.03);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+        .pricing-card.popular {
+            border: 2px solid var(--primary-color);
+        }
+        .pricing-badge {
+            background: var(--primary-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 15px;
+            align-self: center;
+        }
+        .pricing-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+        .pricing-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 25px;
+        }
+        .pricing-price span {
+            font-size: 1rem;
+            color: #888;
+            font-weight: 400;
+        }
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 30px;
+            text-align: left;
+            flex-grow: 1;
+        }
+        .pricing-features li {
+            margin-bottom: 12px;
+            color: #555;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .pricing-features li i {
+            color: var(--primary-color);
+        }
+        
+        body.dark-mode .pricing-section {
+            background-color: #0a0a0a;
+        }
+        body.dark-mode .pricing-card {
+            background: #111;
+            border-color: #222;
+        }
+        body.dark-mode .pricing-features li {
+            color: #aaa;
+        }
+        
+        @media (max-width: 991px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                max-width: 450px;
+                margin-left: auto;
+                margin-right: auto;
             }
         }
     </style>
@@ -279,6 +378,59 @@
                             class="fas fa-chevron-down"></i></div>
                     <div class="accordion-content">Yes, most of our systems use standard button cell batteries, but we
                         also offer USB and AC adapter options for larger displays.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Pricing Section -->
+    <section class="pricing-section">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 15px; font-family: 'Playfair Display', serif;">Transparent Pricing</h2>
+            <p style="color: #666; max-width: 600px; margin: 0 auto; font-size: 1.1rem;">Choose from our ready-to-build DIY kits or commission a fully bespoke architectural masterpiece.</p>
+            
+            <div class="pricing-grid">
+                <!-- Pricing Card 1 -->
+                <div class="pricing-card">
+                    <h3 class="pricing-title">DIY Starter Kits</h3>
+                    <div class="pricing-price">$45<span> / starting at</span></div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Precision-cut wooden materials</li>
+                        <li><i class="fas fa-check"></i> Basic step-by-step instructions</li>
+                        <li><i class="fas fa-check"></i> Standard pre-printed wallpaper</li>
+                        <li><i class="fas fa-check"></i> Non-working decorative lighting</li>
+                        <li><i class="fas fa-check"></i> Essential glue and tweezers included</li>
+                    </ul>
+                    <a href="shop.html" class="btn btn-outline" style="width: 100%;">Browse Kits</a>
+                </div>
+                
+                <!-- Pricing Card 2 -->
+                <div class="pricing-card popular">
+                    <span class="pricing-badge">Most Popular</span>
+                    <h3 class="pricing-title">Artisan Room Boxes</h3>
+                    <div class="pricing-price">$150<span> / starting at</span></div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Premium hardwoods &amp; acrylics</li>
+                        <li><i class="fas fa-check"></i> Functional 12V LED lighting setup</li>
+                        <li><i class="fas fa-check"></i> Custom scale furniture pieces</li>
+                        <li><i class="fas fa-check"></i> Anti-glare glass display casing</li>
+                        <li><i class="fas fa-check"></i> Detailed assembly consultation</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary" style="width: 100%;">Get a Quote</a>
+                </div>
+                
+                <!-- Pricing Card 3 -->
+                <div class="pricing-card">
+                    <h3 class="pricing-title">Bespoke Dollhouse</h3>
+                    <div class="pricing-price">$800<span> / starting at</span></div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Museum-grade 1:12 scale accuracy</li>
+                        <li><i class="fas fa-check"></i> Full architectural replications</li>
+                        <li><i class="fas fa-check"></i> Custom electrical &amp; moving parts</li>
+                        <li><i class="fas fa-check"></i> Hand-carved historical furniture</li>
+                        <li><i class="fas fa-check"></i> White-glove delivery &amp; setup</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-outline" style="width: 100%;">Consult an Artist</a>
                 </div>
             </div>
         </div>
